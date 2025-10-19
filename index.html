@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cabañas [Nombre del Lugar] | Descanso y Naturaleza en Termas de Chillán</title>
+    <meta name="description"
+        content="Reserva nuestras cabañas para 5 y 6 personas cerca de las Termas de Chillán. Totalmente equipadas, con piscina, tinaja y aceptamos mascotas.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        /* ============================================= */
+        /* ========= CONFIGURACIÓN GLOBAL Y VARIABLES ========= */
+        /* ============================================= */
+        :root {
+            --color-primario: #005a5a;
+            --color-secundario: #e67e22;
+            --color-texto: #333333;
+            --color-fondo: #ffffff;
+            --color-fondo-seccion: #f8f8f8;
+            --fuente-titulos: 'Playfair Display', serif;
+            --fuente-cuerpo: 'Montserrat', sans-serif;
+            --ancho-maximo: 1100px;
+            --nav-height: 70px;
+        }
+
+        /* Reseteo básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-texto);
+            line-height: 1.6;
+            background-color: var(--color-fondo);
+        }
+
+        /* ============================================= */
+        /* ========= ESTILOS GENERALES (Botones, etc.) ========= */
+        /* ============================================= */
+
+        .container {
+            max-width: var(--ancho-maximo);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            /* Más espaciado */
+            overflow: hidden;
+            /* Evita que AOS cree scroll horizontal */
+        }
+
+        /* ... (h1, h2, h3, section-header sin cambios) ... */
+        h1,
+        h2,
+        h3 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primario);
+        }
+
+        .placeholder-info {
+            color: #999;
+            font-style: italic;
+            background-color: #fafafa;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px dashed #ddd;
+            margin-top: 10px;
+        }
+
+
+        /* MEJORA: Botones con hover más profesional */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--color-secundario);
+            color: #fff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-family: var(--fuente-cuerpo);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            /* Transición suave */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: #d35400;
+            transform: translateY(-5px);
+            /* Lo "levanta" */
+            box-shadow: 0 10px 25px rgba(22, 80, 80, 0.3);
+            /* Sombra más pronunciada */
+        }
+
+        .btn-secondary {
+            /* ... (sin cambios) ... */
+            display: inline-block;
+            background-color: transparent;
+            border: 2px solid var(--color-primario);
+            color: var(--color-primario);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-primario);
+            color: #fff;
+        }
+
+
+        /* ============================================= */
+        /* ========= HEADER (MEJORA PROFESIONAL) ========= */
+        /* ============================================= */
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            /* CAMBIO: Inicia transparente */
+            background-color: transparent;
+            box-shadow: none;
+            transition: background-color 0.4s ease-out, box-shadow 0.4s ease-out;
+        }
+
+        /* CAMBIO: Este es el estado "inteligente" al hacer scroll */
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Fondo Glassmorphism */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-family: var(--fuente-titulos);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primario);
+        }
+
+        /* CAMBIO: Hacemos que los links resalten más sobre el fondo transparente */
+        .header:not(.scrolled) .nav-logo,
+        .header:not(.scrolled) .nav-link,
+        .header:not(.scrolled) .bar {
+            color: #fff;
+            /* Texto blanco al inicio */
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            /* Sombra para legibilidad */
+        }
+
+        .header:not(.scrolled) .bar {
+            background-color: #fff;
+            /* Barras de hamburguesa blancas */
+        }
+
+        .header:not(.scrolled) .nav-link-button {
+            background-color: var(--color-secundario);
+            color: #fff;
+            text-shadow: none;
+        }
+
+        .header:not(.scrolled) .nav-link-button:hover {
+            background-color: #fff;
+            color: var(--color-primario);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 700;
+            color: var(--color-texto);
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-secundario);
+        }
+
+        .nav-link-button {
+            background-color: var(--color-primario);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link-button:hover {
+            background-color: var(--color-secundario);
+            color: #fff;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--color-texto);
+            transition: all 0.3s ease-in-out;
+        }
+
+
+        /* ============================================= */
+        /* ========= SECCIÓN INICIO (HERO - MEJORA) ========= */
+        /* ============================================= */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding-top: var(--nav-height);
+
+            /* CAMBIO: Imagen de fondo con gradiente más oscuro para legibilidad */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080.png?text=Foto+Increíble+de+Cabañas+o+Vista') no-repeat center center;
+
+            /* CAMBIO: Animación Ken Burns */
+            background-size: 100% 100%;
+            animation: kenburns 25s ease-in-out infinite alternate;
+            overflow: hidden;
+            /* Importante para que el zoom no desborde */
+        }
+
+        /* CAMBIO: Keyframes para la animación de zoom/paneo */
+        @keyframes kenburns {
+            from {
+                background-size: 100% 100%;
+                background-position: center center;
+            }
+
+            to {
+                background-size: 110% 110%;
+                background-position: center bottom;
+            }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            /* Añadimos un leve "drop-shadow" al texto para que resalte más */
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ============================================= */
+        /* ========= SECCIÓN NOSOTROS (BREVE) ========= */
+        /* ============================================= */
+        .about-brief {
+            background-color: var(--color-fondo-seccion);
+        }
+
+        /* Fondo para destacar */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        /* MEJORA: Sombra de la imagen más profesional */
+        .about-image img {
+            box-shadow: -15px 15px 0px var(--color-primario);
+            border: 10px solid #fff;
+            transition: all 0.3s ease;
+        }
+
+        .about-image:hover img {
+            box-shadow: 0px 0px 0px var(--color-primario);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* ============================================= */
+        /* ========= SECCIÓN CABAÑAS ========= */
+        /* ============================================= */
+        /* ... (Sección cabañas sin cambios visuales grandes) ... */
+        .cabins {
+            background-color: #fff;
+        }
+
+        .cabin-details-wrapper {
+            display: flex;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .cabin-price-box {
+            flex: 1;
+            background-color: var(--color-primario);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cabin-price-box h3 {
+            color: #fff;
+        }
+
+        .cabin-price-box .price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .cabin-price-box p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .cabin-amenities {
+            flex: 2;
+            padding: 2.5rem;
+        }
+
+        .cabin-amenities ul {
+            list-style: none;
+            padding: 0;
+            columns: 2;
+            gap: 1.5rem;
+        }
+
+        .cabin-amenities li {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cabin-amenities li i {
+            color: var(--color-secundario);
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ============================================= */
+        /* ========= SECCIÓN SERVICIOS ========= */
+        /* ============================================= */
+        .services {
+            background-color: var(--color-fondo-seccion);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            /* MEJORA: Transición más suave y notoria */
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .service-card-content {
+            padding: 1.5rem;
+        }
+
+        .service-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            background-color: #e0f2f1;
+            color: var(--color-primario);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-tag-optional {
+            background-color: #fef3e0;
+            color: #d35400;
+        }
+
+        .service-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primario);
+            margin-top: 1rem;
+        }
+
+        /* ============================================= */
+        /* ========= SECCIÓN UBICACIÓN ========= */
+        /* ============================================= */
+        .location {
+            background-color: #fff;
+        }
+
+        /* ... (sin cambios) ... */
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .location-text {
+            font-size: 1.1rem;
+        }
+
+        .location-text p {
+            margin-bottom: 1rem;
+        }
+
+        .location-text i {
+            color: var(--color-primario);
+            margin-right: 10px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            color: #999;
+            border-radius: 10px;
+        }
+
+        /* ============================================= */
+        /* ========= SECCIÓN CONTACTO ========= */
+        /* ============================================= */
+        .contact {
+            background-color: var(--color-fondo-seccion);
+        }
+
+        /* ... (sin cambios) ... */
+        .contact-wrapper {
+            display: flex;
+            gap: 3rem;
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info,
+        .contact-rules {
+            flex: 1;
+        }
+
+        .contact-info p,
+        .contact-rules p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p i,
+        .contact-rules p i {
+            color: var(--color-primario);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ============================================= */
+        /* ========= FOOTER ========= */
+        /* ============================================= */
+        .footer {
+            background-color: var(--color-texto);
+            color: #f0f0f0;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .footer strong {
+            color: #fff;
+        }
+
+        /* ============================================= */
+        /* ========= ELIMINADO ========= */
+        /* ============================================= */
+        /* Se borraron los estilos .fade-in y .fade-in.visible, 
+   ya que ahora los maneja la librería AOS */
+
+
+        /* ============================================= */
+        /* ========= RESPONSIVE (CELULARES) ========= */
+        /* ============================================= */
+        @media(max-width: 768px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            /* --- Ajustes del Menú Hamburguesa --- */
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: var(--nav-height);
+                flex-direction: column;
+                background-color: #fff;
+                /* Fondo blanco sólido en mobile */
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: left 0.3s ease-out;
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 2rem 0;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+                color: var(--color-texto);
+                /* Asegura color en mobile */
+            }
+
+            .nav-link-button {
+                background-color: transparent;
+                color: var(--color-texto);
+                padding: 0;
+            }
+
+            .nav-link-button:hover {
+                background-color: transparent;
+                color: var(--color-secundario);
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            /* El texto del header debe ser visible en mobile */
+            .header:not(.scrolled) .nav-logo,
+            .header:not(.scrolled) .nav-link {
+                color: var(--color-primario);
+                /* Vuelve al color primario si está en mobile */
+                text-shadow: none;
+            }
+
+            .header:not(.scrolled) .bar {
+                background-color: var(--color-primario);
+            }
+
+            .header.scrolled .nav-logo {
+                color: var(--color-primario);
+            }
+
+            .header.scrolled .bar {
+                background-color: var(--color-primario);
+            }
+
+
+            /* --- Ajustes de Secciones --- */
+            .hero {
+                background-size: auto 100vh;
+            }
+
+            /* Arreglo de Ken Burns para mobile */
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .cabin-details-wrapper {
+                flex-direction: column;
+            }
+
+            .cabin-amenities ul {
+                columns: 1;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+                padding: 2rem;
+            }
+        }
+
+
+/* ============================================= */
+/* ========= SECCIÓN UBICACIÓN (ADAPTADA A TU HTML) == */
+/* ============================================= */
+
+/* 1. La sección principal */
+.location-pro {
+    padding: 4rem 0; /* Volvemos a darle padding normal */
+    background-color: var(--color-fondo-seccion); /* El fondo gris claro */
+    height: auto; /* Reseteamos la altura */
+    position: static; /* Reseteamos la posición */
+}
+
+/* 2. La tarjeta de texto (la caja blanca) */
+.location-text-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    
+    /* En mobile, usamos más padding horizontal */
+    padding: 2.5rem 1.5rem; 
+    
+    /* Reseteo de la versión flotante anterior */
+    position: static;
+    transform: none;
+    max-width: 650px; /* Ancho máximo para la tarjeta */
+    margin: 0 auto; /* Centra la tarjeta */
+    
+    /* Centra el texto (H2) en mobile */
+    text-align: center; 
+}
+
+/* Los párrafos dentro de la tarjeta */
+.location-text-card p {
+    font-size: 1.05rem; /* Un poco más pequeño para mobile */
+    margin-bottom: 1.5rem;
+    text-align: left; /* Párrafos alineados a la izquierda */
+}
+
+.location-text-card p i {
+    color: var(--color-primario);
+    margin-right: 10px;
+}
+
+/* 3. El div que contiene el mapa Y el botón */
+.location-map-embed {
+    width: 100%;
+    
+    /* ¡LA CLAVE PARA CENTRAR! */
+    /* Usamos Flexbox para centrar verticalmente el mapa y el botón */
+    display: flex;
+    flex-direction: column; /* Uno encima del otro */
+    align-items: center; /* Centrados horizontalmente */
+    
+    /* Espacio entre el mapa y el botón */
+    gap: 1.5rem; 
+    margin-top: 1.5rem; /* Espacio sobre el mapa */
+}
+
+/* 4. EL MAPA (IFRAME) - El cambio más importante */
+.location-map-embed iframe {
+    /* --- RESPONSIVIDAD --- */
+    width: 100%;       /* Ocupa el 100% de su contenedor */
+    max-width: 600px;  /* Ancho máximo (anula el width="600" del HTML) */
+    
+    /* --- ALTURA ADAPTABLE --- */
+    /* Esta es la técnica profesional para que la altura se ajuste sola */
+    height: auto;
+    aspect-ratio: 4 / 3; /* Proporción 4:3 (puedes usar 16/9 si prefieres) */
+    
+    /* --- ESTILO --- */
+    border: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 5. El botón de "Abrir en Google Maps" */
+.location-map-embed .btn-secondary {
+    /* Flexbox ya lo centró, no necesita más estilos */
+    /* (Asegúrate que tus estilos base de .btn-secondary existan) */
+}
+
+
+/* --- Media Query para Escritorio --- */
+/* Opcional, pero pule los detalles para pantallas grandes */
+@media(min-width: 768px) {
+    .location-text-card {
+        padding: 3rem; /* Más padding en escritorio */
+    }
+    
+    .location-text-card p {
+        font-size: 1.1rem; /* Texto tamaño normal */
+    }
+}
+
+
+
+/* ============================================= */
+/* ========= SECCIÓN GALERÍA (NUEVA) ========= */
+/* ============================================= */
+.gallery {
+    background-color: #fff; /* Fondo blanco para esta sección */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-rows: repeat(2, 250px); /* 2 filas de 250px de alto */
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* La magia del grid asimétrico */
+.gallery-item.item-1 {
+    /* La primera foto ocupa 2 filas (es más alta) */
+    grid-row: 1 / 3; 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rellena el espacio sin deformarse */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efecto Hover Profesional */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Zoom sutil */
+}
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-button-container {
+    text-align: center;
+    margin-top: 2.5rem; /* Espacio para el botón */
+}
+
+/* Responsive para la galería */
+@media(max-width: 768px) {
+    .gallery-grid {
+        /* En mobile, 1 sola columna */
+        grid-template-columns: 1fr;
+        /* Todas las filas del mismo alto */
+        grid-template-rows: 300px 200px 200px; 
+    }
+    
+    .gallery-item.item-1 {
+        grid-row: auto; /* Reseteamos el alto de la primera foto */
+    }
+}
+
+
+
+/* ============================================= */
+/* ========= SECCIÓN TESTIMONIOS (NUEVA) ========= */
+/* ============================================= */
+.testimonials {
+    background-color: var(--color-fondo-seccion); /* Fondo gris claro */
+}
+
+.testimonials-grid {
+    display: grid;
+    /* 3 columnas en escritorio */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.testimonial-stars {
+    color: #f39c12; /* Color de las estrellas */
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    font-style: italic; /* Texto en cursiva */
+    color: #555;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Esto hace que todas las tarjetas tengan el mismo alto */
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--color-primario);
+    font-size: 0.9rem;
+}
+
+/* Responsive para testimonios */
+@media(max-width: 768px) {
+    .testimonials-grid {
+        /* 1 sola columna en mobile */
+        grid-template-columns: 1fr;
+    }
+}
+        
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">[NOMBRE DE LAS CABAÑAS]</a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#inicio" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#cabañas" class="nav-link">Cabañas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ubicacion" class="nav-link">Ubicación</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link nav-link-button">Reservar</a>
+                </li>
+            </ul>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1 data-aos="fade-up" data-aos-delay="200">Descanso y Naturaleza en el Corazón de Chillán</h1>
+                <p data-aos="fade-up" data-aos-delay="400">Vive una experiencia única en nuestras cabañas totalmente
+                    equipadas. Perfectas para familias, con piscina, tinaja y la mejor vista.</p>
+                <a href="#contacto" class="btn-primary" data-aos="fade-up" data-aos-delay="600">Reserva tu Estadía
+                    Ahora</a>
+            </div>
+        </section>
+
+        <section id="nosotros" class="about-brief">
+            <div class="container about-container">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="https://via.placeholder.com/500x400.png?text=Foto+Familiar+o+del+Lugar"
+                        alt="Familia administradora de las cabañas">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+                    <h2>Un Negocio Familiar Pensado en tu Descanso</h2>
+                    <p>Somos José Alfredo y familia, dedicados a ofrecer un espacio de tranquilidad en el Km 46.5.
+                        Nuestro compromiso es que te sientas como en casa, disfrutando de la naturaleza con todas las
+                        comodidades.</p>
+                    <a href="nosotros.html" class="btn-secondary">Conoce Nuestra Historia</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="cabañas" class="cabins" data-aos="fade-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nuestras Cabañas: Tu Hogar en la Montaña</h2>
+                    <p>Contamos con 3 cabañas idénticas para 5 y 6 personas. Mismo precio, misma comodidad.</p>
+                </div>
+
+                <div class="cabin-details-wrapper">
+                    <div class="cabin-price-box">
+                        <h3>Valor por Noche</h3>
+                        <p class="price">$79.000</p>
+                        <p>(Temporada Alta)</p>
+                        <a href="#contacto" class="btn-primary">Consultar Disponibilidad</a>
+                    </div>
+
+                    <div class="cabin-amenities">
+                        <h3>Totalmente Equipadas para tu Confort</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-users"></i> Capacidad para 5 y 6 personas</li>
+                            <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
+                            <li class="placeholder-info"><i class="fa-solid fa-plus"></i> [INFORMACIÓN PENDIENTE:
+                                Distribución de camas restantes]</li>
+                            <li><i class="fa-solid fa-bath"></i> Baño privado con Calefont (agua caliente)</li>
+                            <li><i class="fa-solid fa-kitchen-set"></i> Cocina equipada y Refrigerador</li>
+                            <li><i class="fa-solid fa-tv"></i> Living, comedor y TV</li>
+                            <li><i class="fa-solid fa-fire-burner"></i> Salamandra (incluye 10 astillas en invierno)
+                            </li>
+                            <li><i class="fa-solid fa-grill"></i> Parrilla individual</li>
+                            <li><i class="fa-solid fa-leaf"></i> Terraza con hermosa vista</li>
+                            <li><i class="fa-solid fa-sheet-plastic"></i> Incluye sábanas limpias (recambio al 5to día)
+                            </li>
+                            <li><i class="fa-solid fa-paw"></i> ¡Aceptamos mascotas!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="gallery">
+    <div class="container">
+        
+        <div class="section-header" data-aos="fade-up">
+            <h2>Un Vistazo a tu Próximo Destino</h2>
+            <p>Imágenes reales de nuestras instalaciones. Así es el lugar donde descansarás.</p>
+        </div>
+        
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+            
+            <a href="https://via.placeholder.com/1000x800.png?text=Foto+Principal+Cabaña" class="gallery-item item-1" data-aos="zoom-in">
+                <img src="https://via.placeholder.com/1000x800.png?text=Foto+Principal+Cabaña" alt="Vista principal de la cabaña">
+                <div class="gallery-overlay">Ver Más</div>
+            </a>
+            
+            <a href="https://via.placeholder.com/800x600.png?text=Foto+Interior" class="gallery-item item-2" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://via.placeholder.com/800x600.png?text=Foto+Interior" alt="Interior acogedor de la cabaña">
+                <div class="gallery-overlay">Ver Más</div>
+            </a>
+            
+            <a href="https://via.placeholder.com/800x600.png?text=Foto+Piscina" class="gallery-item item-3" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://via.placeholder.com/800x600.png?text=Foto+Piscina" alt="Piscina o tinaja de las cabañas">
+                <div class="gallery-overlay">Ver Más</div>
+            </a>
+        </div>
+        
+        <div class="gallery-button-container" data-aos="fade-up">
+            <a href="galeria.html" class="btn-primary">Ver Galería Completa</a>
+        </div>
+        
+    </div>
+</section>
+
+        <section id="servicios" class="services">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2>Disfruta de Nuestras Instalaciones</h2>
+                    <p>Servicios incluidos y adicionales para una estadía perfecta.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://via.placeholder.com/600x400.png?text=Foto+Piscina+y+Juegos"
+                            alt="Piscina y área de juegos en cabañas">
+                        <div class="service-card-content">
+                            <span class="service-tag">Incluido en tu Estadía</span>
+                            <h3>Piscina y Área de Juegos</h3>
+                            <p>Refréscate en nuestra piscina y deja que los niños se diviertan en los columpios,
+                                saltadora y rayuela.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://via.placeholder.com/600x400.png?text=Foto+Tinaja+de+Noche"
+                            alt="Tinaja caliente de madera">
+                        <div class="service-card-content">
+                            <span class="service-tag service-tag-optional">Servicio Adicional</span>
+                            <h3>Tinaja Caliente</h3>
+                            <p>Relájate bajo las estrellas en nuestra tinaja de agua caliente. Capacidad para 6
+                                personas.</p>
+                            <p class="service-price">Valor: $40.000 (1 hora)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="testimonials">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Qué Dicen Nuestros Visitantes</h2>
+            <p>La opinión de quienes ya nos visitaron es nuestra mejor garantía.</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Un lugar maravilloso, todo muy limpio y la atención de Don José espectacular. La tinaja de noche es 100% recomendada. Volveremos sí o sí."
+                </p>
+                <p class="testimonial-author">
+                    - Familia Pérez, Concepción
+                </p>
+            </div>
+            
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Excelente ubicación para desconectarse. Las cabañas son muy cómodas y tienen de todo. Nuestros hijos amaron los juegos y la piscina."
+                </p>
+                <p class="testimonial-author">
+                    - María y Esteban, Santiago
+                </p>
+            </div>
+            
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testimonial-text">
+                    "Fuimos con nuestro perrito y no hubo ningún problema. La cabaña súper calentita con la salamandra. Hermosa vista."
+                </p>
+                <p class="testimonial-author">
+                    - Camila R., Chillán
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+        <section id="ubicacion" class="location-pro" data-aos="fade-up">
+
+
+
+            <div class="container">
+                <div class="location-text-card">
+                    <h2 data-aos="fade-up">Encuéntranos Fácilmente</h2>
+
+                    <p data-aos="fade-up">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        Estamos en una ubicación privilegiada en el <strong>Kilómetro 46.5, Camino a las Termas de
+                            Chillán.</strong>
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="50">
+                        A solo minutos del pueblo de Recinto, somos el punto de partida ideal para explorar todos los
+                        atractivos de la cordillera.
+                    </p>
+
+                    <div data-aos="fade-up" class="location-map-embed" data-aos-delay="100">
+
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d4516.52280414466!2d-71.68630829927721!3d-36.826573013060575!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x966ec6dbea74ea2d%3A0xe5ab77a44f9edda!2sCerveceria%20Bio%20Bier%2C%20Pinto%2C%20%C3%91uble!3m2!1d-36.8288491!2d-71.68366639999999!5e0!3m2!1ses-419!2scl!4v1760912499022!5m2!1ses-419!2scl"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+
+                        
+                    <a href="https://www.google.com/maps/dir//Cerveceria+Bio+Bier,+Pinto,+%C3%91uble/@-36.8360031,-71.6861328,13.5z/data=!4m17!1m7!3m6!1s0x966ec6dbea74ea2d:0xe5ab77a44f9edda!2sCerveceria+Bio+Bier!8m2!3d-36.8288491!4d-71.6836664!16s%2Fg%2F11dxc_5qjl!4m8!1m0!1m5!1m1!1s0x966ec6dbea74ea2d:0xe5ab77a44f9edda!2m2!1d-71.6836664!2d-36.8288491!3e0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="btn-secondary" data-aos="fade-up" data-aos-delay="150">
+                        Abrir en Google Maps
+                    </a>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact" data-aos="fade-up">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Reserva tu Estadía Hoy Mismo</h2>
+                    <p>Contáctanos y vive la experiencia.</p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Datos de Contacto</h3>
+                        <p><i class="fa-solid fa-user"></i> Administrador: José Alfredo Garay Riffo</p>
+                        <p><i class="fa-solid fa-envelope"></i> Email: dimensión7777@gmail.com</p>
+
+                        <div class="placeholder-info">
+                            <p><i class="fa-solid fa-phone"></i> [INFORMACIÓN PENDIENTE: Falta número de Teléfono /
+                                WhatsApp]</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-rules">
+                        <h3>Reglas Claras</h3>
+                        <p><strong><i class="fa-solid fa-clock"></i> Horario de Salida (Check-out):</strong> 14:00 hrs.
+                        </p>
+                        <p><strong><i class="fa-solid fa-paw"></i> Mascotas:</strong> ¡Son bienvenidas!</p>
+
+                        <div class="placeholder-info">
+                            <p><strong><i class="fa-solid fa-calendar-check"></i> Proceso de Reserva:</strong>
+                                [INFORMACIÓN PENDIENTE: Falta el proceso de reserva. Ej: Se abona el 50%]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 [Nombre de las Cabañas]. Todos los derechos reservados.</p>
+            <p>Diseñado y desarrollado por <strong>paginasfast</strong></p>
+            <p>Km 46.5, Camino Termas de Chillán, Región de Ñuble</p>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        /* ================================================= */
+        /* ========= SCRIPT MENÚ HAMBURGUESA ========= */
+        /* ================================================= */
+        // (Este código sigue igual y funciona perfecto)
+
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+
+        /* ================================================= */
+        /* ========= SCRIPT HEADER "INTELIGENTE" (NUEVO) ========= */
+        /* ================================================= */
+        // Esto añade la clase .scrolled al header cuando el scroll pasa de 50px
+
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector(".header");
+            // .toggle(clase, condición) es la forma más limpia
+            // Añade "scrolled" SI window.scrollY > 50, si no, la quita.
+            header.classList.toggle("scrolled", window.scrollY > 50);
+        });
+
+
+        /* ================================================= */
+        /* ========= SCRIPT ANIMACIÓN (AOS) (NUEVO) ========= */
+        /* ================================================= */
+        // (Se eliminó todo el código antiguo de IntersectionObserver)
+
+        // 1. Inicializamos la librería AOS
+        AOS.init({
+            duration: 800,      // Duración de la animación en milisegundos
+            easing: 'ease-in-out', // Curva de aceleración
+            once: true,         // La animación solo ocurre UNA vez
+            mirror: false,      // No se repite al volver a subir
+            anchorPlacement: 'top-bottom', // Dónde se activa la animación
+        });
+    </script>
+</body>
+
+</html>
