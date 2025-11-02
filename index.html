@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- NUEVO: Bootstrap y Lightbox CSS (antes de tus estilos) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
     <title>Cabañas [Nombre del Lugar] | Descanso y Naturaleza en Termas de Chillán</title>
     <meta name="description"
         content="Reserva nuestras cabañas para 5 y 6 personas cerca de las Termas de Chillán. Totalmente equipadas, con piscina, tinaja y aceptamos mascotas.">
@@ -437,6 +441,78 @@
             margin-right: 12px;
             width: 20px;
             text-align: center;
+        }
+
+        /* ============================================= */
+        /* ========= SECCIÓN CABAÑAS (NUEVAS CARDS) ========= */
+        /* ============================================= */
+        .cabin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .cabin-card-new {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cabin-card-new:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .cabin-card-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        .cabin-card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .cabin-card-content h3 {
+            font-size: 1.5rem;
+        }
+
+        .cabin-card-content .cabin-features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            flex-grow: 1;
+        }
+
+        .cabin-card-content .cabin-features li {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cabin-card-content .cabin-features li i {
+            color: var(--color-primario);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .btn-ver-galeria {
+            width: 100%;
+        }
+
+        .btn-ver-galeria i {
+            margin-right: 8px;
         }
 
         /* ============================================= */
@@ -1074,6 +1150,136 @@
     height: 50px;
 }
 
+/* ============================================= */
+/* ========= CSS DE LA GALERÍA OFFCANVAS ========= */
+/* ============================================= */
+
+#galeriaModal.offcanvas-bottom {
+    height: 95vh; 
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
+}
+
+/* Estilos para el Header Fijo del Offcanvas */
+.offcanvas-header.sticky-top {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1045; /* Sobre el contenido del offcanvas */
+    border-bottom: 1px solid #dee2e6;
+    flex-direction: column;
+    align-items: stretch;
+    padding-bottom: 0;
+    padding-top: 1rem; 
+}
+
+.header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.header-actions { /* Contenedor para botones de la derecha */
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Estilos para la barra de anclas */
+#nav-galeria {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+#nav-galeria::-webkit-scrollbar { display: none; }
+#nav-galeria .nav-link { white-space: nowrap; }
+
+/* Arreglo para que el ScrollSpy no oculte los títulos */
+.offcanvas-body[data-bs-spy="scroll"] {
+    scroll-padding-top: 160px;
+}
+
+/* Estilos para los Grids "Bonitos" dentro del Offcanvas */
+.grid-fotos {
+    display: grid;
+    gap: 8px;
+    max-width: 800PX;
+    margin: auto;
+    margin-top: 30px;
+    grid-auto-rows: 420px !important;
+
+}
+.grid-fotos a {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 180px;
+}
+.grid-fotos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+.grid-fotos a:hover img {
+    transform: scale(1.05);
+}
+
+.grid-3-fotos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+}
+.grid-3-fotos a:first-child {
+    grid-row: span 2; 
+    min-height: 408px;
+}
+.grid-4-fotos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 250px;
+}
+.grid-2-fotos {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 300px;
+}
+
+/* =========================================================== */
+/* === ¡IMPORTANTE! ARREGLO DE CONFLICTO BOOTSTRAP vs TU CSS === */
+/* =========================================================== */
+
+/* 1. Arreglo del .container */
+/* Esto fuerza a que todos los .container de TU PÁGINA usen tu ancho
+   y no el de Bootstrap. */
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: var(--ancho-maximo) !important;
+    padding: 0 2rem !important; /* Mantiene tu padding original */
+    margin: 0 auto !important;
+}
+
+/* 2. Anulación del arreglo DENTRO del Offcanvas */
+/* Esto resetea el arreglo anterior, para que las secciones
+   DENTRO de la galería SÍ usen el padding de Bootstrap (y no se peguen a los bordes). */
+#galeriaModal .container {
+    max-width: none !important; 
+    padding: 0 1rem !important; /* Padding normal de Bootstrap */
+    margin: 0 !important;
+}
+
+/* 3. Arreglo de Fuentes */
+/* Bootstrap cambia las fuentes, esto las restaura a las tuyas. */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulos) !important;
+    color: var(--color-primario) !important;
+}
+
+/* Arreglo H4 dentro del offcanvas (que sí debe ser negro) */
+#galeriaModal h2.h4 {
+     font-family: var(--fuente-cuerpo) !important;
+     color: var(--color-texto) !important;
+     font-weight: 700;
+}
     </style>
 </head>
 
@@ -1144,50 +1350,62 @@
                     <p>Tenemos diferentes opciones para adaptarnos a las necesidades de tu grupo o familia.</p>
                 </div>
 
-                <!-- Cabaña 1 -->
-                <div class="cabin-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="cabin-card-header">
-                        <h3>Cabaña 1 (Hasta 5 personas)</h3>
+                <div class="cabin-grid">
+
+                    <div class="cabin-card-new" data-aos="fade-up" data-aos-delay="100">
+                        <div class="cabin-card-image">
+                            <img src="cabana-1/exterior-1.jpeg" alt="Foto Cabaña 1">
+                        </div>
+                        <div class="cabin-card-content">
+                            <h3>Cabaña 1 (Hasta 5 pers.)</h3>
+                            <ul class="cabin-features">
+                                <li><i class="fa-solid fa-bed"></i> 1 Hab. Matrimonial</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Hab. con litera (2 camas)</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Hab. con 1 cama</li>
+                            </ul>
+                            <button class="btn-secondary btn-ver-galeria" data-cabin="cabaña1">
+                                <i class="fa-solid fa-camera"></i> Ver más fotos
+                            </button>
+                        </div>
                     </div>
-                    <div class="cabin-card-body">
-                        <ul>
-                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con cama matrimonial.</li>
-                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con una litera (2 camas).</li>
-                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con una cama individual.</li>
-                        </ul>
+
+                    <div class="cabin-card-new" data-aos="fade-up" data-aos-delay="200">
+                        <div class="cabin-card-image">
+                            <img src="cabana-1/living-1.jpeg" alt="Foto Cabaña 2">
+                        </div>
+                        <div class="cabin-card-content">
+                            <h3>Cabaña 2 (Hasta 6 pers.)</h3>
+                            <ul class="cabin-features">
+                                <li><i class="fa-solid fa-bed"></i> 1 Hab. Matrimonial</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Hab. con 2 literas (4 camas)</li>
+                                <li><i class="fa-solid fa-couch"></i> Sofá cama en living</li>
+                            </ul>
+                            <button class="btn-secondary btn-ver-galeria" data-cabin="cabaña2">
+                                <i class="fa-solid fa-camera"></i> Ver más fotos
+                            </button>
+                        </div>
                     </div>
+
+                    <div class="cabin-card-new" data-aos="fade-up" data-aos-delay="300">
+                        <div class="cabin-card-image">
+                            <img src="cabana-1/exterior-2.jpeg" alt="Foto Cabaña 3">
+                        </div>
+                        <div class="cabin-card-content">
+                            <h3>Cabaña 3 (Hasta 6 pers.)</h3>
+                            <ul class="cabin-features">
+                                <li><i class="fa-solid fa-bed"></i> 1 Hab. Matrimonial</li>
+                                <li><i class="fa-solid fa-bed"></i> 1 Hab. con litera y 1 cama</li>
+                                <li><i class="fa-solid fa-couch"></i> Sofá cama en living</li>
+                            </ul>
+                            <button class="btn-secondary btn-ver-galeria" data-cabin="cabaña3">
+                                <i class="fa-solid fa-camera"></i> Ver más fotos
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Cabaña 2 -->
-                <div class="cabin-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="cabin-card-header">
-                        <h3>Cabaña 2 (Hasta 6 personas)</h3>
-                    </div>
-                    <div class="cabin-card-body">
-                        <ul>
-                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con cama matrimonial.</li>
-                            <li><i class="fa-solid fa-bed"></i> 1 Habitación with two literas (4 camas).</li>
-                            <li><i class="fa-solid fa-couch"></i> Sofá cama en el living.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Cabaña 3 -->
-                <div class="cabin-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="cabin-card-header">
-                        <h3>Cabaña 3 (Hasta 6 personas)</h3>
-                    </div>
-                    <div class="cabin-card-body">
-                        <ul>
-                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con cama matrimonial.</li>
-                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con una litera y una cama individual.</li>
-                            <li><i class="fa-solid fa-couch"></i> Sofá cama en el living.</li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <div class="cabin-details-wrapper">
+                <div class="cabin-details-wrapper" style="margin-top: 4rem;">
                     <div class="cabin-price-box">
                         <h3>Valor por Noche</h3>
                         <p class="price">$79.000</p>
@@ -1201,12 +1419,10 @@
                             <li><i class="fa-solid fa-bath"></i> Baño privado con Calefont (agua caliente)</li>
                             <li><i class="fa-solid fa-kitchen-set"></i> Cocina equipada y Refrigerador</li>
                             <li><i class="fa-solid fa-tv"></i> Living, comedor y TV</li>
-                            <li><i class="fa-solid fa-fire-burner"></i> Salamandra (incluye 10 astillas en invierno)
-                            </li>
+                            <li><i class="fa-solid fa-fire-burner"></i> Salamandra (incluye 10 astillas)</li>
                             <li><i class="fa-solid fa-grill"></i> Parrilla individual</li>
                             <li><i class="fa-solid fa-leaf"></i> Terraza con hermosa vista</li>
-                            <li><i class="fa-solid fa-sheet-plastic"></i> Incluye sábanas limpias (recambio al 5to día)
-                            </li>
+                            <li><i class="fa-solid fa-sheet-plastic"></i> Incluye sábanas limpias</li>
                             <li><i class="fa-solid fa-paw"></i> ¡Aceptamos mascotas!</li>
                         </ul>
                     </div>
@@ -1222,24 +1438,25 @@
                     <p>Imágenes reales de nuestras instalaciones. Así es el lugar donde descansarás.</p>
                 </div>
 
+                <!-- Simplificamos la grilla visible y usamos Offcanvas para la galería completa -->
                 <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
 
                     <a href="https://via.placeholder.com/1000x800.png?text=Foto+Principal+Cabaña"
-                        class="gallery-item item-1" data-aos="zoom-in">
+                        class="gallery-item item-1" data-aos="zoom-in" data-bs-toggle="offcanvas" data-bs-target="#galeriaModal">
                         <img src="https://via.placeholder.com/1000x800.png?text=Foto+Principal+Cabaña"
                             alt="Vista principal de la cabaña">
                         <div class="gallery-overlay">Ver Más</div>
                     </a>
 
                     <a href="https://via.placeholder.com/800x600.png?text=Foto+Interior" class="gallery-item item-2"
-                        data-aos="zoom-in" data-aos-delay="100">
+                        data-aos="zoom-in" data-aos-delay="100" data-bs-toggle="offcanvas" data-bs-target="#galeriaModal">
                         <img src="https://via.placeholder.com/800x600.png?text=Foto+Interior"
                             alt="Interior acogedor de la cabaña">
                         <div class="gallery-overlay">Ver Más</div>
                     </a>
 
                     <a href="https://via.placeholder.com/800x600.png?text=Foto+Piscina" class="gallery-item item-3"
-                        data-aos="zoom-in" data-aos-delay="200">
+                        data-aos="zoom-in" data-aos-delay="200" data-bs-toggle="offcanvas" data-bs-target="#galeriaModal">
                         <img src="https://via.placeholder.com/800x600.png?text=Foto+Piscina"
                             alt="Piscina o tinaja de las cabañas">
                         <div class="gallery-overlay">Ver Más</div>
@@ -1247,7 +1464,9 @@
                 </div>
 
                 <div class="gallery-button-container" data-aos="fade-up">
-                    <a href="galeria.html" class="btn-primary">Ver Galería Completa</a>
+                    <button type="button" class="btn-primary" data-bs-toggle="offcanvas" data-bs-target="#galeriaModal" aria-controls="galeriaModal">
+                        Ver Galería Completa
+                    </button>
                 </div>
 
             </div>
@@ -1267,90 +1486,36 @@
                         <div class="service-card-content">
                             <span class="service-tag">Incluido en tu Estadía</span>
                             <h3>Piscina y Área de Juegos</h3>
-                            <p>Refréscate en nuestra piscina y deja que los niños se diviertan en los columpios,
-                                saltadora y rayuela.</p>
+                            <p>Refréscate en nuestra piscina y deja que los niños se diviertan en el área de juegos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://via.placeholder.com/600x400.png?text=Foto+Tinaja+y+Jardín"
+                            alt="Tinaja y jardín en cabañas">
+                        <div class="service-card-content">
+                            <span class="service-tag">Opcional</span>
+                            <h3>Tinaja de Agua Caliente</h3>
+                            <p>Relájate en nuestra tinaja al aire libre, rodeado de naturaleza.</p>
+                            <p class="service-price">$15.000 por uso privado</p>
                         </div>
                     </div>
 
                     <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://via.placeholder.com/600x400.png?text=Foto+Tinaja+de+Noche"
-                            alt="Tinaja caliente de madera">
+                        <img src="https://via.placeholder.com/600x400.png?text=Foto+Senderismo+y+Aventura"
+                            alt="Senderismo y aventura en los alrededores">
                         <div class="service-card-content">
-                            <span class="service-tag service-tag-optional">Servicio Adicional</span>
-                            <h3>Tinaja Caliente</h3>
-                            <p>Relájate bajo las estrellas en nuestra tinaja de agua caliente. Capacidad para 6
-                                personas.</p>
-                            <p class="service-price">Valor: $40.000 (1 hora)</p>
+                            <span class="service-tag">Aventura</span>
+                            <h3>Excursiones y Tours</h3>
+                            <p>Descubre los mejores senderos y atractivos turísticos con nuestros guías locales.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonios" class="testimonials">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <h2>Qué Dicen Nuestros Visitantes</h2>
-                    <p>La opinión de quienes ya nos visitaron es nuestra mejor garantía.</p>
-                </div>
-
-                <div class="testimonials-grid">
-
-                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "Un lugar maravilloso
-                            noche es 100% recomendada. Volveremos sí o sí."
-                        </p>
-                        <p class="testimonial-author">
-                            - Familia Pérez, Concepción
-                        </p>
-                    </div>
-
-                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "Excelente ubicación para desconectarse. Las cabañas son muy cómodas y tienen de todo.
-                            Nuestros hijos amaron los juegos y la piscina."
-                        </p>
-                        <p class="testimonial-author">
-                            - María y Esteban, Santiago
-                        </p>
-                    </div>
-
-                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="testimonial-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "Fuimos con nuestro perrito y no hubo ningún problema. La cabaña súper calentita con la
-                            salamandra. Hermosa vista."
-                        </p>
-                        <p class="testimonial-author">
-                            - Camila R., Chillán
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
+        
         <section id="ubicacion" class="location-pro" data-aos="fade-up">
 
 
@@ -1425,7 +1590,7 @@
             </div>
         </section>
 
-        <section id="atracciones" class="attractions">
+       <section id="atracciones" class="attractions">
             <div class="container">
 
                 <div class="section-header" data-aos="fade-up">
@@ -1493,6 +1658,48 @@
 
     </main>
 
+    <!-- NUEVO: Offcanvas Galería (antes del footer) -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="galeriaModal" aria-labelledby="galeriaModalLabel">
+      <div class="offcanvas-header sticky-top">
+        <div class="header-controls">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="header-actions">
+              <button class="btn btn-light btn-sm">Compartir</button>
+              <button class="btn btn-light btn-sm">Guardar</button>
+            </div>
+        </div>
+        <nav id="nav-galeria" class="nav nav-pills">
+          <a class="nav-link" href="#seccion-living">Living</a>
+          <a class="nav-link" href="#seccion-dormitorios">Dormitorios</a>
+          <a class="nav-link" href="#seccion-bano">Baño</a>
+          <a class="nav-link" href="#seccion-exterior">Exterior</a>
+        </nav>
+      </div>
+
+      <div class="offcanvas-body" data-bs-spy="scroll" data-bs-target="#nav-galeria" data-bs-offset="170" tabindex="0">
+    
+        <section id="seccion-living" class="container mb-5">
+          <h2 class="h4">Living y Comedor</h2>
+          <div class="grid-fotos grid-3-fotos" id="gallery-living-grid"></div>
+        </section>
+
+        <section id="seccion-dormitorios" class="container mb-5">
+          <h2 class="h4">Dormitorios</h2>
+          <div class="grid-fotos grid-4-fotos" id="gallery-dormitorios-grid"></div>
+        </section>
+
+        <section id="seccion-bano" class="container mb-5">
+          <h2 class="h4">Baño</h2>
+          <div class="grid-fotos grid-2-fotos" id="gallery-bano-grid"></div>
+        </section>
+
+        <section id="seccion-exterior" class="container mb-5">
+          <h2 class="h4">Exterior y Vistas</h2>
+          <div class="grid-fotos grid-3-fotos" id="gallery-exterior-grid"></div>
+        </section>
+      </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 [Nombre de las Cabañas]. Todos los derechos reservados.</p>
@@ -1501,6 +1708,11 @@
         </div>
     </footer>
 
+
+    <!-- NUEVO: JS de Bootstrap/Lightbox (antes de AOS) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -1547,11 +1759,137 @@
 
         // 1. Inicializamos la librería AOS
         AOS.init({
-            duration: 800,      // Duración de la animación en milisegundos
-            easing: 'ease-in-out', // Curva de aceleración
-            once: true,         // La animación solo ocurre UNA vez
-            mirror: false,      // No se repite al volver a subir
-            anchorPlacement: 'top-bottom', // Dónde se activa la animación
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+            anchorPlacement: 'top-bottom',
+        });
+
+        /* ================================================= */
+        /* ========= SCRIPT GALERÍA OFFCANVAS (NUEVO) ========= */
+        /* ================================================= */
+        // Lightbox
+        if (window.lightbox) {
+          lightbox.option({
+            resizeDuration: 200,
+            wrapAround: true,
+            showImageNumberLabel: true
+          });
+        }
+        // ScrollSpy dentro del Offcanvas
+        var galeriaOffcanvas = document.getElementById('galeriaModal');
+        if (galeriaOffcanvas) {
+          var offcanvasBody = galeriaOffcanvas.querySelector('.offcanvas-body');
+          if (offcanvasBody && window.bootstrap && bootstrap.ScrollSpy) {
+            var scrollSpy = new bootstrap.ScrollSpy(offcanvasBody, { target: '#nav-galeria', offset: 170 });
+            galeriaOffcanvas.addEventListener('shown.bs.offcanvas', function () {
+                scrollSpy.refresh();
+            });
+          }
+        }
+
+
+        /* ================================================= */
+        /* ========= SCRIPT GALERÍA DINÁMICA (NUEVO) ========= */
+        /* ================================================= */
+
+        // Dataset con imágenes locales (cabana-1)
+        const galeriasData = {
+          'cabaña1': {
+            'living': [
+              {thumb: 'cabana-1/living-1.jpeg', large: 'cabana-1/living-1.jpeg', title: 'Living Cabaña 1'},
+              {thumb: 'cabana-1/living-2.jpeg', large: 'cabana-1/living-2.jpeg', title: 'Living Cabaña 1'},
+              {thumb: 'cabana-1/living-3.jpeg', large: 'cabana-1/living-3.jpeg', title: 'Living Cabaña 1'}
+            ],
+            'dormitorios': [
+              {thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio Matrimonial C1'},
+              {thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio 2 C1'}
+            ],
+            'baño': [
+              {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño 1 C1'},
+              {thumb: 'cabana-1/baño-2.jpeg', large: 'cabana-1/baño-2.jpeg', title: 'Baño 2 C1'}
+            ],
+            'exterior': [
+              {thumb: 'cabana-1/exterior-1.jpeg', large: 'cabana-1/exterior-1.jpeg', title: 'Exterior 1 C1'},
+              {thumb: 'cabana-1/exterior-2.jpeg', large: 'cabana-1/exterior-2.jpeg', title: 'Exterior 2 C1'},
+              {thumb: 'cabana-1/exterior-3.jpeg', large: 'cabana-1/exterior-3.jpeg', title: 'Exterior 3 C1'}
+            ]
+          },
+          'cabaña2': {
+            'living': [ {thumb: 'cabana-1/living-4.jpeg', large: 'cabana-1/living-4.jpeg', title: 'Living'} ],
+            'dormitorios': [ {thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio'} ],
+            'baño': [ {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño'} ],
+            'exterior': [ {thumb: 'cabana-1/exterior-4.jpeg', large: 'cabana-1/exterior-4.jpeg', title: 'Exterior'} ]
+          },
+          'cabaña3': {
+            'living': [ {thumb: 'cabana-1/living-5.jpeg', large: 'cabana-1/living-5.jpeg', title: 'Living'} ],
+            'dormitorios': [ {thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio'} ],
+            'baño': [ {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño'} ],
+            'exterior': [ {thumb: 'cabana-1/exterior-5.jpeg', large: 'cabana-1/exterior-5.jpeg', title: 'Exterior'} ]
+          },
+          'general': {
+            'living': [
+              {thumb: 'cabana-1/living-1.jpeg', large: 'cabana-1/living-1.jpeg', title: 'Living'},
+              {thumb: 'cabana-1/living-2.jpeg', large: 'cabana-1/living-2.jpeg', title: 'Living'}
+            ],
+            'dormitorios': [
+              {thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio 1'},
+              {thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio 2'}
+            ],
+            'baño': [ {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño'} ],
+            'exterior': [
+              {thumb: 'cabana-1/exterior-1.jpeg', large: 'cabana-1/exterior-1.jpeg', title: 'Exterior 1'},
+              {thumb: 'cabana-1/exterior-2.jpeg', large: 'cabana-1/exterior-2.jpeg', title: 'Exterior 2'}
+            ]
+          }
+        };
+
+        const galeriaModalElDyn = document.getElementById('galeriaModal');
+        const galeriaModalInstanceDyn = galeriaModalElDyn ? (bootstrap.Offcanvas.getInstance(galeriaModalElDyn) || new bootstrap.Offcanvas(galeriaModalElDyn)) : null;
+        const gridContainers = {
+          living: document.getElementById('gallery-living-grid'),
+          dormitorios: document.getElementById('gallery-dormitorios-grid'),
+          baño: document.getElementById('gallery-bano-grid'),
+          exterior: document.getElementById('gallery-exterior-grid')
+        };
+
+        function buildGridHtml(photos, galleryId) {
+          if (!photos || photos.length === 0) return '<p>No hay fotos disponibles para esta sección.</p>';
+          return photos.map(p => `\n            <a href="${p.large}" data-lightbox="galeria-${galleryId}" data-title="${p.title}">\n              <img src="${p.thumb}" alt="${p.title}">\n            </a>\n          `).join('');
+        }
+
+        function poblarGaleria(galleryId) {
+          const data = galeriasData[galleryId];
+          if (!data) return;
+          gridContainers.living.innerHTML = buildGridHtml(data.living, galleryId);
+          gridContainers.dormitorios.innerHTML = buildGridHtml(data.dormitorios, galleryId);
+          gridContainers.baño.innerHTML = buildGridHtml(data.baño, galleryId);
+          gridContainers.exterior.innerHTML = buildGridHtml(data.exterior, galleryId);
+          if (galeriaModalInstanceDyn) galeriaModalInstanceDyn.show();
+        }
+
+        document.querySelectorAll('.btn-ver-galeria').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = e.currentTarget.dataset.cabin || 'general';
+            poblarGaleria(id);
+          });
+        });
+
+        const mainGalleryButton2 = document.querySelector('#galeria .gallery-button-container button');
+        if (mainGalleryButton2) {
+          mainGalleryButton2.dataset.cabin = 'general';
+          mainGalleryButton2.addEventListener('click', (e) => {
+            const id = e.currentTarget.dataset.cabin;
+            poblarGaleria(id);
+          });
+        }
+        document.querySelectorAll('#galeria .gallery-grid a').forEach(link => {
+          link.dataset.cabin = 'general';
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            poblarGaleria('general');
+          });
         });
     </script>
 </body>
