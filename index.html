@@ -27,11 +27,11 @@
         /* ========= CONFIGURACIÓN GLOBAL Y VARIABLES ========= */
         /* ============================================= */
         :root {
-            --color-primario: #005a5a;
-            --color-secundario: #e67e22;
-            --color-texto: #333333;
-            --color-fondo: #ffffff;
-            --color-fondo-seccion: #f8f8f8;
+            --color-primario: #2980b9; /* Azul brillante y amigable */
+            --color-secundario: #f1c40f; /* Amarillo soleado y vibrante */
+            --color-texto: #2c3e50; /* Gris azulado oscuro y moderno */
+            --color-fondo: #ecf0f1; /* Gris muy claro y limpio */
+            --color-fondo-seccion: #ffffff; /* Blanco para que las secciones resalten */
             --fuente-titulos: 'Playfair Display', serif;
             --fuente-cuerpo: 'Montserrat', sans-serif;
             --ancho-maximo: 1100px;
@@ -142,7 +142,7 @@
         }
 
         .btn-primary:hover {
-            background-color: #d35400;
+            background-color: #e0b400; /* Un amarillo un poco más oscuro para el hover */
             transform: translateY(-5px);
             /* Lo "levanta" */
             box-shadow: 0 10px 25px rgba(22, 80, 80, 0.3);
@@ -483,13 +483,13 @@
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 700;
-            background-color: #e0f2f1;
+            background-color: #eaf2f8; /* Un azul muy pálido */
             color: var(--color-primario);
             margin-bottom: 0.5rem;
         }
 
         .service-tag-optional {
-            background-color: #fef3e0;
+            background-color: #fef9e7; /* Un amarillo muy pálido */
             color: #d35400;
         }
 
@@ -949,8 +949,7 @@
         }
 
         .testimonial-stars {
-            color: #f39c12;
-            /* Color de las estrellas */
+            color: var(--color-secundario); /* Estrellas amarillas */
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
         }
@@ -1050,6 +1049,7 @@
 
 /* ============================================= */
 /* ========= RESPONSIVE (Atracciones) ========= */
+/* =================================
 /* ============================================= */
 /* AHORA SÍ: Pega esto DENTRO de tu @media(max-width: 768px) */
 
@@ -1113,7 +1113,7 @@
 
         <section id="inicio" class="hero">
             <div class="hero-content">
-                <h1 data-aos="fade-up" data-aos-delay="200">Descanso y Naturaleza en el Corazón de Chillán</h1>
+                <h1 data-aos="fade-up" data-aos-delay="200">Descanso y Naturaleza in el Corazón de Chillán</h1>
                 <p data-aos="fade-up" data-aos-delay="400">Vive una experiencia única en nuestras cabañas totalmente
                     equipadas. Perfectas para familias, con piscina, tinaja y la mejor vista.</p>
                 <a href="#contacto" class="btn-primary" data-aos="fade-up" data-aos-delay="600">Reserva tu Estadía
@@ -1141,8 +1141,51 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Nuestras Cabañas: Tu Hogar en la Montaña</h2>
-                    <p>Contamos con 3 cabañas idénticas para 5 y 6 personas. Mismo precio, misma comodidad.</p>
+                    <p>Tenemos diferentes opciones para adaptarnos a las necesidades de tu grupo o familia.</p>
                 </div>
+
+                <!-- Cabaña 1 -->
+                <div class="cabin-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cabin-card-header">
+                        <h3>Cabaña 1 (Hasta 5 personas)</h3>
+                    </div>
+                    <div class="cabin-card-body">
+                        <ul>
+                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con cama matrimonial.</li>
+                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con una litera (2 camas).</li>
+                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con una cama individual.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cabaña 2 -->
+                <div class="cabin-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cabin-card-header">
+                        <h3>Cabaña 2 (Hasta 6 personas)</h3>
+                    </div>
+                    <div class="cabin-card-body">
+                        <ul>
+                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con cama matrimonial.</li>
+                            <li><i class="fa-solid fa-bed"></i> 1 Habitación with two literas (4 camas).</li>
+                            <li><i class="fa-solid fa-couch"></i> Sofá cama en el living.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cabaña 3 -->
+                <div class="cabin-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="cabin-card-header">
+                        <h3>Cabaña 3 (Hasta 6 personas)</h3>
+                    </div>
+                    <div class="cabin-card-body">
+                        <ul>
+                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con cama matrimonial.</li>
+                            <li><i class="fa-solid fa-bed"></i> 1 Habitación con una litera y una cama individual.</li>
+                            <li><i class="fa-solid fa-couch"></i> Sofá cama en el living.</li>
+                        </ul>
+                    </div>
+                </div>
+
 
                 <div class="cabin-details-wrapper">
                     <div class="cabin-price-box">
@@ -1153,12 +1196,8 @@
                     </div>
 
                     <div class="cabin-amenities">
-                        <h3>Totalmente Equipadas para tu Confort</h3>
+                        <h3>Todas las Cabañas Incluyen</h3>
                         <ul>
-                            <li><i class="fa-solid fa-users"></i> Capacidad para 5 y 6 personas</li>
-                            <li><i class="fa-solid fa-bed"></i> 1 Cama Matrimonial</li>
-                            <li class="placeholder-info"><i class="fa-solid fa-plus"></i> [INFORMACIÓN PENDIENTE:
-                                Distribución de camas restantes]</li>
                             <li><i class="fa-solid fa-bath"></i> Baño privado con Calefont (agua caliente)</li>
                             <li><i class="fa-solid fa-kitchen-set"></i> Cocina equipada y Refrigerador</li>
                             <li><i class="fa-solid fa-tv"></i> Living, comedor y TV</li>
@@ -1266,7 +1305,7 @@
                             <i class="fa-solid fa-star"></i>
                         </div>
                         <p class="testimonial-text">
-                            "Un lugar maravilloso, todo muy limpio y la atención de Don José espectacular. La tinaja de
+                            "Un lugar maravilloso
                             noche es 100% recomendada. Volveremos sí o sí."
                         </p>
                         <p class="testimonial-author">
@@ -1341,7 +1380,7 @@
 
 
                         <a href="https://www.google.com/maps/dir//Cerveceria+Bio+Bier,+Pinto,+%C3%91uble/@-36.8360031,-71.6861328,13.5z/data=!4m17!1m7!3m6!1s0x966ec6dbea74ea2d:0xe5ab77a44f9edda!2sCerveceria+Bio+Bier!8m2!3d-36.8288491!4d-71.6836664!16s%2Fg%2F11dxc_5qjl!4m8!1m0!1m5!1m1!1s0x966ec6dbea74ea2d:0xe5ab77a44f9edda!2m2!1d-71.6836664!2d-36.8288491!3e0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" class="btn-secondary" data-aos="fade-up" data-aos-delay="150">
+                            target="_blank" class="btn-secondary" >
                             Abrir en Google Maps
                         </a>
 
@@ -1402,9 +1441,9 @@
                             alt="Paisaje de montaña nevada en el Valle Las Trancas, cerca de Termas de Chillán">
                     </div>
 
-                   <div class="attractions-list" data-aos="fade-left" data-aos-delay="200">
+                   <div class="attractions-list" data-aos="fade-left" data-aos-delay="100">
 
-                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="250">
+                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="120">
                             <div class="attraction-icon">
                                 <i class="fa-solid fa-person-skiing"></i>
                             </div>
@@ -1415,7 +1454,7 @@
                             </div>
                         </div>
 
-                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="300">
+                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="140">
                             <div class="attraction-icon">
                                 <i class="fa-solid fa-water"></i>
                             </div>
@@ -1426,7 +1465,7 @@
                             </div>
                         </div>
 
-                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="350">
+                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="160">
                             <div class="attraction-icon">
                                 <i class="fa-solid fa-tree"></i>
                             </div>
@@ -1437,7 +1476,7 @@
                             </div>
                         </div>
 
-                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="400">
+                        <div class="attraction-item" data-aos="fade-left" data-aos-delay="180">
                             <div class="attraction-icon">
                                 <i class="fa-solid fa-camera-retro"></i>
                             </div>

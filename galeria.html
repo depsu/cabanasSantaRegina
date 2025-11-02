@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Estilo Airbnb v2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+    <style>
+        /* --- Animación Slide-Up --- */
+        .modal.modal-slide-up.fade .modal-dialog {
+            /* 1. Estado inicial: Abajo y fuera de la pantalla */
+            transform: translateY(100vh); 
+            transition: transform 0.3s ease-out;
+        }
+        .modal.modal-slide-up.fade.show .modal-dialog {
+            /* 2. Estado final: En su posición normal */
+            transform: translateY(0);
+        }
+
+        /* --- Header Fijo y Anclas --- */
+        .modal-header.sticky-top {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1055;
+            border-bottom: 1px solid #dee2e6;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .header-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        #nav-galeria {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        #nav-galeria::-webkit-scrollbar { display: none; }
+        #nav-galeria .nav-link { white-space: nowrap; }
+        
+        /* --- Arreglo de ScrollSpy (Anclas) --- */
+        .modal-body[data-bs-spy="scroll"] {
+            /* Esta es la magia para que los saltos de ancla no queden
+              ocultos detrás del header. 160px = altura del header + margen.
+            */
+            scroll-padding-top: 160px;
+        }
+
+        /* --- Grid "Bonito" (Estilo Airbnb) --- */
+        .grid-fotos {
+            display: grid;
+            gap: 8px;
+        }
+        .grid-fotos a {
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 180px; /* Altura mínima para fotos */
+        }
+        .grid-fotos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s ease;
+        }
+        .grid-fotos a:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Layout para 3 fotos (1 grande, 2 pequeñas) */
+        .grid-3-fotos {
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            grid-auto-rows: 200px; /* Altura de fila automática */
+        }
+        .grid-3-fotos a:first-child {
+            /* La primera foto ocupa 2 filas */
+            grid-row: span 2; 
+            min-height: 408px; /* 200px * 2 + 8px gap */
+        }
+
+        /* Layout para 4 fotos (2x2) */
+        .grid-4-fotos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 250px;
+        }
+
+        /* Layout para 2 fotos (1x2) */
+        .grid-2-fotos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 300px;
+        }
+    </style>
+</head>
+<body class="p-5">
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#galeriaModal">
+        Ver Recorrido Fotográfico (v2)
+    </button>
+
+    <div class="modal fade modal-slide-up" id="galeriaModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+    
+          <div class="modal-header sticky-top">
+            <div class="header-controls">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div>
+                  <button class="btn btn-light btn-sm">Compartir</button>
+                  <button class="btn btn-light btn-sm">Guardar</button>
+                </div>
+            </div>
+            <nav id="nav-galeria" class="nav nav-pills">
+              <a class="nav-link" href="#seccion-sala">Sala</a>
+              <a class="nav-link" href="#seccion-dormitorio">Dormitorio</a>
+              <a class="nav-link" href="#seccion-cocina">Cocina</a>
+              <a class="nav-link" href="#seccion-bano">Baño</a>
+              <a class="nav-link" href="#seccion-exterior">Exterior</a>
+            </nav>
+          </div>
+    
+          <div class="modal-body" data-bs-spy="scroll" data-bs-target="#nav-galeria" data-bs-offset="170" tabindex="0">
+    
+            <section id="seccion-sala" class="container mb-5">
+              <h2 class="h4">Sala de estar</h2>
+              <div class="grid-fotos grid-3-fotos">
+                <a href="https://picsum.photos/id/1018/800/600" data-lightbox="galeria" data-title="Sala 1">
+                    <img src="https://picsum.photos/id/1018/400/600" alt="Sala">
+                </a>
+                <a href="https://picsum.photos/id/1015/800/600" data-lightbox="galeria" data-title="Sala 2">
+                    <img src="https://picsum.photos/id/1015/400/300" alt="Sala">
+                </a>
+                <a href="https://picsum.photos/id/1016/800/600" data-lightbox="galeria" data-title="Sala 3">
+                    <img src="https://picsum.photos/id/1016/400/300" alt="Sala">
+                </a>
+              </div>
+            </section>
+    
+            <section id="seccion-dormitorio" class="container mb-5">
+              <h2 class="h4">Dormitorio</h2>
+              <div class="grid-fotos grid-2-fotos">
+                <a href="https://picsum.photos/id/1025/800/600" data-lightbox="galeria" data-title="Dormitorio 1">
+                    <img src="https://picsum.photos/id/1025/400/300" alt="Dormitorio">
+                </a>
+                <a href="https://picsum.photos/id/1024/800/600" data-lightbox="galeria" data-title="Dormitorio 2">
+                    <img src="https://picsum.photos/id/1024/400/300" alt="Dormitorio">
+                </a>
+              </div>
+            </section>
+    
+            <section id="seccion-cocina" class="container mb-5">
+                <h2 class="h4">Cocina</h2>
+                <div class="grid-fotos grid-4-fotos">
+                  <a href="https://picsum.photos/id/103/800/600" data-lightbox="galeria" data-title="Cocina 1">
+                      <img src="https://picsum.photos/id/103/400/300" alt="Cocina">
+                  </a>
+                  <a href="https://picsum.photos/id/1037/800/600" data-lightbox="galeria" data-title="Cocina 2">
+                      <img src="https://picsum.photos/id/1037/400/300" alt="Cocina">
+                  </a>
+                  <a href="https://picsum.photos/id/1039/800/600" data-lightbox="galeria" data-title="Cocina 3">
+                      <img src="https://picsum.photos/id/1039/400/300" alt="Cocina">
+                  </a>
+                  <a href="https://picsum.photos/id/104/800/600" data-lightbox="galeria" data-title="Cocina 4">
+                      <img src="https://picsum.photos/id/104/400/300" alt="Cocina">
+                  </a>
+                </div>
+            </section>
+
+            <section id="seccion-bano" class="container mb-5">
+              <h2 class="h4">Baño</h2>
+              <div class="grid-fotos grid-2-fotos">
+                <a href="https://picsum.photos/id/106/800/600" data-lightbox="galeria" data-title="Baño 1">
+                    <img src="https://picsum.photos/id/106/400/300" alt="Baño">
+                </a>
+                <a href="https://picsum.photos/id/1063/800/600" data-lightbox="galeria" data-title="Baño 2">
+                    <img src="https://picsum.photos/id/1063/400/300" alt="Baño">
+                </a>
+              </div>
+            </section>
+
+            <section id="seccion-exterior" class="container mb-5">
+              <h2 class="h4">Exterior</h2>
+              <div class="grid-fotos grid-3-fotos">
+                <a href="https://picsum.photos/id/108/800/600" data-lightbox="galeria" data-title="Exterior 1">
+                    <img src="https://picsum.photos/id/108/400/600" alt="Exterior">
+                </a>
+                <a href="https://picsum.photos/id/1084/800/600" data-lightbox="galeria" data-title="Exterior 2">
+                    <img src="https://picsum.photos/id/1084/400/300" alt="Exterior">
+                </a>
+                 <a href="https://picsum.photos/id/1050/800/600" data-lightbox="galeria" data-title="Exterior 3">
+                    <img src="https://picsum.photos/id/1050/400/300" alt="Exterior">
+                </a>
+              </div>
+            </section>
+    
+          </div> </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+    <script>
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'showImageNumberLabel': true
+        });
+
+        var scrollSpyElement = document.querySelector('.modal-body[data-bs-spy="scroll"]');
+        var scrollSpy = new bootstrap.ScrollSpy(scrollSpyElement, {
+            target: '#nav-galeria',
+            offset: 170 // Ajustado para coincidir con el data-bs-offset
+        });
+
+        // Refresca el ScrollSpy cuando el modal se termina de mostrar
+        var galeriaModal = document.getElementById('galeriaModal');
+        galeriaModal.addEventListener('shown.bs.modal', function () {
+            scrollSpy.refresh();
+        });
+    </script>
+</body>
+</html>
