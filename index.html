@@ -180,7 +180,8 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            height: var(--nav-height);
+            height: auto;
+            min-height: var(--nav-height);
             /* CAMBIO: Inicia transparente */
             background-color: transparent;
             box-shadow: none;
@@ -199,7 +200,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
+            height: auto;
+            min-height: var(--nav-height);
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
@@ -210,6 +212,12 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--color-primario);
+        }
+
+        .nav-logo img {
+            width: 90px;
+            height: auto;
+            display: block;
         }
 
         /* CAMBIO: Hacemos que los links resalten más sobre el fondo transparente */
@@ -243,6 +251,7 @@
             list-style: none;
             align-items: center;
             gap: 1.5rem;
+            margin-bottom: 0;
         }
 
         .nav-link {
@@ -293,11 +302,11 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
+            color: #fff !important;
             padding-top: var(--nav-height);
 
             /* CAMBIO: Imagen de fondo con gradiente más oscuro para legibilidad */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080.png?text=Foto+Increíble+de+Cabañas+o+Vista') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/banner.jpeg') no-repeat center center;
 
             /* CAMBIO: Animación Ken Burns */
             background-size: 100% 100%;
@@ -327,7 +336,7 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            color: #fff;
+            color: #fff !important;
             margin-bottom: 1rem;
         }
 
@@ -1172,6 +1181,7 @@
     align-items: stretch;
     padding-bottom: 0;
     padding-top: 1rem; 
+    border-radius: 35px 35px 0 0;
 }
 
 .header-controls {
@@ -1194,6 +1204,20 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+#nav-galeria{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.offcanvas-body h2{
+text-align: center !important;
+}
+
+#nav-galeria section{
+  padding:5px 10px;
+}
+
 #nav-galeria::-webkit-scrollbar { display: none; }
 #nav-galeria .nav-link { white-space: nowrap; }
 
@@ -1245,6 +1269,14 @@
     grid-auto-rows: 300px;
 }
 
+@media screen and (max-width: 768px) {
+    /* Estilos específicos para pantallas pequeñas */
+    .grid-fotos {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+    }
+}
+
 /* =========================================================== */
 /* === ¡IMPORTANTE! ARREGLO DE CONFLICTO BOOTSTRAP vs TU CSS === */
 /* =========================================================== */
@@ -1287,7 +1319,7 @@ h1, h2, h3, h4, h5, h6 {
 
     <header class="header">
         <nav class="navbar">
-            <a href="index.html" class="nav-logo">[NOMBRE DE LAS CABAÑAS]</a>
+            <a href="index.html" class="nav-logo"><img src="/logo trannsparente.png" alt="Santa Regina Cabañas"></a>
 
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -1330,7 +1362,7 @@ h1, h2, h3, h4, h5, h6 {
         <section id="nosotros" class="about-brief">
             <div class="container about-container">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="https://via.placeholder.com/500x400.png?text=Foto+Familiar+o+del+Lugar"
+                    <img src="/tarjeta de presentación 1.png"
                         alt="Familia administradora de las cabañas">
                 </div>
                 <div class="about-text" data-aos="fade-left" data-aos-delay="200">
@@ -1371,7 +1403,7 @@ h1, h2, h3, h4, h5, h6 {
 
                     <div class="cabin-card-new" data-aos="fade-up" data-aos-delay="200">
                         <div class="cabin-card-image">
-                            <img src="cabana-1/living-1.jpeg" alt="Foto Cabaña 2">
+                            <img src="cabana-2/exterior-2.jpeg" alt="Foto Cabaña 2">
                         </div>
                         <div class="cabin-card-content">
                             <h3>Cabaña 2 (Hasta 6 pers.)</h3>
@@ -1388,7 +1420,7 @@ h1, h2, h3, h4, h5, h6 {
 
                     <div class="cabin-card-new" data-aos="fade-up" data-aos-delay="300">
                         <div class="cabin-card-image">
-                            <img src="cabana-1/exterior-2.jpeg" alt="Foto Cabaña 3">
+                            <img src="cabana-3/exterior-1.jpeg" alt="Foto Cabaña 3">
                         </div>
                         <div class="cabin-card-content">
                             <h3>Cabaña 3 (Hasta 6 pers.)</h3>
@@ -1430,7 +1462,7 @@ h1, h2, h3, h4, h5, h6 {
             </div>
         </section>
 
-        <section id="galeria" class="gallery">
+        <!-- <section id="galeria" class="gallery">
             <div class="container">
 
                 <div class="section-header" data-aos="fade-up">
@@ -1438,7 +1470,6 @@ h1, h2, h3, h4, h5, h6 {
                     <p>Imágenes reales de nuestras instalaciones. Así es el lugar donde descansarás.</p>
                 </div>
 
-                <!-- Simplificamos la grilla visible y usamos Offcanvas para la galería completa -->
                 <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
 
                     <a href="https://via.placeholder.com/1000x800.png?text=Foto+Principal+Cabaña"
@@ -1470,7 +1501,7 @@ h1, h2, h3, h4, h5, h6 {
                 </div>
 
             </div>
-        </section>
+        </section> -->
 
         <section id="servicios" class="services">
             <div class="container">
@@ -1481,7 +1512,7 @@ h1, h2, h3, h4, h5, h6 {
 
                 <div class="services-grid">
                     <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://via.placeholder.com/600x400.png?text=Foto+Piscina+y+Juegos"
+                        <img src="/piscina.jpeg"
                             alt="Piscina y área de juegos en cabañas">
                         <div class="service-card-content">
                             <span class="service-tag">Incluido en tu Estadía</span>
@@ -1492,7 +1523,7 @@ h1, h2, h3, h4, h5, h6 {
                     </div>
 
                     <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://via.placeholder.com/600x400.png?text=Foto+Tinaja+y+Jardín"
+                        <img src="/tinaja.png"
                             alt="Tinaja y jardín en cabañas">
                         <div class="service-card-content">
                             <span class="service-tag">Opcional</span>
@@ -1502,7 +1533,15 @@ h1, h2, h3, h4, h5, h6 {
                         </div>
                     </div>
 
-                   
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="/sendero.jpeg"
+                            alt="Senderismo y aventura en los alrededores">
+                        <div class="service-card-content">
+                            <span class="service-tag">Aventura</span>
+                            <h3>Excursiones y Tours</h3>
+                            <p>Descubre los mejores senderos y atractivos turísticos con nuestros guías locales.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1593,10 +1632,7 @@ h1, h2, h3, h4, h5, h6 {
 
                 <div class="attractions-layout">
 
-                    <div class="attractions-image" data-aos="fade-right">
-                        <img src="https://images.unsplash.com/photo-1613462618037-f61b18126b48?auto=format&fit=crop&q=80&w=987"
-                            alt="Paisaje de montaña nevada en el Valle Las Trancas, cerca de Termas de Chillán">
-                    </div>
+                   
 
                    <div class="attractions-list" data-aos="fade-left" data-aos-delay="100">
 
@@ -1643,6 +1679,11 @@ h1, h2, h3, h4, h5, h6 {
                             </div>
                         </div>
 
+                    </div>
+
+                     <div class="attractions-image" data-aos="fade-right">
+                        <img src="Paisaje de montaña nevada en el Valle Las Trancas, cerca de Termas de Chillán.jpg"
+                            alt="Paisaje de montaña nevada en el Valle Las Trancas, cerca de Termas de Chillán">
                     </div>
                 </div>
             </div>
@@ -1786,7 +1827,7 @@ h1, h2, h3, h4, h5, h6 {
         /* ========= SCRIPT GALERÍA DINÁMICA (NUEVO) ========= */
         /* ================================================= */
 
-        // Dataset con imágenes locales (cabana-1)
+        // Dataset con imágenes locales (cabana-1, cabana-2, cabana-3)
         const galeriasData = {
           'cabaña1': {
             'living': [
@@ -1809,16 +1850,52 @@ h1, h2, h3, h4, h5, h6 {
             ]
           },
           'cabaña2': {
-            'living': [ {thumb: 'cabana-1/living-4.jpeg', large: 'cabana-1/living-4.jpeg', title: 'Living'} ],
-            'dormitorios': [ {thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio'} ],
-            'baño': [ {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño'} ],
-            'exterior': [ {thumb: 'cabana-1/exterior-4.jpeg', large: 'cabana-1/exterior-4.jpeg', title: 'Exterior'} ]
+            'living': [
+              {thumb: 'cabana-2/living-1.jpeg', large: 'cabana-2/living-1.jpeg', title: 'Living Cabaña 2'},
+              {thumb: 'cabana-2/living-2.jpeg', large: 'cabana-2/living-2.jpeg', title: 'Living Cabaña 2'},
+              {thumb: 'cabana-2/living-3.jpeg', large: 'cabana-2/living-3.jpeg', title: 'Living Cabaña 2'}
+            ],
+            'dormitorios': [
+              {thumb: 'cabana-2/dormitorio-1.jpeg', large: 'cabana-2/dormitorio-1.jpeg', title: 'Dormitorio 1 C2'},
+              {thumb: 'cabana-2/dormitorio-2.jpeg', large: 'cabana-2/dormitorio-2.jpeg', title: 'Dormitorio 2 C2'},
+              {thumb: 'cabana-2/dormitorio-3.jpeg', large: 'cabana-2/dormitorio-3.jpeg', title: 'Dormitorio 3 C2'}
+            ],
+            'baño': [
+              {thumb: 'cabana-2/baño-1.jpeg', large: 'cabana-2/baño-1.jpeg', title: 'Baño C2'}
+            ],
+            'exterior': [
+              {thumb: 'cabana-2/exterior-1.jpeg', large: 'cabana-2/exterior-1.jpeg', title: 'Exterior 1 C2'},
+              {thumb: 'cabana-2/exterior-2.jpeg', large: 'cabana-2/exterior-2.jpeg', title: 'Exterior 2 C2'},
+              {thumb: 'cabana-2/exterior-3.jpeg', large: 'cabana-2/exterior-3.jpeg', title: 'Exterior 3 C2'},
+              {thumb: 'cabana-2/exterior-4.jpeg', large: 'cabana-2/exterior-4.jpeg', title: 'Exterior 4 C2'},
+              {thumb: 'cabana-2/exterior-5.jpeg', large: 'cabana-2/exterior-5.jpeg', title: 'Exterior 5 C2'},
+              {thumb: 'cabana-2/exterior-6.jpeg', large: 'cabana-2/exterior-6.jpeg', title: 'Exterior 6 C2'},
+              {thumb: 'cabana-2/exterior-7.jpeg', large: 'cabana-2/exterior-7.jpeg', title: 'Exterior 7 C2'}
+            ]
           },
           'cabaña3': {
-            'living': [ {thumb: 'cabana-1/living-5.jpeg', large: 'cabana-1/living-5.jpeg', title: 'Living'} ],
-            'dormitorios': [ {thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio'} ],
-            'baño': [ {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño'} ],
-            'exterior': [ {thumb: 'cabana-1/exterior-5.jpeg', large: 'cabana-1/exterior-5.jpeg', title: 'Exterior'} ]
+            'living': [
+              {thumb: 'cabana-3/living-1.jpeg', large: 'cabana-3/living-1.jpeg', title: 'Living Cabaña 3'},
+              {thumb: 'cabana-3/living-2.jpeg', large: 'cabana-3/living-2.jpeg', title: 'Living Cabaña 3'},
+              {thumb: 'cabana-3/living-3.jpeg', large: 'cabana-3/living-3.jpeg', title: 'Living Cabaña 3'}
+            ],
+            'dormitorios': [
+              {thumb: 'cabana-3/dormitorio-1.jpeg', large: 'cabana-3/dormitorio-1.jpeg', title: 'Dormitorio 1 C3'},
+              {thumb: 'cabana-3/dormitorio-2.jpeg', large: 'cabana-3/dormitorio-2.jpeg', title: 'Dormitorio 2 C3'},
+              {thumb: 'cabana-3/dormitorio-3.jpeg', large: 'cabana-3/dormitorio-3.jpeg', title: 'Dormitorio 3 C3'}
+            ],
+            'baño': [
+              {thumb: 'cabana-3/baño-1.jpeg', large: 'cabana-3/baño-1.jpeg', title: 'Baño C3'}
+            ],
+            'exterior': [
+              {thumb: 'cabana-3/exterior-1.jpeg', large: 'cabana-3/exterior-1.jpeg', title: 'Exterior 1 C3'},
+              {thumb: 'cabana-3/exterior-2.jpeg', large: 'cabana-3/exterior-2.jpeg', title: 'Exterior 2 C3'},
+              {thumb: 'cabana-3/exterior-3.jpeg', large: 'cabana-3/exterior-3.jpeg', title: 'Exterior 3 C3'},
+              {thumb: 'cabana-3/exterior-4.jpeg', large: 'cabana-3/exterior-4.jpeg', title: 'Exterior 4 C3'},
+              {thumb: 'cabana-3/exterior-5.jpeg', large: 'cabana-3/exterior-5.jpeg', title: 'Exterior 5 C3'},
+              {thumb: 'cabana-3/exterior-6.jpeg', large: 'cabana-3/exterior-6.jpeg', title: 'Exterior 6 C3'},
+              {thumb: 'cabana-3/exterior-7.jpeg', large: 'cabana-3/exterior-7.jpeg', title: 'Exterior 7 C3'}
+            ]
           },
           'general': {
             'living': [
