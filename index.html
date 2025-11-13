@@ -847,7 +847,7 @@
             .nav-menu {
                 position: fixed;
                 left: -100%;
-                top: var(--nav-height);
+                top: 0;
                 flex-direction: column;
                 background-color: #fff;
                 /* Fondo blanco sólido en mobile */
@@ -1611,6 +1611,39 @@
                 right: 18px;
             }
         }
+
+        /* Ajustes adicionales: Hero en mobile y color de hamburguesa */
+        .header.scrolled .bar { background-color: var(--color-primario); }
+
+        @media(max-width: 768px) {
+            /* Evitar estiramiento del banner en mobile y quitar Ken Burns */
+            .hero {
+                /* ...existing code... */
+                background-size: cover;
+                background-position: center center;
+                animation: none;
+            }
+            /* Hamburguesa blanca antes del scroll en mobile */
+            .header:not(.scrolled) .bar { background-color: #fff; }
+        }
+
+        /* Fix: botón Reservar en mobile con mejor padding y contraste */
+        @media(max-width: 768px) {
+            .nav-menu .nav-link-button {
+                display: inline-block;
+                background-color: var(--color-primario);
+                color: #fff;
+                padding: 0.9rem 1.6rem;
+                border-radius: 50px;
+                font-weight: 700;
+                margin: 0.5rem auto 1rem;
+            }
+            .nav-menu .nav-link-button:hover { background-color: #256b29; color: #fff; }
+            .nav-menu .nav-link-button:active { background-color: #1e5a23; color: #fff; }
+        }
+
+        /* Fix: la hamburguesa (X) siempre verde cuando está activa */
+        .hamburger.active .bar { background-color: var(--color-primario) !important; }
     </style>
 </head>
 
