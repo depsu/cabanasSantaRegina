@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
-    <title>Cabañas [Nombre del Lugar] | Descanso y Naturaleza en Termas de Chillán</title>
+    <title>Cabañas Santa Regina | Descanso y Naturaleza en Termas de Chillán</title>
     <meta name="description"
         content="Reserva nuestras cabañas para 5 y 6 personas cerca de las Termas de Chillán. Totalmente equipadas, con piscina, tinaja y aceptamos mascotas.">
 
@@ -2010,23 +2010,21 @@
         });
 
         (function () {
-            // Cambia esto por tu dominio cuando publiques
-            const FALLBACK_PUBLIC_URL = 'https://cabañassantaregina.cl/';
+            // Canonical Unicode URL para compartir (evita punycode visual)
+            const SHARE_URL_UNICODE = 'https://cabañassantaregina.cl/';
+            const SHARE_TITLE = document.title || 'Cabañas Santa Regina';
+            const SHARE_TEXT = `${SHARE_TITLE} - Reserva por WhatsApp: +56 9 8881 3811`;
 
             function srBuildShare() {
-                const loc = window.location;
-                const isHttp = loc.protocol === 'http:' || loc.protocol === 'https:';
-                const cleanUrl = isHttp ? (loc.origin + loc.pathname) : FALLBACK_PUBLIC_URL;
-                const title = document.title || 'Santa Regina Cabañas - Galería';
-                const text = `${title} - Reserva por WhatsApp: +56 9 8881 3811`;
-                return { url: cleanUrl, title, text };
+                // Siempre usamos el dominio canónico en Unicode para compartir
+                return { url: SHARE_URL_UNICODE, title: SHARE_TITLE, text: SHARE_TEXT, displayUrl: SHARE_URL_UNICODE };
             }
 
             async function srHandleShare() {
                 const sel = document.getElementById('share-select');
                 if (!sel) return;
 
-                const { url, title, text } = srBuildShare();
+                const { url, title, text, displayUrl } = srBuildShare();
                 const isPublic = /^https?:\/\//.test(url);
 
                 // Opción nativa del sistema (iOS/Android/desktop compatibles)
@@ -2038,14 +2036,15 @@
                 }
 
                 if (sel.value === 'whatsapp') {
-                    const waText = `${text}\n${url}`;
+                    // Mostramos siempre la versión con ñ
+                    const waText = `${text}\n${displayUrl}`;
                     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`, '_blank', 'noopener,noreferrer');
                     return;
                 }
 
                 if (sel.value === 'facebook') {
-                    if (!isPublic || url.includes('tu-dominio.com')) {
-                        alert('Facebook solo permite compartir URLs públicas (http/https). Sube el sitio y reemplaza FALLBACK_PUBLIC_URL por tu dominio real.');
+                    if (!isPublic) {
+                        alert('Facebook solo permite compartir URLs públicas (http/https).');
                         return;
                     }
                     const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
