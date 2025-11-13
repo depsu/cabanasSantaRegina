@@ -1740,9 +1740,11 @@
                         aria-label="Seleccionar red social">
                         <option value="whatsapp">WhatsApp</option>
                         <option value="facebook">Facebook</option>
+                        <option value="sistema">Compartir (Sistema)</option>
                     </select>
-                    <button id="share-button" class="btn btn-primary btn-sm"><i class="fa-solid fa-share-nodes"></i>
-                        Compartir</button>
+                    <button id="share-button" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-share-nodes"></i> Compartir
+                    </button>
                 </div>
             </div>
             <nav id="nav-galeria" class="nav nav-pills">
@@ -2008,30 +2010,64 @@
             });
         });
 
-        // Compartir galería (selector + botón)
         (function () {
+            // Cambia esto por tu dominio cuando publiques
+            const FALLBACK_PUBLIC_URL = 'https://cabañassantaregina.cl/';
+
             function srBuildShare() {
-                const url = window.location.href.split('#')[0];
-                const title = 'Santa Regina Cabañas - Galería';
-                return { url, text: `${title} \n${url}` };
+                const loc = window.location;
+                const isHttp = loc.protocol === 'http:' || loc.protocol === 'https:';
+                const cleanUrl = isHttp ? (loc.origin + loc.pathname) : FALLBACK_PUBLIC_URL;
+                const title = document.title || 'Santa Regina Cabañas - Galería';
+                const text = `${title} - Reserva por WhatsApp: +56 9 8881 3811`;
+                return { url: cleanUrl, title, text };
             }
-            function srHandleShare() {
+
+            async function srHandleShare() {
                 const sel = document.getElementById('share-select');
                 if (!sel) return;
-                const { url, text } = srBuildShare();
-                let shareUrl = '';
-                if (sel.value === 'facebook') shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-                if (sel.value === 'whatsapp') shareUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-                if (shareUrl) window.open(shareUrl, '_blank');
+
+                const { url, title, text } = srBuildShare();
+                const isPublic = /^https?:\/\//.test(url);
+
+                // Opción nativa del sistema (iOS/Android/desktop compatibles)
+                if (sel.value === 'sistema' && navigator.share) {
+                    try {
+                        await navigator.share({ title, text, url });
+                    } catch { /* usuario canceló */ }
+                    return;
+                }
+
+                if (sel.value === 'whatsapp') {
+                    const waText = `${text}\n${url}`;
+                    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`, '_blank', 'noopener,noreferrer');
+                    return;
+                }
+
+                if (sel.value === 'facebook') {
+                    if (!isPublic || url.includes('tu-dominio.com')) {
+                        alert('Facebook solo permite compartir URLs públicas (http/https). Sube el sitio y reemplaza FALLBACK_PUBLIC_URL por tu dominio real.');
+                        return;
+                    }
+                    const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    window.open(fb, '_blank', 'noopener,noreferrer');
+                    return;
+                }
             }
+
             const btn = document.getElementById('share-button');
             if (btn) btn.addEventListener('click', srHandleShare);
-            const gm = document.getElementById('galeriaModal');
-            if (gm) gm.addEventListener('shown.bs.offcanvas', () => {
+
+            // Reengancha al abrir el offcanvas por si se re-renderiza algo
+            document.getElementById('galeriaModal')?.addEventListener('shown.bs.offcanvas', () => {
                 const b = document.getElementById('share-button');
-                if (b) { b.removeEventListener('click', srHandleShare); b.addEventListener('click', srHandleShare); }
+                if (b) {
+                    b.removeEventListener('click', srHandleShare);
+                    b.addEventListener('click', srHandleShare);
+                }
             });
         })();
+
     </script>
 
     <!-- Botón de WhatsApp flotante -->
