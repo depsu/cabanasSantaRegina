@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://cabañassantaregina.cl/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="Cabañas Santa Regina">
+    <meta property="og:title" content="Cabañas Santa Regina | Descanso y Naturaleza en Termas de Chillán">
+    <meta property="og:description"
+        content="Cabañas equipadas en el Valle Las Trancas. Piscina, tinaja y entorno natural.">
+    <meta property="og:url" content="https://cabañassantaregina.cl/">
+    <meta property="og:image" content="https://cabañassantaregina.cl/banner.jpeg">
+    <meta property="og:image:alt" content="Cabañas Santa Regina - Valle Las Trancas">
 
     <!-- NUEVO: Bootstrap y Lightbox CSS (antes de tus estilos) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,10 +42,14 @@
         /* ============================================= */
         :root {
             /* Paleta con vibra de cabaña/naturaleza */
-            --color-primario: #2e7d32; /* Verde bosque */
-            --color-secundario: #c79a3b; /* Ámbar cálido */
-            --color-texto: #2c3e2f; /* Gris verdoso profundo */
-            --color-fondo: #f7f4ef; /* Marfil cálido */
+            --color-primario: #2e7d32;
+            /* Verde bosque */
+            --color-secundario: #c79a3b;
+            /* Ámbar cálido */
+            --color-texto: #2c3e2f;
+            /* Gris verdoso profundo */
+            --color-fondo: #f7f4ef;
+            /* Marfil cálido */
             --color-fondo-seccion: #ffffff;
             /* Blanco para que las secciones resalten */
             --fuente-titulos: 'Merriweather', serif;
@@ -221,8 +235,8 @@
             width: 90px;
             height: auto;
             display: block;
-                border-radius: 50%;
-    background: white;
+            border-radius: 50%;
+            background: white;
 
         }
 
@@ -677,50 +691,142 @@
             color: #f5f2ed;
             padding: 3.5rem 0 2.5rem;
             background:
-                linear-gradient(135deg, rgba(60,40,20,0.85), rgba(55,35,18,0.9)),
+                linear-gradient(135deg, rgba(60, 40, 20, 0.85), rgba(55, 35, 18, 0.9)),
                 repeating-linear-gradient(90deg,
                     #6e4a2c 0px,
                     #744f30 12px,
                     #6a4426 12px,
                     #6a4426 24px),
-                radial-gradient(circle at 30% 65%, rgba(255,255,255,0.06), transparent 60%),
-                radial-gradient(circle at 75% 35%, rgba(255,255,255,0.05), transparent 55%);
+                radial-gradient(circle at 30% 65%, rgba(255, 255, 255, 0.06), transparent 60%),
+                radial-gradient(circle at 75% 35%, rgba(255, 255, 255, 0.05), transparent 55%);
             background-blend-mode: overlay, normal, screen, screen;
-            box-shadow: inset 0 8px 18px -6px rgba(0,0,0,0.6);
+            box-shadow: inset 0 8px 18px -6px rgba(0, 0, 0, 0.6);
         }
+
         .footer:before {
             content: "";
             position: absolute;
             inset: 0;
             pointer-events: none;
             background:
-                repeating-linear-gradient(180deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px, transparent 2px, transparent 7px),
-                linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 40%);
+                repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 2px, transparent 2px, transparent 7px),
+                linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 40%);
             mix-blend-mode: multiply;
             opacity: .55;
         }
-        .footer .footer-inner { position: relative; z-index: 2; }
+
+        .footer .footer-inner {
+            position: relative;
+            z-index: 2;
+        }
+
         .footer-grid {
             display: grid;
             gap: 2.5rem;
-            grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             align-items: start;
         }
-        .footer h4 { font-family: var(--fuente-titulos); color: #ffe3b3; letter-spacing:.5px; margin-bottom:1rem; font-size:1.15rem; }
-        .footer p, .footer li, .footer a { font-size:.95rem; }
-        .footer a { color:#ffd28a; transition:color .25s ease, text-shadow .25s ease; }
-        .footer a:hover { color:#fff3d6; text-shadow:0 0 6px rgba(255,240,210,.6); }
-        .footer-list { list-style:none; padding:0; margin:0; }
-        .footer-list li { margin-bottom:.55rem; display:flex; align-items:center; }
-        .footer-list li i { color:#ffd28a; margin-right:.6rem; width:18px; text-align:center; }
-        .brand-block img { width:110px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.4)); margin-bottom:.6rem; }
-        .brand-block .tagline { font-size:.9rem; opacity:.85; }
-        .legal-row { margin-top:2.5rem; padding-top:1.2rem; border-top:1px solid rgba(255,255,255,.15); display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; align-items:center; }
-        .credit-link { font-weight:600; position:relative; display:inline-flex; align-items:center; gap:.45rem; background:rgba(255,255,255,.08); padding:.55rem .95rem; border-radius:40px; backdrop-filter: blur(4px); box-shadow:0 4px 12px -3px rgba(0,0,0,.5); }
-        .credit-link span { font-size:.8rem; text-transform:uppercase; letter-spacing:1px; color:#ffe8c2; }
-        .credit-link i { color:#ffe3b3; }
-        .credit-link:hover { background:rgba(255,255,255,.18); text-decoration:none; }
-        @media (max-width: 640px){ .legal-row { flex-direction:column; align-items:flex-start; } }
+
+        .footer h4 {
+            font-family: var(--fuente-titulos);
+            color: #ffe3b3;
+            letter-spacing: .5px;
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+        }
+
+        .footer p,
+        .footer li,
+        .footer a {
+            font-size: .95rem;
+        }
+
+        .footer a {
+            color: #ffd28a;
+            transition: color .25s ease, text-shadow .25s ease;
+        }
+
+        .footer a:hover {
+            color: #fff3d6;
+            text-shadow: 0 0 6px rgba(255, 240, 210, .6);
+        }
+
+        .footer-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-list li {
+            margin-bottom: .55rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-list li i {
+            color: #ffd28a;
+            margin-right: .6rem;
+            width: 18px;
+            text-align: center;
+        }
+
+        .brand-block img {
+            width: 110px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .4));
+            margin-bottom: .6rem;
+        }
+
+        .brand-block .tagline {
+            font-size: .9rem;
+            opacity: .85;
+        }
+
+        .legal-row {
+            margin-top: 2.5rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, .15);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .credit-link {
+            font-weight: 600;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            background: rgba(255, 255, 255, .08);
+            padding: .55rem .95rem;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 12px -3px rgba(0, 0, 0, .5);
+        }
+
+        .credit-link span {
+            font-size: .8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffe8c2;
+        }
+
+        .credit-link i {
+            color: #ffe3b3;
+        }
+
+        .credit-link:hover {
+            background: rgba(255, 255, 255, .18);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .legal-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
 
         /* ============================================= */
         /* ========= ELIMINADO ========= */
@@ -1243,7 +1349,8 @@
         }
 
         .share-group {
-            margin-left: auto; /* Empuja el grupo a la derecha */
+            margin-left: auto;
+            /* Empuja el grupo a la derecha */
             display: flex;
             align-items: center;
             gap: .5rem;
@@ -1258,46 +1365,61 @@
             border: 1px solid #e5e7eb;
             opacity: 1;
         }
+
         .close-pill.btn-close:hover {
             background-color: #eceff1;
         }
+
         .close-pill {
             margin-left: .25rem;
         }
+
         /* Share dropdown general look (nav + offcanvas reuse) */
-        .share-dropdown .btn.btn-outline-primary.btn-sm { 
-            border-radius: 9999px; 
-            font-weight:600; 
-            font-size:.7rem; 
-            letter-spacing:.5px; 
-            padding:.45rem .9rem; 
-            border:1px solid var(--color-primario); 
-            background:rgba(255,255,255,.85); 
-            color:var(--color-primario); 
-            backdrop-filter: blur(6px); 
+        .share-dropdown .btn.btn-outline-primary.btn-sm {
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: .7rem;
+            letter-spacing: .5px;
+            padding: .45rem .9rem;
+            border: 1px solid var(--color-primario);
+            background: rgba(255, 255, 255, .85);
+            color: var(--color-primario);
+            backdrop-filter: blur(6px);
         }
-        .header:not(.scrolled) .share-dropdown .btn.btn-outline-primary.btn-sm { 
-            background:rgba(0,0,0,.35); 
-            color:#fff; 
-            border-color:rgba(255,255,255,.6);
+
+        .header:not(.scrolled) .share-dropdown .btn.btn-outline-primary.btn-sm {
+            background: rgba(0, 0, 0, .35);
+            color: #fff;
+            border-color: rgba(255, 255, 255, .6);
         }
-        .share-dropdown .btn.btn-outline-primary.btn-sm:hover { 
-            background:var(--color-primario); 
-            color:#fff; 
+
+        .share-dropdown .btn.btn-outline-primary.btn-sm:hover {
+            background: var(--color-primario);
+            color: #fff;
         }
-        .dropdown-menu.share-menu { min-width: 190px; }
-        @media(max-width:768px){
-            .share-nav-item { margin-top:1rem; }
-            .share-dropdown .btn.btn-outline-primary.btn-sm { font-size:.85rem; }
+
+        .dropdown-menu.share-menu {
+            min-width: 190px;
+        }
+
+        @media(max-width:768px) {
+            .share-nav-item {
+                margin-top: 1rem;
+            }
+
+            .share-dropdown .btn.btn-outline-primary.btn-sm {
+                font-size: .85rem;
+            }
         }
 
         /* Dropdown compartir refinado */
         .share-dropdown .btn {
             border-radius: 9999px;
         }
+
         .dropdown-menu.share-menu {
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
 
         /* Estilos para la barra de anclas */
@@ -1456,25 +1578,38 @@
             right: 22px;
             width: 60px;
             height: 60px;
-            background-color: #25d366; /* Color oficial WhatsApp */
+            background-color: #25d366;
+            /* Color oficial WhatsApp */
             color: #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 32px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-            z-index: 1500; /* Sobre otros elementos */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            z-index: 1500;
+            /* Sobre otros elementos */
             transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
         }
+
         .whatsapp-float:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
             background-color: #1ebe5b;
         }
-        .whatsapp-float i { line-height: 1; }
+
+        .whatsapp-float i {
+            line-height: 1;
+        }
+
         @media (max-width: 480px) {
-            .whatsapp-float { width: 54px; height: 54px; font-size: 28px; bottom: 18px; right: 18px; }
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                font-size: 28px;
+                bottom: 18px;
+                right: 18px;
+            }
         }
     </style>
 </head>
@@ -1501,14 +1636,20 @@
                 <li class="nav-item share-nav-item">
                     <div class="share-group share-dropdown">
                         <div class="dropdown">
-                            <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="shareMenuButtonNav" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button"
+                                id="shareMenuButtonNav" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-share-nodes"></i> Compartir
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end share-menu" aria-labelledby="shareMenuButtonNav">
-                                <li><a class="dropdown-item" href="#" data-share="whatsapp"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp</a></li>
-                                <li><a class="dropdown-item" href="#" data-share="facebook"><i class="fa-brands fa-facebook" style="color:#1877F2"></i> Facebook</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#" data-share="sistema"><i class="fa-solid fa-share-from-square"></i> Compartir (Sistema)</a></li>
+                                <li><a class="dropdown-item" href="#" data-share="whatsapp"><i
+                                            class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp</a></li>
+                                <li><a class="dropdown-item" href="#" data-share="facebook"><i
+                                            class="fa-brands fa-facebook" style="color:#1877F2"></i> Facebook</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#" data-share="sistema"><i
+                                            class="fa-solid fa-share-from-square"></i> Compartir (Sistema)</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1860,17 +2001,24 @@
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="galeriaModal" aria-labelledby="galeriaModalLabel">
         <div class="offcanvas-header sticky-top">
             <div class="header-controls">
-                <button type="button" class="btn-close close-pill" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+                <button type="button" class="btn-close close-pill" data-bs-dismiss="offcanvas"
+                    aria-label="Cerrar"></button>
                 <div class="share-group share-dropdown">
                     <div class="dropdown">
-                        <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="shareMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button"
+                            id="shareMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-share-nodes"></i> Compartir
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end share-menu" aria-labelledby="shareMenuButton">
-                            <li><a class="dropdown-item" href="#" data-share="whatsapp"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp</a></li>
-                            <li><a class="dropdown-item" href="#" data-share="facebook"><i class="fa-brands fa-facebook" style="color:#1877F2"></i> Facebook</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#" data-share="sistema"><i class="fa-solid fa-share-from-square"></i> Compartir (Sistema)</a></li>
+                            <li><a class="dropdown-item" href="#" data-share="whatsapp"><i class="fa-brands fa-whatsapp"
+                                        style="color:#25D366"></i> WhatsApp</a></li>
+                            <li><a class="dropdown-item" href="#" data-share="facebook"><i class="fa-brands fa-facebook"
+                                        style="color:#1877F2"></i> Facebook</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" data-share="sistema"><i
+                                        class="fa-solid fa-share-from-square"></i> Compartir (Sistema)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1914,7 +2062,8 @@
                 <div class="brand-block">
                     <img src="/logo_transparente.png" alt="Logo Cabañas Santa Regina">
                     <p class="tagline">Descanso auténtico en el valle Las Trancas.</p>
-                    <p style="margin-top:.75rem; max-width:250px">Km 46.5 Camino Termas de Chillán<br>Región de Ñuble, Chile</p>
+                    <p style="margin-top:.75rem; max-width:250px">Km 46.5 Camino Termas de Chillán<br>Región de Ñuble,
+                        Chile</p>
                 </div>
                 <div class="block-links">
                     <h4>Explora</h4>
@@ -1930,8 +2079,10 @@
                     <h4>Contacto Directo</h4>
                     <ul class="footer-list">
                         <li><i class="fa-solid fa-phone"></i><a href="tel:+56988813811">+56 9 8881 3811</a></li>
-                        <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/56988813811" target="_blank" rel="noopener">WhatsApp</a></li>
-                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:contacto@cabañassantaregina.cl">contacto@cabañassantaregina.cl</a></li>
+                        <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/56988813811" target="_blank"
+                                rel="noopener">WhatsApp</a></li>
+                        <li><i class="fa-solid fa-envelope"></i><a
+                                href="mailto:contacto@cabañassantaregina.cl">contacto@cabañassantaregina.cl</a></li>
                         <li><i class="fa-solid fa-map-location-dot"></i><a href="#ubicacion">Ver Ubicación</a></li>
                     </ul>
                 </div>
@@ -1946,20 +2097,28 @@
                 </div>
             </div>
             <div class="legal-row">
-                <p style="margin:0; font-size:.8rem">&copy; 2025 Cabañas Santa Regina. Todos los derechos reservados.</p>
-                <a href="https://paginasfast.cl" class="credit-link" target="_blank" rel="noopener" aria-label="Diseño web profesional por paginasfast.cl">
+                <p style="margin:0; font-size:.8rem">&copy; 2025 Cabañas Santa Regina. Todos los derechos reservados.
+                </p>
+                <a href="https://paginasfast.cl" class="credit-link" target="_blank" rel="noopener"
+                    aria-label="Diseño web profesional por paginasfast.cl">
                     <i class="fa-solid fa-bolt"></i><span>Creado por paginasfast.cl</span>
                 </a>
                 <div class="share-group share-dropdown" style="margin-left:auto;">
                     <div class="dropdown">
-                        <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="shareMenuButtonFooter" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button"
+                            id="shareMenuButtonFooter" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-share-nodes"></i> Compartir
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end share-menu" aria-labelledby="shareMenuButtonFooter">
-                            <li><a class="dropdown-item" href="#" data-share="whatsapp"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> WhatsApp</a></li>
-                            <li><a class="dropdown-item" href="#" data-share="facebook"><i class="fa-brands fa-facebook" style="color:#1877F2"></i> Facebook</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#" data-share="sistema"><i class="fa-solid fa-share-from-square"></i> Compartir (Sistema)</a></li>
+                            <li><a class="dropdown-item" href="#" data-share="whatsapp"><i class="fa-brands fa-whatsapp"
+                                        style="color:#25D366"></i> WhatsApp</a></li>
+                            <li><a class="dropdown-item" href="#" data-share="facebook"><i class="fa-brands fa-facebook"
+                                        style="color:#1877F2"></i> Facebook</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" data-share="sistema"><i
+                                        class="fa-solid fa-share-from-square"></i> Compartir (Sistema)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1967,7 +2126,7 @@
         </div>
     </footer>
 
-        <script type="application/ld+json">
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "LodgingBusiness",
@@ -2220,21 +2379,21 @@
         });
 
         (function () {
-            // Canonical Unicode URL para compartir (evita punycode visual)
             const SHARE_URL_UNICODE = 'https://cabañassantaregina.cl/';
             const SHARE_TITLE = document.title || 'Cabañas Santa Regina';
             const SHARE_TEXT = `${SHARE_TITLE} - Reserva por WhatsApp: +56 9 8881 3811`;
+            const SHARE_HASHTAG = '#CabañasSantaRegina';
 
             function srBuildShare() {
-                return { url: SHARE_URL_UNICODE, title: SHARE_TITLE, text: SHARE_TEXT };
+                return { url: SHARE_URL_UNICODE, title: SHARE_TITLE, text: SHARE_TEXT, hashtag: SHARE_HASHTAG };
             }
 
             async function srHandleShare(network) {
-                const { url, title, text } = srBuildShare();
+                const { url, title, text, hashtag } = srBuildShare();
                 const isPublic = /^https?:\/\//.test(url);
 
                 if (network === 'sistema' && navigator.share) {
-                    try { await navigator.share({ title, text, url }); } catch {}
+                    try { await navigator.share({ title, text, url }); } catch { }
                     return;
                 }
                 if (network === 'whatsapp') {
@@ -2244,7 +2403,9 @@
                 }
                 if (network === 'facebook') {
                     if (!isPublic) { alert('Facebook solo permite compartir URLs públicas (http/https).'); return; }
-                    const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    // Trucazo: mostramos el dominio con ñ en el texto del post mediante "quote"
+                    const quote = `${text}\n${url}`;
+                    const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(quote)}&hashtag=${encodeURIComponent(hashtag)}`;
                     window.open(fb, '_blank', 'noopener,noreferrer');
                     return;
                 }
