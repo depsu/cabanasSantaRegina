@@ -21,7 +21,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&family=Merriweather:wght@700;900&display=swap"
+        rel="stylesheet">
 
 
     <style>
@@ -29,11 +31,16 @@
         /* ========= CONFIGURACIÓN GLOBAL Y VARIABLES ========= */
         /* ============================================= */
         :root {
-            --color-primario: #2980b9; /* Azul brillante y amigable */
-            --color-secundario: #f1c40f; /* Amarillo soleado y vibrante */
-            --color-texto: #2c3e50; /* Gris azulado oscuro y moderno */
-            --color-fondo: #ecf0f1; /* Gris muy claro y limpio */
-            --color-fondo-seccion: #ffffff; /* Blanco para que las secciones resalten */
+            --color-primario: #2980b9;
+            /* Azul brillante y amigable */
+            --color-secundario: #f1c40f;
+            /* Amarillo soleado y vibrante */
+            --color-texto: #2c3e50;
+            /* Gris azulado oscuro y moderno */
+            --color-fondo: #ecf0f1;
+            /* Gris muy claro y limpio */
+            --color-fondo-seccion: #ffffff;
+            /* Blanco para que las secciones resalten */
             --fuente-titulos: 'Merriweather', serif;
             --fuente-cuerpo: 'Cabin', sans-serif;
             --ancho-maximo: 1100px;
@@ -144,7 +151,8 @@
         }
 
         .btn-primary:hover {
-            background-color: #e0b400; /* Un amarillo un poco más oscuro para el hover */
+            background-color: #e0b400;
+            /* Un amarillo un poco más oscuro para el hover */
             transform: translateY(-5px);
             /* Lo "levanta" */
             box-shadow: 0 10px 25px rgba(22, 80, 80, 0.3);
@@ -566,13 +574,15 @@
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 700;
-            background-color: #eaf2f8; /* Un azul muy pálido */
+            background-color: #eaf2f8;
+            /* Un azul muy pálido */
             color: var(--color-primario);
             margin-bottom: 0.5rem;
         }
 
         .service-tag-optional {
-            background-color: #fef9e7; /* Un amarillo muy pálido */
+            background-color: #fef9e7;
+            /* Un amarillo muy pálido */
             color: #d35400;
         }
 
@@ -1032,7 +1042,8 @@
         }
 
         .testimonial-stars {
-            color: var(--color-secundario); /* Estrellas amarillas */
+            color: var(--color-secundario);
+            /* Estrellas amarillas */
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
         }
@@ -1064,258 +1075,295 @@
 
 
         /* ============================================= */
-/* ========= SECCIÓN ATRACCIONES (NUEVA) ========= */
+        /* ========= SECCIÓN ATRACCIONES (NUEVA) ========= */
+        /* ============================================= */
+        .attractions {
+            background-color: #fff;
+            /* Fondo blanco */
+        }
+
+        .attractions-layout {
+            display: grid;
+            /* 2 columnas: 45% para la imagen, 55% para el texto */
+            grid-template-columns: 45fr 55fr;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .attractions-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            /* Damos un toque de color a la sombra */
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 10px var(--color-primario);
+        }
+
+        .attractions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            /* Espacio entre cada item de la lista */
+        }
+
+        .attraction-item {
+            display: flex;
+            align-items: flex-start;
+            /* Alinea al inicio */
+            gap: 1.5rem;
+        }
+
+        .attraction-icon {
+            flex-shrink: 0;
+            /* Evita que el ícono se encoja */
+            font-size: 2rem;
+            color: var(--color-primario);
+
+            /* Fondo para el ícono */
+            background-color: var(--color-fondo-seccion);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .attraction-text h4 {
+            font-family: var(--fuente-cuerpo);
+            /* Usamos la fuente del cuerpo para que sea más legible */
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--color-texto);
+            margin-bottom: 0.25rem;
+        }
+
+        .attraction-text p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* ============================================= */
+        /* ========= RESPONSIVE (Atracciones) ========= */
+        /* =================================
 /* ============================================= */
-.attractions {
-    background-color: #fff; /* Fondo blanco */
-}
+        /* AHORA SÍ: Pega esto DENTRO de tu @media(max-width: 768px) */
 
-.attractions-layout {
-    display: grid;
-    /* 2 columnas: 45% para la imagen, 55% para el texto */
-    grid-template-columns: 45fr 55fr;
-    align-items: center;
-    gap: 3rem;
-}
+        .attractions-layout {
+            /* En mobile, 1 sola columna */
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            /* Más espacio entre imagen y texto */
+        }
 
-.attractions-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    /* Damos un toque de color a la sombra */
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 10px var(--color-primario);
-}
+        .attractions-image img {
+            /* La sombra se ve muy grande en mobile, la ajustamos */
+            box-shadow: 0 0 0 6px var(--color-primario);
+        }
 
-.attractions-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* Espacio entre cada item de la lista */
-}
+        .attraction-item {
+            gap: 1rem;
+        }
 
-.attraction-item {
-    display: flex;
-    align-items: flex-start; /* Alinea al inicio */
-    gap: 1.5rem;
-}
+        .attraction-icon {
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+        }
 
-.attraction-icon {
-    flex-shrink: 0; /* Evita que el ícono se encoja */
-    font-size: 2rem;
-    color: var(--color-primario);
-    
-    /* Fondo para el ícono */
-    background-color: var(--color-fondo-seccion);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
+        /* ============================================= */
+        /* ========= CSS DE LA GALERÍA OFFCANVAS ========= */
+        /* ============================================= */
 
-.attraction-text h4 {
-    font-family: var(--fuente-cuerpo); /* Usamos la fuente del cuerpo para que sea más legible */
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-texto);
-    margin-bottom: 0.25rem;
-}
+        #galeriaModal.offcanvas-bottom {
+            height: 95vh;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.15);
+        }
 
-.attraction-text p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
-}
+        /* Estilos para el Header Fijo del Offcanvas */
+        .offcanvas-header.sticky-top {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1045;
+            /* Sobre el contenido del offcanvas */
+            border-bottom: 1px solid #dee2e6;
+            flex-direction: column;
+            align-items: stretch;
+            padding-bottom: 0;
+            padding-top: 1rem;
+            border-radius: 35px 35px 0 0;
+        }
 
-/* ============================================= */
-/* ========= RESPONSIVE (Atracciones) ========= */
-/* =================================
-/* ============================================= */
-/* AHORA SÍ: Pega esto DENTRO de tu @media(max-width: 768px) */
+        .header-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
 
-.attractions-layout {
-    /* En mobile, 1 sola columna */
-    grid-template-columns: 1fr;
-    gap: 2.5rem; /* Más espacio entre imagen y texto */
-}
+        .share-group {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
 
-.attractions-image img {
-    /* La sombra se ve muy grande en mobile, la ajustamos */
-    box-shadow: 0 0 0 6px var(--color-primario);
-}
+        .share-select {
+            width: 180px;
+        }
 
-.attraction-item {
-    gap: 1rem;
-}
+        /* Estilos para la barra de anclas */
+        #nav-galeria {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
-.attraction-icon {
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-}
+        #nav-galeria {
+            padding-left: 0;
+            padding-right: 0;
+        }
 
-/* ============================================= */
-/* ========= CSS DE LA GALERÍA OFFCANVAS ========= */
-/* ============================================= */
+        .offcanvas-body h2 {
+            text-align: center !important;
+        }
 
-#galeriaModal.offcanvas-bottom {
-    height: 95vh; 
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
-}
+        #nav-galeria section {
+            padding: 5px 10px;
+        }
 
-/* Estilos para el Header Fijo del Offcanvas */
-.offcanvas-header.sticky-top {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 1045; /* Sobre el contenido del offcanvas */
-    border-bottom: 1px solid #dee2e6;
-    flex-direction: column;
-    align-items: stretch;
-    padding-bottom: 0;
-    padding-top: 1rem; 
-    border-radius: 35px 35px 0 0;
-}
+        #nav-galeria::-webkit-scrollbar {
+            display: none;
+        }
 
-.header-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1rem;
-}
+        #nav-galeria .nav-link {
+            white-space: nowrap;
+            border-radius: 9999px;
+        }
 
-.share-group {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
+        #nav-galeria .nav-link.active {
+            background-color: var(--color-primario);
+            color: #fff;
+        }
 
-.share-select {
-    width: 180px;
-}
+        /* Arreglo para que el ScrollSpy no oculte los títulos */
+        .offcanvas-body[data-bs-spy="scroll"] {
+            scroll-padding-top: 160px;
+        }
 
-/* Estilos para la barra de anclas */
-#nav-galeria {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+        /* Estilos para los Grids "Bonitos" dentro del Offcanvas */
+        .grid-fotos {
+            display: grid;
+            gap: 8px;
+            max-width: 800PX;
+            margin: auto;
+            margin-top: 30px;
+            grid-auto-rows: 420px !important;
 
-#nav-galeria{
-    padding-left: 0;
-    padding-right: 0;
-}
+        }
 
-.offcanvas-body h2{
-text-align: center !important;
-}
+        .grid-fotos a {
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 180px;
+        }
 
-#nav-galeria section{
-  padding:5px 10px;
-}
+        .grid-fotos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s ease;
+        }
 
-#nav-galeria::-webkit-scrollbar { display: none; }
-#nav-galeria .nav-link { white-space: nowrap; border-radius: 9999px; }
-#nav-galeria .nav-link.active { background-color: var(--color-primario); color: #fff; }
+        .grid-fotos a:hover img {
+            transform: scale(1.05);
+        }
 
-/* Arreglo para que el ScrollSpy no oculte los títulos */
-.offcanvas-body[data-bs-spy="scroll"] {
-    scroll-padding-top: 160px;
-}
+        .grid-3-fotos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 200px;
+        }
 
-/* Estilos para los Grids "Bonitos" dentro del Offcanvas */
-.grid-fotos {
-    display: grid;
-    gap: 8px;
-    max-width: 800PX;
-    margin: auto;
-    margin-top: 30px;
-    grid-auto-rows: 420px !important;
+        .grid-3-fotos a:first-child {
+            grid-row: span 2;
+            min-height: 408px;
+        }
 
-}
-.grid-fotos a {
-    display: block;
-    border-radius: 8px;
-    overflow: hidden;
-    min-height: 180px;
-}
-.grid-fotos img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.2s ease;
-}
-.grid-fotos a:hover img {
-    transform: scale(1.05);
-}
+        .grid-4-fotos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 250px;
+        }
 
-.grid-3-fotos {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 200px;
-}
-.grid-3-fotos a:first-child {
-    grid-row: span 2; 
-    min-height: 408px;
-}
-.grid-4-fotos {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 250px;
-}
-.grid-2-fotos {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 300px;
-}
+        .grid-2-fotos {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 300px;
+        }
 
-@media screen and (max-width: 768px) {
-    /* Estilos específicos para pantallas pequeñas */
-    .grid-fotos {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 200px;
-    }
-}
+        @media screen and (max-width: 768px) {
 
-/* =========================================================== */
-/* === ¡IMPORTANTE! ARREGLO DE CONFLICTO BOOTSTRAP vs TU CSS === */
-/* =========================================================== */
+            /* Estilos específicos para pantallas pequeñas */
+            .grid-fotos {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+        }
 
-/* 1. Arreglo del .container */
-/* Esto fuerza a que todos los .container de TU PÁGINA usen tu ancho
+        /* =========================================================== */
+        /* === ¡IMPORTANTE! ARREGLO DE CONFLICTO BOOTSTRAP vs TU CSS === */
+        /* =========================================================== */
+
+        /* 1. Arreglo del .container */
+        /* Esto fuerza a que todos los .container de TU PÁGINA usen tu ancho
    y no el de Bootstrap. */
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: var(--ancho-maximo) !important;
-    padding: 0 2rem !important; /* Mantiene tu padding original */
-    margin: 0 auto !important;
-}
+        .container,
+        .container-fluid,
+        .container-lg,
+        .container-md,
+        .container-sm,
+        .container-xl,
+        .container-xxl {
+            max-width: var(--ancho-maximo) !important;
+            padding: 0 2rem !important;
+            /* Mantiene tu padding original */
+            margin: 0 auto !important;
+        }
 
-/* 2. Anulación del arreglo DENTRO del Offcanvas */
-/* Esto resetea el arreglo anterior, para que las secciones
+        /* 2. Anulación del arreglo DENTRO del Offcanvas */
+        /* Esto resetea el arreglo anterior, para que las secciones
    DENTRO de la galería SÍ usen el padding de Bootstrap (y no se peguen a los bordes). */
-#galeriaModal .container {
-    max-width: none !important; 
-    padding: 0 1rem !important; /* Padding normal de Bootstrap */
-    margin: 0 !important;
-}
+        #galeriaModal .container {
+            max-width: none !important;
+            padding: 0 1rem !important;
+            /* Padding normal de Bootstrap */
+            margin: 0 !important;
+        }
 
-/* 3. Arreglo de Fuentes */
-/* Bootstrap cambia las fuentes, esto las restaura a las tuyas. */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--fuente-titulos) !important;
-    color: var(--color-primario) !important;
-}
+        /* 3. Arreglo de Fuentes */
+        /* Bootstrap cambia las fuentes, esto las restaura a las tuyas. */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--fuente-titulos) !important;
+            color: var(--color-primario) !important;
+        }
 
-/* Arreglo H4 dentro del offcanvas (que sí debe ser negro) */
-#galeriaModal h2.h4 {
-     font-family: var(--fuente-cuerpo) !important;
-     color: var(--color-texto) !important;
-     font-weight: 700;
-}
+        /* Arreglo H4 dentro del offcanvas (que sí debe ser negro) */
+        #galeriaModal h2.h4 {
+            font-family: var(--fuente-cuerpo) !important;
+            color: var(--color-texto) !important;
+            font-weight: 700;
+        }
     </style>
 </head>
 
@@ -1366,8 +1414,7 @@ h1, h2, h3, h4, h5, h6 {
         <section id="nosotros" class="about-brief">
             <div class="container about-container">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="/tarjeta1.png"
-                        alt="Familia administradora de las cabañas">
+                    <img src="/tarjeta1.png" alt="Familia administradora de las cabañas">
                 </div>
                 <div class="about-text" data-aos="fade-left" data-aos-delay="200">
                     <h2>Un Negocio Familiar Pensado en tu Descanso</h2>
@@ -1516,24 +1563,26 @@ h1, h2, h3, h4, h5, h6 {
 
                 <div class="services-grid">
                     <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="/piscina.jpeg"
-                            alt="Piscina y área de juegos en cabañas">
+                        <img src="/piscina.jpeg" alt="Piscina y área de juegos en cabañas">
                         <div class="service-card-content">
                             <span class="service-tag">Incluido en tu Estadía</span>
                             <h3>Piscina y Área de Juegos</h3>
-                            <p>Refréscate en nuestra piscina y deja que los niños se div
-                            alt="Tinaja y jardín en cabañas">
+                            <p>Refréscate en nuestra piscina y deja que los niños se diviertan en el área de juegos.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="/tinaja.png" alt="Tinaja y jardín en cabañas">
                         <div class="service-card-content">
-                            <span class="service-tag">Opcional</span>
+                            <span class="service-tag service-tag-optional">Opcional</span>
                             <h3>Tinaja de Agua Caliente</h3>
                             <p>Relájate en nuestra tinaja al aire libre, rodeado de naturaleza.</p>
                             <p class="service-price">$15.000 por uso privado</p>
                         </div>
                     </div>
- 
+
                     <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="/sendero.jpeg"
-                            alt="Senderismo y aventura en los alrededores">
+                        <img src="/sendero.jpeg" alt="Senderismo y aventura en los alrededores">
                         <div class="service-card-content">
                             <span class="service-tag">Aventura</span>
                             <h3>Excursiones y Tours</h3>
@@ -1544,7 +1593,7 @@ h1, h2, h3, h4, h5, h6 {
             </div>
         </section>
 
-        
+
         <section id="ubicacion" class="location-pro" data-aos="fade-up">
 
 
@@ -1574,7 +1623,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
                         <a href="https://www.google.com/maps/dir//Cerveceria+Bio+Bier,+Pinto,+%C3%91uble/@-36.8360031,-71.6861328,13.5z/data=!4m17!1m7!3m6!1s0x966ec6dbea74ea2d:0xe5ab77a44f9edda!2sCerveceria+Bio+Bier!8m2!3d-36.8288491!4d-71.6836664!16s%2Fg%2F11dxc_5qjl!4m8!1m0!1m5!1m1!1s0x966ec6dbea74ea2d:0xe5ab77a44f9edda!2m2!1d-71.6836664!2d-36.8288491!3e0?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
-                            target="_blank" class="btn-secondary" >
+                            target="_blank" class="btn-secondary">
                             Abrir en Google Maps
                         </a>
 
@@ -1597,7 +1646,8 @@ h1, h2, h3, h4, h5, h6 {
                         <h3>Datos de Contacto</h3>
                         <p><i class="fa-solid fa-user"></i> Administrador: José Alfredo Garay Riffo</p>
                         <p><i class="fa-solid fa-envelope"></i> Email: dimensión7777@gmail.com</p>
-                        <p><i class="fa-solid fa-phone"></i> Teléfono/WhatsApp: <a href="https://wa.me/56988813811" target="_blank" rel="noopener">+56 9 8881 3811</a></p>
+                        <p><i class="fa-solid fa-phone"></i> Teléfono/WhatsApp: <a href="https://wa.me/56988813811"
+                                target="_blank" rel="noopener">+56 9 8881 3811</a></p>
                     </div>
 
                     <div class="contact-rules">
@@ -1610,7 +1660,7 @@ h1, h2, h3, h4, h5, h6 {
             </div>
         </section>
 
-       <section id="atracciones" class="attractions">
+        <section id="atracciones" class="attractions">
             <div class="container">
 
                 <div class="section-header" data-aos="fade-up">
@@ -1621,9 +1671,9 @@ h1, h2, h3, h4, h5, h6 {
 
                 <div class="attractions-layout">
 
-                   
 
-                   <div class="attractions-list" data-aos="fade-left" data-aos-delay="100">
+
+                    <div class="attractions-list" data-aos="fade-left" data-aos-delay="100">
 
                         <div class="attraction-item" data-aos="fade-left" data-aos-delay="120">
                             <div class="attraction-icon">
@@ -1670,8 +1720,8 @@ h1, h2, h3, h4, h5, h6 {
 
                     </div>
 
-                     <div class="attractions-image" data-aos="fade-right">
-                        <img src="Paisaje de montaña nevada en el Valle Las Trancas, cerca de Termas de Chillán.jpg"
+                    <div class="attractions-image" data-aos="fade-right">
+                        <img src="/Paisaje de montaña nevada en el Valle Las Trancas, cerca de Termas de Chillán.jpg"
                             alt="Paisaje de montaña nevada en el Valle Las Trancas, cerca de Termas de Chillán">
                     </div>
                 </div>
@@ -1682,52 +1732,55 @@ h1, h2, h3, h4, h5, h6 {
 
     <!-- NUEVO: Offcanvas Galería (antes del footer) -->
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="galeriaModal" aria-labelledby="galeriaModalLabel">
-      <div class="offcanvas-header sticky-top">
-        <div class="header-controls">
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            <div class="share-group">
-              <select id="share-select" class="form-select form-select-sm share-select" aria-label="Seleccionar red social">
-                <option value="whatsapp">WhatsApp</option>
-                <option value="facebook">Facebook</option>
-              </select>
-              <button id="share-button" class="btn btn-primary btn-sm"><i class="fa-solid fa-share-nodes"></i> Compartir</button>
+        <div class="offcanvas-header sticky-top">
+            <div class="header-controls">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="share-group">
+                    <select id="share-select" class="form-select form-select-sm share-select"
+                        aria-label="Seleccionar red social">
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="facebook">Facebook</option>
+                    </select>
+                    <button id="share-button" class="btn btn-primary btn-sm"><i class="fa-solid fa-share-nodes"></i>
+                        Compartir</button>
+                </div>
             </div>
+            <nav id="nav-galeria" class="nav nav-pills">
+                <a class="nav-link active" href="#seccion-living">Living</a>
+                <a class="nav-link" href="#seccion-dormitorios">Dormitorios</a>
+                <a class="nav-link" href="#seccion-bano">Baño</a>
+                <a class="nav-link" href="#seccion-exterior">Exterior</a>
+            </nav>
         </div>
-        <nav id="nav-galeria" class="nav nav-pills">
-          <a class="nav-link active" href="#seccion-living">Living</a>
-          <a class="nav-link" href="#seccion-dormitorios">Dormitorios</a>
-          <a class="nav-link" href="#seccion-bano">Baño</a>
-          <a class="nav-link" href="#seccion-exterior">Exterior</a>
-        </nav>
-      </div>
 
-      <div class="offcanvas-body" data-bs-spy="scroll" data-bs-target="#nav-galeria" data-bs-offset="170" tabindex="0">
-    
-        <section id="seccion-living" class="container mb-5">
-          <h2 class="h4">Living y Comedor</h2>
-          <div class="grid-fotos grid-3-fotos" id="gallery-living-grid"></div>
-        </section>
+        <div class="offcanvas-body" data-bs-spy="scroll" data-bs-target="#nav-galeria" data-bs-offset="170"
+            tabindex="0">
 
-        <section id="seccion-dormitorios" class="container mb-5">
-          <h2 class="h4">Dormitorios</h2>
-          <div class="grid-fotos grid-4-fotos" id="gallery-dormitorios-grid"></div>
-        </section>
+            <section id="seccion-living" class="container mb-5">
+                <h2 class="h4">Living y Comedor</h2>
+                <div class="grid-fotos grid-3-fotos" id="gallery-living-grid"></div>
+            </section>
 
-        <section id="seccion-bano" class="container mb-5">
-          <h2 class="h4">Baño</h2>
-          <div class="grid-fotos grid-2-fotos" id="gallery-bano-grid"></div>
-        </section>
+            <section id="seccion-dormitorios" class="container mb-5">
+                <h2 class="h4">Dormitorios</h2>
+                <div class="grid-fotos grid-4-fotos" id="gallery-dormitorios-grid"></div>
+            </section>
 
-        <section id="seccion-exterior" class="container mb-5">
-          <h2 class="h4">Exterior y Vistas</h2>
-          <div class="grid-fotos grid-3-fotos" id="gallery-exterior-grid"></div>
-        </section>
-      </div>
+            <section id="seccion-bano" class="container mb-5">
+                <h2 class="h4">Baño</h2>
+                <div class="grid-fotos grid-2-fotos" id="gallery-bano-grid"></div>
+            </section>
+
+            <section id="seccion-exterior" class="container mb-5">
+                <h2 class="h4">Exterior y Vistas</h2>
+                <div class="grid-fotos grid-3-fotos" id="gallery-exterior-grid"></div>
+            </section>
+        </div>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 [Nombre de las Cabañas]. Todos los derechos reservados.</p>
+            <p>&copy; 2025 Cabañas Santa Regina. Todos los derechos reservados.</p>
             <p>Diseñado y desarrollado por <strong>paginasfast</strong></p>
             <p>Km 46.5, Camino Termas de Chillán, Región de Ñuble</p>
         </div>
@@ -1796,22 +1849,22 @@ h1, h2, h3, h4, h5, h6 {
         /* ================================================= */
         // Lightbox
         if (window.lightbox) {
-          lightbox.option({
-            resizeDuration: 200,
-            wrapAround: true,
-            showImageNumberLabel: true
-          });
+            lightbox.option({
+                resizeDuration: 200,
+                wrapAround: true,
+                showImageNumberLabel: true
+            });
         }
         // ScrollSpy dentro del Offcanvas
         var galeriaOffcanvas = document.getElementById('galeriaModal');
         if (galeriaOffcanvas) {
-          var offcanvasBody = galeriaOffcanvas.querySelector('.offcanvas-body');
-          if (offcanvasBody && window.bootstrap && bootstrap.ScrollSpy) {
-            var scrollSpy = new bootstrap.ScrollSpy(offcanvasBody, { target: '#nav-galeria', offset: 170 });
-            galeriaOffcanvas.addEventListener('shown.bs.offcanvas', function () {
-                scrollSpy.refresh();
-            });
-          }
+            var offcanvasBody = galeriaOffcanvas.querySelector('.offcanvas-body');
+            if (offcanvasBody && window.bootstrap && bootstrap.ScrollSpy) {
+                var scrollSpy = new bootstrap.ScrollSpy(offcanvasBody, { target: '#nav-galeria', offset: 170 });
+                galeriaOffcanvas.addEventListener('shown.bs.offcanvas', function () {
+                    scrollSpy.refresh();
+                });
+            }
         }
 
 
@@ -1821,89 +1874,89 @@ h1, h2, h3, h4, h5, h6 {
 
         // Dataset con imágenes locales (cabana-1, cabana-2, cabana-3)
         const galeriasData = {
-          'cabaña1': {
-            'living': [
-              {thumb: 'cabana-1/living-1.jpeg', large: 'cabana-1/living-1.jpeg', title: 'Living Cabaña 1'},
-              {thumb: 'cabana-1/living-2.jpeg', large: 'cabana-1/living-2.jpeg', title: 'Living Cabaña 1'},
-              {thumb: 'cabana-1/living-3.jpeg', large: 'cabana-1/living-3.jpeg', title: 'Living Cabaña 1'}
-            ],
-            'dormitorios': [
-              {thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio Matrimonial C1'},
-              {thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio 2 C1'}
-            ],
-            'baño': [
-              {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño 1 C1'},
-              {thumb: 'cabana-1/baño-2.jpeg', large: 'cabana-1/baño-2.jpeg', title: 'Baño 2 C1'}
-            ],
-            'exterior': [
-              {thumb: 'cabana-1/exterior-1.jpeg', large: 'cabana-1/exterior-1.jpeg', title: 'Exterior 1 C1'},
-              {thumb: 'cabana-1/exterior-2.jpeg', large: 'cabana-1/exterior-2.jpeg', title: 'Exterior 2 C1'},
-              {thumb: 'cabana-1/exterior-3.jpeg', large: 'cabana-1/exterior-3.jpeg', title: 'Exterior 3 C1'}
-            ]
-          },
-          'cabaña2': {
-            'living': [
-              {thumb: 'cabana-2/living-1.jpeg', large: 'cabana-2/living-1.jpeg', title: 'Living Cabaña 2'},
-              {thumb: 'cabana-2/living-2.jpeg', large: 'cabana-2/living-2.jpeg', title: 'Living Cabaña 2'},
-              {thumb: 'cabana-2/living-3.jpeg', large: 'cabana-2/living-3.jpeg', title: 'Living Cabaña 2'}
-            ],
-            'dormitorios': [
-              {thumb: 'cabana-2/dormitorio-1.jpeg', large: 'cabana-2/dormitorio-1.jpeg', title: 'Dormitorio 1 C2'},
-              {thumb: 'cabana-2/dormitorio-2.jpeg', large: 'cabana-2/dormitorio-2.jpeg', title: 'Dormitorio 2 C2'},
-              {thumb: 'cabana-2/dormitorio-3.jpeg', large: 'cabana-2/dormitorio-3.jpeg', title: 'Dormitorio 3 C2'}
-            ],
-            'baño': [
-              {thumb: 'cabana-2/baño-1.jpeg', large: 'cabana-2/baño-1.jpeg', title: 'Baño C2'}
-            ],
-            'exterior': [
-              {thumb: 'cabana-2/exterior-1.jpeg', large: 'cabana-2/exterior-1.jpeg', title: 'Exterior 1 C2'},
-              {thumb: 'cabana-2/exterior-2.jpeg', large: 'cabana-2/exterior-2.jpeg', title: 'Exterior 2 C2'},
-              {thumb: 'cabana-2/exterior-3.jpeg', large: 'cabana-2/exterior-3.jpeg', title: 'Exterior 3 C2'},
-              {thumb: 'cabana-2/exterior-4.jpeg', large: 'cabana-2/exterior-4.jpeg', title: 'Exterior 4 C2'},
-              {thumb: 'cabana-2/exterior-5.jpeg', large: 'cabana-2/exterior-5.jpeg', title: 'Exterior 5 C2'},
-              {thumb: 'cabana-2/exterior-6.jpeg', large: 'cabana-2/exterior-6.jpeg', title: 'Exterior 6 C2'},
-              {thumb: 'cabana-2/exterior-7.jpeg', large: 'cabana-2/exterior-7.jpeg', title: 'Exterior 7 C2'}
-            ]
-          },
-          'cabaña3': {
-            'living': [
-              {thumb: 'cabana-3/living-1.jpeg', large: 'cabana-3/living-1.jpeg', title: 'Living Cabaña 3'},
-              {thumb: 'cabana-3/living-2.jpeg', large: 'cabana-3/living-2.jpeg', title: 'Living Cabaña 3'},
-              {thumb: 'cabana-3/living-3.jpeg', large: 'cabana-3/living-3.jpeg', title: 'Living Cabaña 3'}
-            ],
-            'dormitorios': [
-              {thumb: 'cabana-3/dormitorio-1.jpeg', large: 'cabana-3/dormitorio-1.jpeg', title: 'Dormitorio 1 C3'},
-              {thumb: 'cabana-3/dormitorio-2.jpeg', large: 'cabana-3/dormitorio-2.jpeg', title: 'Dormitorio 2 C3'},
-              {thumb: 'cabana-3/dormitorio-3.jpeg', large: 'cabana-3/dormitorio-3.jpeg', title: 'Dormitorio 3 C3'}
-            ],
-            'baño': [
-              {thumb: 'cabana-3/baño-1.jpeg', large: 'cabana-3/baño-1.jpeg', title: 'Baño C3'}
-            ],
-            'exterior': [
-              {thumb: 'cabana-3/exterior-1.jpeg', large: 'cabana-3/exterior-1.jpeg', title: 'Exterior 1 C3'},
-              {thumb: 'cabana-3/exterior-2.jpeg', large: 'cabana-3/exterior-2.jpeg', title: 'Exterior 2 C3'},
-              {thumb: 'cabana-3/exterior-3.jpeg', large: 'cabana-3/exterior-3.jpeg', title: 'Exterior 3 C3'},
-              {thumb: 'cabana-3/exterior-4.jpeg', large: 'cabana-3/exterior-4.jpeg', title: 'Exterior 4 C3'},
-              {thumb: 'cabana-3/exterior-5.jpeg', large: 'cabana-3/exterior-5.jpeg', title: 'Exterior 5 C3'},
-              {thumb: 'cabana-3/exterior-6.jpeg', large: 'cabana-3/exterior-6.jpeg', title: 'Exterior 6 C3'},
-              {thumb: 'cabana-3/exterior-7.jpeg', large: 'cabana-3/exterior-7.jpeg', title: 'Exterior 7 C3'}
-            ]
-          },
-          'general': {
-            'living': [
-              {thumb: 'cabana-1/living-1.jpeg', large: 'cabana-1/living-1.jpeg', title: 'Living'},
-              {thumb: 'cabana-1/living-2.jpeg', large: 'cabana-1/living-2.jpeg', title: 'Living'}
-            ],
-            'dormitorios': [
-              {thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio 1'},
-              {thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio 2'}
-            ],
-            'baño': [ {thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño'} ],
-            'exterior': [
-              {thumb: 'cabana-1/exterior-1.jpeg', large: 'cabana-1/exterior-1.jpeg', title: 'Exterior 1'},
-              {thumb: 'cabana-1/exterior-2.jpeg', large: 'cabana-1/exterior-2.jpeg', title: 'Exterior 2'}
-            ]
-          }
+            'cabaña1': {
+                'living': [
+                    { thumb: 'cabana-1/living-1.jpeg', large: 'cabana-1/living-1.jpeg', title: 'Living Cabaña 1' },
+                    { thumb: 'cabana-1/living-2.jpeg', large: 'cabana-1/living-2.jpeg', title: 'Living Cabaña 1' },
+                    { thumb: 'cabana-1/living-3.jpeg', large: 'cabana-1/living-3.jpeg', title: 'Living Cabaña 1' }
+                ],
+                'dormitorios': [
+                    { thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio Matrimonial C1' },
+                    { thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio 2 C1' }
+                ],
+                'baño': [
+                    { thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño 1 C1' },
+                    { thumb: 'cabana-1/baño-2.jpeg', large: 'cabana-1/baño-2.jpeg', title: 'Baño 2 C1' }
+                ],
+                'exterior': [
+                    { thumb: 'cabana-1/exterior-1.jpeg', large: 'cabana-1/exterior-1.jpeg', title: 'Exterior 1 C1' },
+                    { thumb: 'cabana-1/exterior-2.jpeg', large: 'cabana-1/exterior-2.jpeg', title: 'Exterior 2 C1' },
+                    { thumb: 'cabana-1/exterior-3.jpeg', large: 'cabana-1/exterior-3.jpeg', title: 'Exterior 3 C1' }
+                ]
+            },
+            'cabaña2': {
+                'living': [
+                    { thumb: 'cabana-2/living-1.jpeg', large: 'cabana-2/living-1.jpeg', title: 'Living Cabaña 2' },
+                    { thumb: 'cabana-2/living-2.jpeg', large: 'cabana-2/living-2.jpeg', title: 'Living Cabaña 2' },
+                    { thumb: 'cabana-2/living-3.jpeg', large: 'cabana-2/living-3.jpeg', title: 'Living Cabaña 2' }
+                ],
+                'dormitorios': [
+                    { thumb: 'cabana-2/dormitorio-1.jpeg', large: 'cabana-2/dormitorio-1.jpeg', title: 'Dormitorio 1 C2' },
+                    { thumb: 'cabana-2/dormitorio-2.jpeg', large: 'cabana-2/dormitorio-2.jpeg', title: 'Dormitorio 2 C2' },
+                    { thumb: 'cabana-2/dormitorio-3.jpeg', large: 'cabana-2/dormitorio-3.jpeg', title: 'Dormitorio 3 C2' }
+                ],
+                'baño': [
+                    { thumb: 'cabana-2/baño-1.jpeg', large: 'cabana-2/baño-1.jpeg', title: 'Baño C2' }
+                ],
+                'exterior': [
+                    { thumb: 'cabana-2/exterior-1.jpeg', large: 'cabana-2/exterior-1.jpeg', title: 'Exterior 1 C2' },
+                    { thumb: 'cabana-2/exterior-2.jpeg', large: 'cabana-2/exterior-2.jpeg', title: 'Exterior 2 C2' },
+                    { thumb: 'cabana-2/exterior-3.jpeg', large: 'cabana-2/exterior-3.jpeg', title: 'Exterior 3 C2' },
+                    { thumb: 'cabana-2/exterior-4.jpeg', large: 'cabana-2/exterior-4.jpeg', title: 'Exterior 4 C2' },
+                    { thumb: 'cabana-2/exterior-5.jpeg', large: 'cabana-2/exterior-5.jpeg', title: 'Exterior 5 C2' },
+                    { thumb: 'cabana-2/exterior-6.jpeg', large: 'cabana-2/exterior-6.jpeg', title: 'Exterior 6 C2' },
+                    { thumb: 'cabana-2/exterior-7.jpeg', large: 'cabana-2/exterior-7.jpeg', title: 'Exterior 7 C2' }
+                ]
+            },
+            'cabaña3': {
+                'living': [
+                    { thumb: 'cabana-3/living-1.jpeg', large: 'cabana-3/living-1.jpeg', title: 'Living Cabaña 3' },
+                    { thumb: 'cabana-3/living-2.jpeg', large: 'cabana-3/living-2.jpeg', title: 'Living Cabaña 3' },
+                    { thumb: 'cabana-3/living-3.jpeg', large: 'cabana-3/living-3.jpeg', title: 'Living Cabaña 3' }
+                ],
+                'dormitorios': [
+                    { thumb: 'cabana-3/dormitorio-1.jpeg', large: 'cabana-3/dormitorio-1.jpeg', title: 'Dormitorio 1 C3' },
+                    { thumb: 'cabana-3/dormitorio-2.jpeg', large: 'cabana-3/dormitorio-2.jpeg', title: 'Dormitorio 2 C3' },
+                    { thumb: 'cabana-3/dormitorio-3.jpeg', large: 'cabana-3/dormitorio-3.jpeg', title: 'Dormitorio 3 C3' }
+                ],
+                'baño': [
+                    { thumb: 'cabana-3/baño-1.jpeg', large: 'cabana-3/baño-1.jpeg', title: 'Baño C3' }
+                ],
+                'exterior': [
+                    { thumb: 'cabana-3/exterior-1.jpeg', large: 'cabana-3/exterior-1.jpeg', title: 'Exterior 1 C3' },
+                    { thumb: 'cabana-3/exterior-2.jpeg', large: 'cabana-3/exterior-2.jpeg', title: 'Exterior 2 C3' },
+                    { thumb: 'cabana-3/exterior-3.jpeg', large: 'cabana-3/exterior-3.jpeg', title: 'Exterior 3 C3' },
+                    { thumb: 'cabana-3/exterior-4.jpeg', large: 'cabana-3/exterior-4.jpeg', title: 'Exterior 4 C3' },
+                    { thumb: 'cabana-3/exterior-5.jpeg', large: 'cabana-3/exterior-5.jpeg', title: 'Exterior 5 C3' },
+                    { thumb: 'cabana-3/exterior-6.jpeg', large: 'cabana-3/exterior-6.jpeg', title: 'Exterior 6 C3' },
+                    { thumb: 'cabana-3/exterior-7.jpeg', large: 'cabana-3/exterior-7.jpeg', title: 'Exterior 7 C3' }
+                ]
+            },
+            'general': {
+                'living': [
+                    { thumb: 'cabana-1/living-1.jpeg', large: 'cabana-1/living-1.jpeg', title: 'Living' },
+                    { thumb: 'cabana-1/living-2.jpeg', large: 'cabana-1/living-2.jpeg', title: 'Living' }
+                ],
+                'dormitorios': [
+                    { thumb: 'cabana-1/dormitorio-1.jpeg', large: 'cabana-1/dormitorio-1.jpeg', title: 'Dormitorio 1' },
+                    { thumb: 'cabana-1/dormitorio-2.jpeg', large: 'cabana-1/dormitorio-2.jpeg', title: 'Dormitorio 2' }
+                ],
+                'baño': [{ thumb: 'cabana-1/baño1.jpeg', large: 'cabana-1/baño1.jpeg', title: 'Baño' }],
+                'exterior': [
+                    { thumb: 'cabana-1/exterior-1.jpeg', large: 'cabana-1/exterior-1.jpeg', title: 'Exterior 1' },
+                    { thumb: 'cabana-1/exterior-2.jpeg', large: 'cabana-1/exterior-2.jpeg', title: 'Exterior 2' }
+                ]
+            }
         };
 
 
@@ -1911,78 +1964,79 @@ h1, h2, h3, h4, h5, h6 {
         const galeriaModalElDyn = document.getElementById('galeriaModal');
         const galeriaModalInstanceDyn = galeriaModalElDyn ? (bootstrap.Offcanvas.getInstance(galeriaModalElDyn) || new bootstrap.Offcanvas(galeriaModalElDyn)) : null;
         const gridContainers = {
-          living: document.getElementById('gallery-living-grid'),
-          dormitorios: document.getElementById('gallery-dormitorios-grid'),
-          baño: document.getElementById('gallery-bano-grid'),
-          exterior: document.getElementById('gallery-exterior-grid')
+            living: document.getElementById('gallery-living-grid'),
+            dormitorios: document.getElementById('gallery-dormitorios-grid'),
+            baño: document.getElementById('gallery-bano-grid'),
+            exterior: document.getElementById('gallery-exterior-grid')
         };
 
         function buildGridHtml(photos, galleryId) {
-          if (!photos || photos.length === 0) return '<p>No hay fotos disponibles para esta sección.</p>';
-          return photos.map(p => `\n            <a href="${p.large}" data-lightbox="galeria-${galleryId}" data-title="${p.title}">\n              <img src="${p.thumb}" alt="${p.title}">\n            </a>\n          `).join('');
+            if (!photos || photos.length === 0) return '<p>No hay fotos disponibles para esta sección.</p>';
+            return photos.map(p => `\n            <a href="${p.large}" data-lightbox="galeria-${galleryId}" data-title="${p.title}">\n              <img src="${p.thumb}" alt="${p.title}">\n            </a>\n          `).join('');
         }
 
         function poblarGaleria(galleryId) {
-          const data = galeriasData[galleryId];
-          if (!data) return;
-          gridContainers.living.innerHTML = buildGridHtml(data.living, galleryId);
-          gridContainers.dormitorios.innerHTML = buildGridHtml(data.dormitorios, galleryId);
-          gridContainers.baño.innerHTML = buildGridHtml(data.baño, galleryId);
-          gridContainers.exterior.innerHTML = buildGridHtml(data.exterior, galleryId);
-          if (galeriaModalInstanceDyn) galeriaModalInstanceDyn.show();
+            const data = galeriasData[galleryId];
+            if (!data) return;
+            gridContainers.living.innerHTML = buildGridHtml(data.living, galleryId);
+            gridContainers.dormitorios.innerHTML = buildGridHtml(data.dormitorios, galleryId);
+            gridContainers.baño.innerHTML = buildGridHtml(data.baño, galleryId);
+            gridContainers.exterior.innerHTML = buildGridHtml(data.exterior, galleryId);
+            if (galeriaModalInstanceDyn) galeriaModalInstanceDyn.show();
         }
 
         document.querySelectorAll('.btn-ver-galeria').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            const id = e.currentTarget.dataset.cabin || 'general';
-            poblarGaleria(id);
-          });
+            btn.addEventListener('click', (e) => {
+                const id = e.currentTarget.dataset.cabin || 'general';
+                poblarGaleria(id);
+            });
         });
 
         const mainGalleryButton2 = document.querySelector('#galeria .gallery-button-container button');
         if (mainGalleryButton2) {
-          mainGalleryButton2.dataset.cabin = 'general';
-          mainGalleryButton2.addEventListener('click', (e) => {
-            const id = e.currentTarget.dataset.cabin;
-            poblarGaleria(id);
-          });
+            mainGalleryButton2.dataset.cabin = 'general';
+            mainGalleryButton2.addEventListener('click', (e) => {
+                const id = e.currentTarget.dataset.cabin;
+                poblarGaleria(id);
+            });
         }
         document.querySelectorAll('#galeria .gallery-grid a').forEach(link => {
-          link.dataset.cabin = 'general';
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            poblarGaleria('general');
-          });
+            link.dataset.cabin = 'general';
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                poblarGaleria('general');
+            });
         });
 
         // Compartir galería (selector + botón)
-      (function(){
-        function srBuildShare(){
-          const url = window.location.href.split('#')[0];
-          const title = 'Santa Regina Cabañas - Galería';
-          return { url, text: `${title} \n${url}` };
-        }
-        function srHandleShare(){
-          const sel = document.getElementById('share-select');
-          if(!sel) return;
-          const { url, text } = srBuildShare();
-          let shareUrl = '';
-          if(sel.value === 'facebook') shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-          if(sel.value === 'whatsapp') shareUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
-          if(shareUrl) window.open(shareUrl, '_blank');
-        }
-        const btn = document.getElementById('share-button');
-        if(btn) btn.addEventListener('click', srHandleShare);
-        const gm = document.getElementById('galeriaModal');
-        if(gm) gm.addEventListener('shown.bs.offcanvas', ()=>{
-          const b = document.getElementById('share-button');
-          if(b){ b.removeEventListener('click', srHandleShare); b.addEventListener('click', srHandleShare); }
-        });
-      })();
+        (function () {
+            function srBuildShare() {
+                const url = window.location.href.split('#')[0];
+                const title = 'Santa Regina Cabañas - Galería';
+                return { url, text: `${title} \n${url}` };
+            }
+            function srHandleShare() {
+                const sel = document.getElementById('share-select');
+                if (!sel) return;
+                const { url, text } = srBuildShare();
+                let shareUrl = '';
+                if (sel.value === 'facebook') shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                if (sel.value === 'whatsapp') shareUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+                if (shareUrl) window.open(shareUrl, '_blank');
+            }
+            const btn = document.getElementById('share-button');
+            if (btn) btn.addEventListener('click', srHandleShare);
+            const gm = document.getElementById('galeriaModal');
+            if (gm) gm.addEventListener('shown.bs.offcanvas', () => {
+                const b = document.getElementById('share-button');
+                if (b) { b.removeEventListener('click', srHandleShare); b.addEventListener('click', srHandleShare); }
+            });
+        })();
     </script>
 
     <!-- Botón de WhatsApp flotante -->
-    <a href="https://wa.me/56988813811" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/56988813811" class="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="Contactar por WhatsApp">
         <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
     </a>
 </body>
