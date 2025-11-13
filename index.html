@@ -21,9 +21,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
 
 
     <style>
@@ -36,8 +34,8 @@
             --color-texto: #2c3e50; /* Gris azulado oscuro y moderno */
             --color-fondo: #ecf0f1; /* Gris muy claro y limpio */
             --color-fondo-seccion: #ffffff; /* Blanco para que las secciones resalten */
-            --fuente-titulos: 'Playfair Display', serif;
-            --fuente-cuerpo: 'Montserrat', sans-serif;
+            --fuente-titulos: 'Merriweather', serif;
+            --fuente-cuerpo: 'Cabin', sans-serif;
             --ancho-maximo: 1100px;
             --nav-height: 70px;
         }
@@ -1192,9 +1190,14 @@
     margin-bottom: 1rem;
 }
 
-.header-actions { /* Contenedor para botones de la derecha */
+.share-group {
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+    gap: .5rem;
+}
+
+.share-select {
+    width: 180px;
 }
 
 /* Estilos para la barra de anclas */
@@ -1219,7 +1222,8 @@ text-align: center !important;
 }
 
 #nav-galeria::-webkit-scrollbar { display: none; }
-#nav-galeria .nav-link { white-space: nowrap; }
+#nav-galeria .nav-link { white-space: nowrap; border-radius: 9999px; }
+#nav-galeria .nav-link.active { background-color: var(--color-primario); color: #fff; }
 
 /* Arreglo para que el ScrollSpy no oculte los títulos */
 .offcanvas-body[data-bs-spy="scroll"] {
@@ -1351,7 +1355,7 @@ h1, h2, h3, h4, h5, h6 {
 
         <section id="inicio" class="hero">
             <div class="hero-content">
-                <h1 data-aos="fade-up" data-aos-delay="200">Descanso y Naturaleza in el Corazón de Chillán</h1>
+                <h1 data-aos="fade-up" data-aos-delay="200">Descanso y Naturaleza en el Corazón de Chillán</h1>
                 <p data-aos="fade-up" data-aos-delay="400">Vive una experiencia única en nuestras cabañas totalmente
                     equipadas. Perfectas para familias, con piscina, tinaja y la mejor vista.</p>
                 <a href="#contacto" class="btn-primary" data-aos="fade-up" data-aos-delay="600">Reserva tu Estadía
@@ -1362,7 +1366,7 @@ h1, h2, h3, h4, h5, h6 {
         <section id="nosotros" class="about-brief">
             <div class="container about-container">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="/tarjeta de presentación 1.png"
+                    <img src="/tarjeta1.png"
                         alt="Familia administradora de las cabañas">
                 </div>
                 <div class="about-text" data-aos="fade-left" data-aos-delay="200">
@@ -1370,7 +1374,7 @@ h1, h2, h3, h4, h5, h6 {
                     <p>Somos José Alfredo y familia, dedicados a ofrecer un espacio de tranquilidad en el Km 46.5.
                         Nuestro compromiso es que te sientas como en casa, disfrutando de la naturaleza con todas las
                         comodidades.</p>
-                    <a href="nosotros.html" class="btn-secondary">Conoce Nuestra Historia</a>
+                    <!-- <a href="nosotros.html" class="btn-secondary">Conoce Nuestra Historia</a> -->
                 </div>
             </div>
         </section>
@@ -1517,13 +1521,7 @@ h1, h2, h3, h4, h5, h6 {
                         <div class="service-card-content">
                             <span class="service-tag">Incluido en tu Estadía</span>
                             <h3>Piscina y Área de Juegos</h3>
-                            <p>Refréscate en nuestra piscina y deja que los niños se diviertan en el área de juegos.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="/tinaja.png"
+                            <p>Refréscate en nuestra piscina y deja que los niños se div
                             alt="Tinaja y jardín en cabañas">
                         <div class="service-card-content">
                             <span class="service-tag">Opcional</span>
@@ -1599,11 +1597,7 @@ h1, h2, h3, h4, h5, h6 {
                         <h3>Datos de Contacto</h3>
                         <p><i class="fa-solid fa-user"></i> Administrador: José Alfredo Garay Riffo</p>
                         <p><i class="fa-solid fa-envelope"></i> Email: dimensión7777@gmail.com</p>
-
-                        <div class="placeholder-info">
-                            <p><i class="fa-solid fa-phone"></i> [INFORMACIÓN PENDIENTE: Falta número de Teléfono /
-                                WhatsApp]</p>
-                        </div>
+                        <p><i class="fa-solid fa-phone"></i> Teléfono/WhatsApp: <a href="https://wa.me/56988813811" target="_blank" rel="noopener">+56 9 8881 3811</a></p>
                     </div>
 
                     <div class="contact-rules">
@@ -1611,11 +1605,6 @@ h1, h2, h3, h4, h5, h6 {
                         <p><strong><i class="fa-solid fa-clock"></i> Horario de Salida (Check-out):</strong> 14:00 hrs.
                         </p>
                         <p><strong><i class="fa-solid fa-paw"></i> Mascotas:</strong> ¡Son bienvenidas!</p>
-
-                        <div class="placeholder-info">
-                            <p><strong><i class="fa-solid fa-calendar-check"></i> Proceso de Reserva:</strong>
-                                [INFORMACIÓN PENDIENTE: Falta el proceso de reserva. Ej: Se abona el 50%]</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1696,13 +1685,16 @@ h1, h2, h3, h4, h5, h6 {
       <div class="offcanvas-header sticky-top">
         <div class="header-controls">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            <div class="header-actions">
-              <button class="btn btn-light btn-sm">Compartir</button>
-              <button class="btn btn-light btn-sm">Guardar</button>
+            <div class="share-group">
+              <select id="share-select" class="form-select form-select-sm share-select" aria-label="Seleccionar red social">
+                <option value="whatsapp">WhatsApp</option>
+                <option value="facebook">Facebook</option>
+              </select>
+              <button id="share-button" class="btn btn-primary btn-sm"><i class="fa-solid fa-share-nodes"></i> Compartir</button>
             </div>
         </div>
         <nav id="nav-galeria" class="nav nav-pills">
-          <a class="nav-link" href="#seccion-living">Living</a>
+          <a class="nav-link active" href="#seccion-living">Living</a>
           <a class="nav-link" href="#seccion-dormitorios">Dormitorios</a>
           <a class="nav-link" href="#seccion-bano">Baño</a>
           <a class="nav-link" href="#seccion-exterior">Exterior</a>
@@ -1914,6 +1906,8 @@ h1, h2, h3, h4, h5, h6 {
           }
         };
 
+
+
         const galeriaModalElDyn = document.getElementById('galeriaModal');
         const galeriaModalInstanceDyn = galeriaModalElDyn ? (bootstrap.Offcanvas.getInstance(galeriaModalElDyn) || new bootstrap.Offcanvas(galeriaModalElDyn)) : null;
         const gridContainers = {
@@ -1960,7 +1954,37 @@ h1, h2, h3, h4, h5, h6 {
             poblarGaleria('general');
           });
         });
+
+        // Compartir galería (selector + botón)
+      (function(){
+        function srBuildShare(){
+          const url = window.location.href.split('#')[0];
+          const title = 'Santa Regina Cabañas - Galería';
+          return { url, text: `${title} \n${url}` };
+        }
+        function srHandleShare(){
+          const sel = document.getElementById('share-select');
+          if(!sel) return;
+          const { url, text } = srBuildShare();
+          let shareUrl = '';
+          if(sel.value === 'facebook') shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+          if(sel.value === 'whatsapp') shareUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
+          if(shareUrl) window.open(shareUrl, '_blank');
+        }
+        const btn = document.getElementById('share-button');
+        if(btn) btn.addEventListener('click', srHandleShare);
+        const gm = document.getElementById('galeriaModal');
+        if(gm) gm.addEventListener('shown.bs.offcanvas', ()=>{
+          const b = document.getElementById('share-button');
+          if(b){ b.removeEventListener('click', srHandleShare); b.addEventListener('click', srHandleShare); }
+        });
+      })();
     </script>
+
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/56988813811" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
 </body>
 
 </html>
