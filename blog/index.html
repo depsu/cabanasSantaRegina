@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Cabañas Santa Regina | Termas de Chillán</title>
+<meta name="description" content="Guías de turismo en Termas de Chillán, recomendaciones gastronómicas, mantención de cabañas y consejos para tu próxima escapada al Valle Las Trancas.">
+<link rel="canonical" href="https://cabanassantaregina.cl/blog/">
+<meta property="og:title" content="Blog | Cabañas Santa Regina">
+<meta property="og:description" content="Guías de turismo, gastronomía y mantención en Termas de Chillán.">
+<meta property="og:url" content="https://cabanassantaregina.cl/blog/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://cabanassantaregina.cl/banner.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Cabin:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --color-primario: #2e7d32;
+    --color-secundario: #c79a3b;
+    --color-texto: #2c3e2f;
+    --color-fondo: #f7f4ef;
+    --color-fondo-seccion: #ffffff;
+    --fuente-titulos: 'Merriweather', serif;
+    --fuente-cuerpo: 'Cabin', sans-serif;
+}
+* { box-sizing: border-box; }
+body { font-family: var(--fuente-cuerpo); color: var(--color-texto); background-color: var(--color-fondo); margin: 0; line-height: 1.7; }
+h1, h2, h3 { font-family: var(--fuente-titulos); color: var(--color-primario); line-height: 1.25; }
+a { color: var(--color-secundario); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.nav-bar { background: white; padding: 15px 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+.nav-bar .logo { font-family: var(--fuente-titulos); color: var(--color-primario); font-weight: bold; font-size: 1.3rem; text-decoration: none; }
+.nav-bar nav a { color: var(--color-texto); margin: 0 15px; font-weight: 600; }
+.nav-bar nav a:hover { color: var(--color-primario); }
+.btn-reservar { background: var(--color-secundario); color: white !important; padding: 10px 20px; border-radius: 30px; font-weight: bold; }
+.hero-blog { background: linear-gradient(rgba(46,125,50,.7), rgba(46,125,50,.6)), url('/banner.jpeg'); background-size: cover; background-position: center; color: white; padding: 100px 30px 70px; text-align: center; }
+.hero-blog h1 { color: white; font-size: 3rem; margin-bottom: 1rem; }
+.hero-blog p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: .95; }
+.container { max-width: 800px; margin: 0 auto; padding: 50px 30px; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; padding: 50px 30px; }
+.card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(46,125,50,.08); border-top: 4px solid var(--color-secundario); transition: transform .3s; }
+.card:hover { transform: translateY(-4px); }
+.card .meta { font-size: .8rem; color: var(--color-secundario); text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
+.card h3 { margin: 10px 0; font-size: 1.4rem; }
+.card a.read { color: var(--color-primario); font-weight: bold; margin-top: 15px; display: inline-block; }
+article { background: white; padding: 60px 50px; border-radius: 16px; box-shadow: 0 6px 30px rgba(46,125,50,.07); }
+article .meta-top { color: var(--color-secundario); text-transform: uppercase; letter-spacing: 2px; font-size: .85rem; font-weight: bold; }
+article h1 { font-size: 2.5rem; margin: 1rem 0; }
+article .lead { font-size: 1.25rem; color: #555; border-left: 4px solid var(--color-secundario); padding-left: 25px; font-style: italic; margin: 30px 0; }
+article h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
+article h3 { font-size: 1.3rem; margin: 1.5rem 0 .75rem; color: var(--color-texto); }
+article p { margin-bottom: 1.2rem; }
+article ul, article ol { padding-left: 1.5rem; margin: 1rem 0 1.5rem; }
+article li { margin-bottom: .5rem; }
+article table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+article th, article td { border: 1px solid #d4d4d4; padding: 12px; text-align: left; }
+article th { background: var(--color-fondo); color: var(--color-primario); }
+.cta-final { background: var(--color-primario); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 50px; }
+.cta-final h3 { color: white; }
+.cta-final .btn { background: var(--color-secundario); padding: 14px 30px; border-radius: 30px; color: white !important; font-weight: bold; display: inline-block; margin-top: 15px; text-decoration: none; }
+.related { margin-top: 50px; }
+.related h2 { color: var(--color-primario); margin-bottom: 20px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+.related-card { background: var(--color-fondo); padding: 20px; border-radius: 10px; border-left: 3px solid var(--color-secundario); }
+.related-card a { color: var(--color-primario); font-weight: bold; }
+footer.site-footer { background: #1a3320; color: #c8d8c9; padding: 50px 30px 20px; margin-top: 80px; }
+footer.site-footer .ft-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+footer.site-footer h4 { color: var(--color-secundario); margin-bottom: 15px; font-family: var(--fuente-titulos); }
+footer.site-footer ul { list-style: none; padding: 0; }
+footer.site-footer ul li { margin-bottom: .5rem; }
+footer.site-footer ul li a { color: #c8d8c9; }
+footer.site-footer .copyright { text-align: center; padding-top: 30px; margin-top: 30px; border-top: 1px solid #2a4a30; font-size: .9rem; }
+@media(max-width:768px) {
+  .hero-blog h1 { font-size: 2rem; }
+  article { padding: 40px 25px; }
+  .nav-bar nav { display: none; }
+}
+</style>
+</head>
+<body>
+<header class="nav-bar">
+    <a href="/" class="logo">Cabañas Santa Regina</a>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/#cabanas">Cabañas</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contacto">Contacto</a>
+        <a href="https://wa.me/56987655566?text=Hola%2C%20quisiera%20reservar" class="btn-reservar" target="_blank" rel="noopener">Reservar</a>
+    </nav>
+</header>
+<section class="hero-blog">
+    <h1>Blog · Termas de Chillán</h1>
+    <p>Guías de turismo, recomendaciones gastronómicas y consejos prácticos para tu escapada al Valle Las Trancas.</p>
+</section>
+<section class="cards-grid">
+        <article class="card">
+            <span class="meta">Turismo</span>
+            <h3>Termas de Chillán: por qué es el mejor destino de fin de semana largo en invierno</h3>
+            <p style="color:#555;">Guía honesta para planificar un fin de semana largo en Termas de Chillán y Valle Las Trancas: ski, termas, gastronomía, alojamiento y rutas escénicas.</p>
+            <a href="/blog/termas-de-chillan-fin-de-semana-largo" class="read">Leer artículo →</a>
+        </article>
+        <article class="card">
+            <span class="meta">Gastronomía</span>
+            <h3>Qué comer en Valle Las Trancas: nuestra guía gastronómica honesta para huéspedes</h3>
+            <p style="color:#555;">Recomendaciones reales de dónde comer en Valle Las Trancas y Termas de Chillán: parrillas de cordillera, restaurantes de autor, sushi en la zona y cafés.</p>
+            <a href="/blog/que-comer-valle-las-trancas-guia-gastronomica" class="read">Leer artículo →</a>
+        </article>
+        <article class="card">
+            <span class="meta">Detrás del telón</span>
+            <h3>Cómo cuidamos nuestras cabañas: el detrás de cámaras de mantención, fosas y sistema eléctrico</h3>
+            <p style="color:#555;">Detrás del telón: cómo mantenemos las cabañas operativas todo el año en zona cordillera. Fosa séptica, eléctrica de respaldo, antinieve y aliados que nos ayudan.</p>
+            <a href="/blog/como-cuidamos-nuestras-cabanas" class="read">Leer artículo →</a>
+        </article>
+</section>
+<footer class="site-footer">
+    <div class="ft-container">
+        <div>
+            <h4>Cabañas Santa Regina</h4>
+            <p>Valle Las Trancas, Termas de Chillán. Descanso y naturaleza en la cordillera de Ñuble.</p>
+        </div>
+        <div>
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/#cabanas">Cabañas</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Aliados</h4>
+            <ul>
+                <li><a href="https://www.limpiafosasydestape.cl" rel="noopener">Mantención sanitaria</a></li>
+                <li><a href="https://chileelectrico.cl" rel="noopener">Servicios eléctricos</a></li>
+                <li><a href="https://paginasfast.cl" rel="noopener">Sitio por PaginasFast</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">&copy; <span id="yy"></span> Cabañas Santa Regina · Valle Las Trancas, Chile</div>
+</footer>
+<script>document.getElementById('yy').textContent = new Date().getFullYear();</script>
+</body>
+</html>
