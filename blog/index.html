@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blog | Cabañas Santa Regina | Termas de Chillán</title>
-<meta name="description" content="Guías de turismo en Termas de Chillán, recomendaciones gastronómicas, mantención de cabañas y consejos para tu próxima escapada al Valle Las Trancas.">
+<meta name="description" content="Guías de turismo en Termas de Chillán, recomendaciones gastronómicas, operación de cabañas y consejos para tu escapada al Valle Las Trancas.">
 <link rel="canonical" href="https://cabanassantaregina.cl/blog/">
 <meta property="og:title" content="Blog | Cabañas Santa Regina">
-<meta property="og:description" content="Guías de turismo, gastronomía y mantención en Termas de Chillán.">
+<meta property="og:description" content="Guías de turismo, gastronomía, operación y digital en Termas de Chillán.">
 <meta property="og:url" content="https://cabanassantaregina.cl/blog/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://cabanassantaregina.cl/banner.jpeg">
@@ -19,6 +19,8 @@
     --color-texto: #2c3e2f;
     --color-fondo: #f7f4ef;
     --color-fondo-seccion: #ffffff;
+    --color-acento-claro: #e8f3e9;
+    --color-acento-calido: #fff5e1;
     --fuente-titulos: 'Merriweather', serif;
     --fuente-cuerpo: 'Cabin', sans-serif;
 }
@@ -35,34 +37,18 @@ a:hover { text-decoration: underline; }
 .hero-blog { background: linear-gradient(rgba(46,125,50,.7), rgba(46,125,50,.6)), url('/banner.jpeg'); background-size: cover; background-position: center; color: white; padding: 100px 30px 70px; text-align: center; }
 .hero-blog h1 { color: white; font-size: 3rem; margin-bottom: 1rem; }
 .hero-blog p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: .95; }
-.container { max-width: 800px; margin: 0 auto; padding: 50px 30px; }
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto; padding: 50px 30px; }
+.breadcrumbs{max-width:1100px;margin:20px auto 0;padding:0 30px;font-size:.85rem;color:#6a6a6a}
+.breadcrumbs a{color:var(--color-primario)}
+.section-title{max-width:1100px;margin:40px auto 0;padding:0 30px;font-size:1.4rem;color:var(--color-primario)}
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto 30px; padding: 20px 30px; }
 .card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(46,125,50,.08); border-top: 4px solid var(--color-secundario); transition: transform .3s; }
 .card:hover { transform: translateY(-4px); }
 .card .meta { font-size: .8rem; color: var(--color-secundario); text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
-.card h3 { margin: 10px 0; font-size: 1.4rem; }
+.card h3 { margin: 10px 0; font-size: 1.25rem; }
+.card .author { color: #7a7a7a; font-size: .85rem; margin: 8px 0 12px; }
+.card .author a { color: var(--color-primario); font-weight: 600; }
 .card a.read { color: var(--color-primario); font-weight: bold; margin-top: 15px; display: inline-block; }
-article { background: white; padding: 60px 50px; border-radius: 16px; box-shadow: 0 6px 30px rgba(46,125,50,.07); }
-article .meta-top { color: var(--color-secundario); text-transform: uppercase; letter-spacing: 2px; font-size: .85rem; font-weight: bold; }
-article h1 { font-size: 2.5rem; margin: 1rem 0; }
-article .lead { font-size: 1.25rem; color: #555; border-left: 4px solid var(--color-secundario); padding-left: 25px; font-style: italic; margin: 30px 0; }
-article h2 { font-size: 1.8rem; margin: 2rem 0 1rem; }
-article h3 { font-size: 1.3rem; margin: 1.5rem 0 .75rem; color: var(--color-texto); }
-article p { margin-bottom: 1.2rem; }
-article ul, article ol { padding-left: 1.5rem; margin: 1rem 0 1.5rem; }
-article li { margin-bottom: .5rem; }
-article table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-article th, article td { border: 1px solid #d4d4d4; padding: 12px; text-align: left; }
-article th { background: var(--color-fondo); color: var(--color-primario); }
-.cta-final { background: var(--color-primario); color: white; padding: 40px; border-radius: 12px; text-align: center; margin-top: 50px; }
-.cta-final h3 { color: white; }
-.cta-final .btn { background: var(--color-secundario); padding: 14px 30px; border-radius: 30px; color: white !important; font-weight: bold; display: inline-block; margin-top: 15px; text-decoration: none; }
-.related { margin-top: 50px; }
-.related h2 { color: var(--color-primario); margin-bottom: 20px; }
-.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-.related-card { background: var(--color-fondo); padding: 20px; border-radius: 10px; border-left: 3px solid var(--color-secundario); }
-.related-card a { color: var(--color-primario); font-weight: bold; }
-footer.site-footer { background: #1a3320; color: #c8d8c9; padding: 50px 30px 20px; margin-top: 80px; }
+footer.site-footer { background: #1a3320; color: #c8d8c9; padding: 50px 30px 20px; margin-top: 60px; }
 footer.site-footer .ft-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
 footer.site-footer h4 { color: var(--color-secundario); margin-bottom: 15px; font-family: var(--fuente-titulos); }
 footer.site-footer ul { list-style: none; padding: 0; }
@@ -71,7 +57,6 @@ footer.site-footer ul li a { color: #c8d8c9; }
 footer.site-footer .copyright { text-align: center; padding-top: 30px; margin-top: 30px; border-top: 1px solid #2a4a30; font-size: .9rem; }
 @media(max-width:768px) {
   .hero-blog h1 { font-size: 2rem; }
-  article { padding: 40px 25px; }
   .nav-bar nav { display: none; }
 }
 </style>
@@ -83,34 +68,108 @@ footer.site-footer .copyright { text-align: center; padding-top: 30px; margin-to
         <a href="/">Inicio</a>
         <a href="/#cabanas">Cabañas</a>
         <a href="/blog/">Blog</a>
+        <a href="/autores/">Autores</a>
         <a href="/#contacto">Contacto</a>
-        <a href="https://wa.me/56987655566?text=Hola%2C%20quisiera%20reservar" class="btn-reservar" target="_blank" rel="noopener">Reservar</a>
+        <a href="https://wa.me/56988813811?text=Hola%2C%20quisiera%20reservar" class="btn-reservar" target="_blank" rel="noopener">Reservar</a>
     </nav>
 </header>
 <section class="hero-blog">
     <h1>Blog · Termas de Chillán</h1>
-    <p>Guías de turismo, recomendaciones gastronómicas y consejos prácticos para tu escapada al Valle Las Trancas.</p>
+    <p>Guías de turismo, gastronomía, operación de cabañas y digitalización del negocio familiar.</p>
 </section>
+<nav class="breadcrumbs" aria-label="Migas de pan">
+    <a href="/">Inicio</a> › <span>Blog</span>
+</nav>
+
+<h2 class="section-title">Turismo y experiencia en el valle</h2>
 <section class="cards-grid">
-        <article class="card">
-            <span class="meta">Turismo</span>
-            <h3>Termas de Chillán: por qué es el mejor destino de fin de semana largo en invierno</h3>
-            <p style="color:#555;">Guía honesta para planificar un fin de semana largo en Termas de Chillán y Valle Las Trancas: ski, termas, gastronomía, alojamiento y rutas escénicas.</p>
-            <a href="/blog/termas-de-chillan-fin-de-semana-largo" class="read">Leer artículo →</a>
-        </article>
-        <article class="card">
-            <span class="meta">Gastronomía</span>
-            <h3>Qué comer en Valle Las Trancas: nuestra guía gastronómica honesta para huéspedes</h3>
-            <p style="color:#555;">Recomendaciones reales de dónde comer en Valle Las Trancas y Termas de Chillán: parrillas de cordillera, restaurantes de autor, sushi en la zona y cafés.</p>
-            <a href="/blog/que-comer-valle-las-trancas-guia-gastronomica" class="read">Leer artículo →</a>
-        </article>
-        <article class="card">
-            <span class="meta">Detrás del telón</span>
-            <h3>Cómo cuidamos nuestras cabañas: el detrás de cámaras de mantención, fosas y sistema eléctrico</h3>
-            <p style="color:#555;">Detrás del telón: cómo mantenemos las cabañas operativas todo el año en zona cordillera. Fosa séptica, eléctrica de respaldo, antinieve y aliados que nos ayudan.</p>
-            <a href="/blog/como-cuidamos-nuestras-cabanas" class="read">Leer artículo →</a>
-        </article>
+    <article class="card">
+        <span class="meta">Turismo</span>
+        <h3>Termas de Chillán: por qué es el mejor destino de fin de semana largo en invierno</h3>
+        <p class="author">Por <a href="/autores/jose-alfredo">José Alfredo</a> · 6 min</p>
+        <p style="color:#555;">Guía honesta para planificar fin de semana largo en Termas de Chillán y Valle Las Trancas: ski, termas, gastronomía y rutas.</p>
+        <a href="/blog/termas-de-chillan-fin-de-semana-largo" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Gastronomía</span>
+        <h3>Qué comer en Valle Las Trancas: nuestra guía gastronómica honesta para huéspedes</h3>
+        <p class="author">Por <a href="/autores/oscar-olivera">Oscar Olivera</a> · 5 min</p>
+        <p style="color:#555;">Recomendaciones reales de dónde comer en Valle Las Trancas y Termas de Chillán: parrillas, autor, sushi y cafés.</p>
+        <a href="/blog/que-comer-valle-las-trancas-guia-gastronomica" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Huéspedes especiales</span>
+        <h3>Cabañas para retiro creativo: músicos, podcasters y escritores en Valle Las Trancas</h3>
+        <p class="author">Por <a href="/autores/oscar-olivera">Oscar Olivera</a> · 6 min</p>
+        <p style="color:#555;">Silencio del bosque + WiFi Starlink + espacio para crear. Cómo recibimos a creadores que vienen a retirarse.</p>
+        <a href="/blog/cabanas-retiro-creativo-musicos-podcasters-las-trancas" class="read">Leer artículo →</a>
+    </article>
 </section>
+
+<h2 class="section-title">Operación y mantención de cabañas</h2>
+<section class="cards-grid">
+    <article class="card">
+        <span class="meta">Mantención</span>
+        <h3>Cómo cuidamos nuestras cabañas: el detrás de cámaras de mantención, fosas y eléctrico</h3>
+        <p class="author">Por <a href="/autores/jose-alfredo">José Alfredo</a> · 5 min</p>
+        <p style="color:#555;">Detrás del telón: cómo mantenemos las cabañas operativas todo el año en zona cordillera.</p>
+        <a href="/blog/como-cuidamos-nuestras-cabanas" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Sanitario</span>
+        <h3>Destape de fosa séptica en cabañas rurales: por qué importa la manguera larga</h3>
+        <p class="author">Por <a href="/autores/jose-alfredo">José Alfredo</a> · 6 min</p>
+        <p style="color:#555;">Cómo elegir servicio de destape para cabaña rural sin dañar el pasto ni los accesos.</p>
+        <a href="/blog/destape-fosa-septica-cabanas-zona-rural" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Protocolo anual</span>
+        <h3>Mantención anual de fosa séptica en cabañas de turismo: protocolo</h3>
+        <p class="author">Por <a href="/autores/jose-alfredo">José Alfredo</a> · 7 min</p>
+        <p style="color:#555;">Protocolo bianual completo: cuándo, cómo, hidrojet, costos. Para operadores de complejos rurales.</p>
+        <a href="/blog/mantencion-fosa-septica-anual-cabanas-turismo" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Eléctrico</span>
+        <h3>Instalación eléctrica de una cabaña en cordillera: continuidad en cortes</h3>
+        <p class="author">Por <a href="/autores/jose-alfredo">José Alfredo</a> · 7 min</p>
+        <p style="color:#555;">Empalme, generador, sistema solar y certificación SEC. Arquitectura redundante para zona cordillera.</p>
+        <a href="/blog/instalacion-electrica-cabana-cordillera-respaldo" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Materiales nativos</span>
+        <h3>Por qué usamos colihue en la construcción de nuestras cabañas rurales</h3>
+        <p class="author">Por <a href="/autores/jose-alfredo">José Alfredo</a> · 6 min</p>
+        <p style="color:#555;">Bambú nativo chileno como material para cercos, pérgolas y detalles en cordillera de Ñuble.</p>
+        <a href="/blog/usar-colihue-construccion-cabanas-rurales-cordillera" class="read">Leer artículo →</a>
+    </article>
+</section>
+
+<h2 class="section-title">Gestión del negocio familiar</h2>
+<section class="cards-grid">
+    <article class="card">
+        <span class="meta">Legal</span>
+        <h3>Aspectos legales de arrendar cabañas de turismo en Chile (lo que aprendimos)</h3>
+        <p class="author">Por <a href="/autores/jose-alfredo">José Alfredo</a> · 8 min</p>
+        <p style="color:#555;">SII, patente municipal, seguros y contratos. Lo que aprendimos formalizando el negocio familiar.</p>
+        <a href="/blog/aspectos-legales-arrendar-cabanas-turismo-chile" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Digital</span>
+        <h3>Automatizar reservas por WhatsApp en cabañas: nuestra experiencia</h3>
+        <p class="author">Por <a href="/autores/oscar-olivera">Oscar Olivera</a> · 6 min</p>
+        <p style="color:#555;">De libreta sobre el refrigerador a calendario sincronizado y bot WhatsApp en 6 meses.</p>
+        <a href="/blog/automatizacion-reservas-whatsapp-cabanas" class="read">Leer artículo →</a>
+    </article>
+    <article class="card">
+        <span class="meta">Negocio digital</span>
+        <h3>Cómo armamos el sitio web de Cabañas Santa Regina (SEO + Google Ads)</h3>
+        <p class="author">Por <a href="/autores/oscar-olivera">Oscar Olivera</a> · 8 min</p>
+        <p style="color:#555;">El camino para dejar de depender de Booking, SEO orgánico y Google Ads.</p>
+        <a href="/blog/como-armamos-sitio-web-cabanas-seo" class="read">Leer artículo →</a>
+    </article>
+</section>
+
 <footer class="site-footer">
     <div class="ft-container">
         <div>
@@ -123,15 +182,22 @@ footer.site-footer .copyright { text-align: center; padding-top: 30px; margin-to
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/#cabanas">Cabañas</a></li>
                 <li><a href="/blog/">Blog</a></li>
+                <li><a href="/autores/">Autores</a></li>
+                <li><a href="/resenas/">Reseñas</a></li>
                 <li><a href="/#contacto">Contacto</a></li>
             </ul>
         </div>
         <div>
             <h4>Aliados</h4>
             <ul>
+                <li><a href="https://destaperapido.cl" rel="noopener">Destape Rápido</a></li>
                 <li><a href="https://www.limpiafosasydestape.cl" rel="noopener">Mantención sanitaria</a></li>
-                <li><a href="https://chileelectrico.cl" rel="noopener">Servicios eléctricos</a></li>
-                <li><a href="https://paginasfast.cl" rel="noopener">Sitio por PaginasFast</a></li>
+                <li><a href="https://chileelectrico.cl" rel="noopener">ChileEléctrico</a></li>
+                <li><a href="https://aguswer.cl" rel="noopener">Coligue Sur</a></li>
+                <li><a href="https://fuegoestudio.cl" rel="noopener">Fuego Estudio</a></li>
+                <li><a href="https://innovabogados.cl" rel="noopener">Innova Bogados</a></li>
+                <li><a href="https://automatizaweb.cl" rel="noopener">AutomatizaWeb</a></li>
+                <li><a href="https://paginasfast.cl" rel="noopener">PaginasFast</a></li>
             </ul>
         </div>
     </div>

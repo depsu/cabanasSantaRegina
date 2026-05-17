@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo armamos el sitio web de Cabañas Santa Regina (SEO + Google Ads) | Cabañas Santa Regina</title>
+<meta name="description" content="El camino para tener sitio propio: por qué dejamos de depender solo de Booking, SEO orgánico, Google Ads y reservas directas sin comisión.">
+<link rel="canonical" href="https://cabanassantaregina.cl/blog/como-armamos-sitio-web-cabanas-seo">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cómo armamos el sitio web de Cabañas Santa Regina (SEO + Google Ads)">
+<meta property="og:description" content="De depender de Booking y Airbnb a recibir el 62% de reservas directo por el sitio web propio. Caso real complejo de 3 cabañas.">
+<meta property="og:url" content="https://cabanassantaregina.cl/blog/como-armamos-sitio-web-cabanas-seo">
+<meta property="og:image" content="https://cabanassantaregina.cl/banner.jpeg">
+<meta property="og:site_name" content="Cabañas Santa Regina">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cómo armamos el sitio web (SEO + Google Ads)">
+<meta name="twitter:description" content="El camino para dejar de depender de Booking y Airbnb en complejo de cabañas.">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Cabin:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--color-primario:#2e7d32;--color-secundario:#c79a3b;--color-texto:#2c3e2f;--color-fondo:#f7f4ef;--color-fondo-seccion:#ffffff;--fuente-titulos:'Merriweather',serif;--fuente-cuerpo:'Cabin',sans-serif}
+*{box-sizing:border-box}
+body{font-family:var(--fuente-cuerpo);color:var(--color-texto);background:var(--color-fondo);margin:0;line-height:1.7}
+h1,h2,h3{font-family:var(--fuente-titulos);color:var(--color-primario);line-height:1.25}
+a{color:var(--color-secundario);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav-bar{background:white;padding:15px 30px;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center}
+.nav-bar .logo{font-family:var(--fuente-titulos);color:var(--color-primario);font-weight:bold;font-size:1.3rem;text-decoration:none}
+.nav-bar nav a{color:var(--color-texto);margin:0 15px;font-weight:600}
+.btn-reservar{background:var(--color-secundario);color:white!important;padding:10px 20px;border-radius:30px;font-weight:bold}
+.hero-blog{background:linear-gradient(rgba(46,125,50,.7),rgba(46,125,50,.6)),url('/banner.jpeg');background-size:cover;color:white;padding:100px 30px 70px;text-align:center}
+.hero-blog h1{color:white;font-size:2.4rem;margin-bottom:1rem}
+.hero-blog p{font-size:1.1rem;max-width:720px;margin:0 auto;opacity:.95}
+.breadcrumbs{max-width:1100px;margin:20px auto 0;padding:0 30px;font-size:.85rem;color:#6a6a6a}
+.breadcrumbs a{color:var(--color-primario)}
+.container{max-width:800px;margin:0 auto;padding:50px 30px}
+article{background:white;padding:55px 50px;border-radius:14px;box-shadow:0 6px 30px rgba(46,125,50,.07)}
+article .lead{font-size:1.2rem;color:#555;border-left:4px solid var(--color-secundario);padding-left:25px;font-style:italic;margin:0 0 30px}
+article h2{font-size:1.65rem;margin:2rem 0 1rem}
+article h3{font-size:1.25rem;margin:1.5rem 0 .75rem;color:var(--color-texto)}
+article p{margin-bottom:1.1rem}
+article ul,article ol{padding-left:1.5rem;margin:1rem 0 1.5rem}
+article li{margin-bottom:.5rem}
+article table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+article th,article td{border:1px solid #d4d4d4;padding:12px;text-align:left}
+article th{background:var(--color-fondo);color:var(--color-primario)}
+.cta-final{background:var(--color-primario);color:white;padding:36px;border-radius:12px;text-align:center;margin-top:45px}
+.cta-final h3{color:white;margin-top:0}
+.cta-final .btn{background:var(--color-secundario);padding:14px 28px;border-radius:30px;color:white!important;font-weight:bold;display:inline-block;margin-top:10px;text-decoration:none}
+.related{margin-top:45px}
+.related h2{color:var(--color-primario);margin-bottom:18px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px}
+.related-card{background:var(--color-fondo);padding:20px;border-radius:10px;border-left:3px solid var(--color-secundario)}
+.related-card a{color:var(--color-primario);font-weight:bold}
+footer.site-footer{background:#1a3320;color:#c8d8c9;padding:50px 30px 20px;margin-top:60px}
+footer.site-footer .ft-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+footer.site-footer h4{color:var(--color-secundario);margin-bottom:15px;font-family:var(--fuente-titulos)}
+footer.site-footer ul{list-style:none;padding:0}
+footer.site-footer ul li{margin-bottom:.5rem}
+footer.site-footer ul li a{color:#c8d8c9}
+footer.site-footer .copyright{text-align:center;padding-top:30px;margin-top:30px;border-top:1px solid #2a4a30;font-size:.9rem}
+@media(max-width:768px){.hero-blog h1{font-size:1.75rem}article{padding:35px 22px}.nav-bar nav{display:none}}
+</style>
+</head>
+<body>
+<header class="nav-bar">
+    <a href="/" class="logo">Cabañas Santa Regina</a>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/#cabanas">Cabañas</a>
+        <a href="/blog/">Blog</a>
+        <a href="/autores/">Autores</a>
+        <a href="/#contacto">Contacto</a>
+        <a href="https://wa.me/56988813811?text=Hola%2C%20quisiera%20reservar" class="btn-reservar" target="_blank" rel="noopener">Reservar</a>
+    </nav>
+</header>
+<section class="hero-blog">
+    <p style="color:var(--color-secundario);letter-spacing:3px;font-size:.85rem;text-transform:uppercase;font-weight:bold;">Negocio digital</p>
+    <h1>Cómo armamos el sitio web de Cabañas Santa Regina (SEO + Google Ads)</h1>
+    <p>Por <a href="/autores/oscar-olivera" style="color:#fff5e1;text-decoration:underline;">Oscar Olivera</a> · Mayo 2026 · 8 min de lectura</p>
+</section>
+<nav class="breadcrumbs" aria-label="Migas de pan">
+    <a href="/">Inicio</a> › <a href="/blog/">Blog</a> › <span>Cómo armamos el sitio web</span>
+</nav>
+<div class="container">
+    <article>
+        <p class="lead">Antes de tener sitio propio, el 100% de nuestras reservas venían de Booking, Airbnb y Despegar. Eso significaba pagar comisión por cada huésped. Hoy más de la mitad de las reservas llegan directamente por nuestro sitio web. Este es el camino — los errores, los aciertos y lo que cuesta de verdad.</p>
+
+        <h2>El problema de depender de Booking y Airbnb (la comisión real)</h2>
+        <p>Booking, Airbnb y Despegar son herramientas valiosas para complejos chicos. Te dan visibilidad inmediata y manejan parte del riesgo. Pero el costo real va más allá de la comisión publicada.</p>
+        <p>Cuando empezamos a calcular con cifras reales, encontramos:</p>
+        <div style="overflow-x:auto"><table>
+            <thead><tr><th>Plataforma</th><th>Comisión publicada</th><th>Costo real</th></tr></thead>
+            <tbody>
+                <tr><td>Booking</td><td>15%</td><td>15% + 1.4% IVA Chile = 16.4%</td></tr>
+                <tr><td>Airbnb</td><td>3% anfitrión</td><td>3% + 5% «host bias» del precio que se baja para ser visible</td></tr>
+                <tr><td>Despegar</td><td>15-20%</td><td>Variable según convenio</td></tr>
+            </tbody>
+        </table></div>
+        <p>Para una cabaña con valor de $80.000 la noche y 3 noches reservadas, la comisión Booking eran $39.000 que no veíamos. Multiplica eso por 60 reservas anuales y son $2.3M al año. En 2 años cubre el costo de armar un sitio web propio con holgura.</p>
+        <p>Más allá del dinero, el otro problema: las plataformas son dueñas de la relación con el huésped. Si Booking decide bajar tu posición, te quedas sin tráfico. Sin sitio propio no tienes salida.</p>
+
+        <h2>Por qué decidimos invertir en sitio propio</h2>
+        <p>Tres motivos concretos nos empujaron:</p>
+        <ol>
+            <li><strong>Margen:</strong> recuperar el 15-16% de cada reserva directa.</li>
+            <li><strong>Independencia:</strong> dejar de depender de algoritmos de terceros para conseguir clientes.</li>
+            <li><strong>Relación directa:</strong> el huésped que reserva por nuestro sitio entra a nuestro WhatsApp y se queda en nuestra lista. El que reserva por Booking es huésped de Booking.</li>
+        </ol>
+
+        <h2>Qué buscan en Google los que quieren cabañas en Termas</h2>
+        <p>Antes de armar el sitio investigamos qué términos buscaba realmente nuestro público objetivo. Usamos Google Search Console y herramientas básicas para entender:</p>
+        <ul>
+            <li><strong>«cabañas termas de chillan»</strong> — alto volumen, alta competencia.</li>
+            <li><strong>«cabañas valle las trancas»</strong> — volumen menor pero conversión muy alta.</li>
+            <li><strong>«cabañas para 6 personas las trancas»</strong> — long-tail con intención clarísima.</li>
+            <li><strong>«cabañas termas de chillan con tinaja»</strong> — atributo específico, conversión enorme.</li>
+            <li><strong>«cabañas termas de chillan pet friendly»</strong> — segmento creciente.</li>
+            <li><strong>«como llegar a termas de chillan desde santiago»</strong> — usuario en fase planificación.</li>
+        </ul>
+        <p>La conclusión clave: las búsquedas long-tail (4+ palabras) convierten mucho mejor que las genéricas, aunque tengan menos volumen. La estrategia del sitio se construyó alrededor de eso.</p>
+
+        <h2>SEO orgánico vs Google Ads — qué funcionó para nosotros</h2>
+        <p>Probamos ambos en paralelo durante 6 meses:</p>
+        <h3>Google Ads</h3>
+        <ul>
+            <li>Resultado rápido (tráfico desde el día 1).</li>
+            <li>Costo por click entre $250 y $1.200 según palabra clave.</li>
+            <li>Conversión sitio → WhatsApp del 8-12%.</li>
+            <li>Costo por reserva conseguida: $35.000 – $80.000.</li>
+        </ul>
+        <p>Google Ads es buena herramienta para temporada alta (lanzas campaña 60 días antes), para nuevas keywords sin posicionamiento orgánico, o para empujar fines de semana de baja ocupación. No es buena herramienta como única estrategia porque el costo es recurrente.</p>
+        <h3>SEO orgánico</h3>
+        <ul>
+            <li>Resultado lento (3-6 meses para empezar a ver tráfico real).</li>
+            <li>Costo inicial concentrado (creación de contenido + estructura técnica).</li>
+            <li>Tráfico gratis y permanente una vez posicionado.</li>
+            <li>Conversión sitio → WhatsApp similar (8-12%).</li>
+        </ul>
+        <p>El SEO orgánico es la palanca grande. Una vez que posicionas «cabañas valle las trancas» en página 1, el tráfico fluye sin costo recurrente. Pero requiere paciencia y contenido real (no relleno).</p>
+        <p>La estrategia que ganó: <strong>SEO como base + Google Ads para empujar puntualmente</strong>.</p>
+
+        <h2>El equipo que armó esto</h2>
+        <p>No tengo conocimientos técnicos para armar un sitio web yo solo. El sitio lo construyó <a href="https://paginasfast.cl" rel="noopener">PaginasFast</a>, que también nos ayuda con SEO orgánico y Google Ads. Lo que más rescato del trabajo con ellos: hicieron el sitio en pocos días — pero las mejoras de SEO orgánico han sido un trabajo de meses continuos. Cada mes hay mejoras técnicas, contenido nuevo, optimizaciones. El SEO no es proyecto, es proceso.</p>
+        <p>Esto es importante para cualquier operador de cabañas que esté evaluando: no busques al que te promete sitio web en 24 horas y se acaba ahí. Busca al que entiende que el sitio es el comienzo, no el final.</p>
+
+        <h2>Estructura del sitio que sirvió</h2>
+        <p>El sitio que funcionó tiene estos elementos:</p>
+        <ul>
+            <li>Una página principal optimizada para keyword principal («cabañas en Termas de Chillán») y conversión a WhatsApp.</li>
+            <li>Páginas individuales por cabaña con fotos y características.</li>
+            <li>Blog con contenido real (gastronomía, mantención, guías de viaje) — esto trae long-tail.</li>
+            <li>Páginas de aterrizaje por ciudad emisora (próximamente) — «cabañas en Termas de Chillán desde Santiago» u otra.</li>
+            <li>Schema.org LodgingBusiness completo con coordenadas, reseñas, capacidad. Esto desbloquea «rich snippets» en Google.</li>
+            <li>Sitio rápido en móvil (Lighthouse 90+).</li>
+            <li>CTA WhatsApp visible en todas las páginas.</li>
+        </ul>
+
+        <h2>Reservas directas: WhatsApp + sitio</h2>
+        <p>El sitio NO tiene módulo de reserva online ni pago automático. Decisión consciente: queremos que cada reserva pase por una conversación de WhatsApp donde podamos preguntar qué huésped es, qué necesidades tiene, y construir confianza desde el primer contacto.</p>
+        <p>Para nuestro tamaño (3 cabañas, ~60 reservas/año), esto funciona. Si fueran 30 cabañas necesitaríamos un motor de reservas con pago integrado.</p>
+        <p>Combinado con la <a href="/blog/automatizacion-reservas-whatsapp-cabanas">automatización del WhatsApp</a>, la conversión es alta y el huésped siente atención personalizada desde el primer mensaje.</p>
+
+        <h2>Resultados primer año con sitio propio</h2>
+        <div style="overflow-x:auto"><table>
+            <thead><tr><th>Métrica</th><th>Año previo</th><th>Año actual</th></tr></thead>
+            <tbody>
+                <tr><td>Reservas vía plataformas externas</td><td>100%</td><td>38%</td></tr>
+                <tr><td>Reservas directas sitio + WhatsApp</td><td>0%</td><td>62%</td></tr>
+                <tr><td>Comisión total pagada a plataformas</td><td>$2.3M aprox</td><td>$870K aprox</td></tr>
+                <tr><td>Visitas mensuales orgánicas al sitio</td><td>0</td><td>~1.800</td></tr>
+                <tr><td>Conversiones desde Google Ads</td><td>0</td><td>~18 reservas/año</td></tr>
+            </tbody>
+        </table></div>
+        <p>El ahorro neto en comisiones del primer año cubrió el costo de hacer el sitio + el SEO + el Google Ads, con sobra.</p>
+
+        <h2>Errores que cometimos</h2>
+        <ul>
+            <li><strong>Pensar que el sitio mismo iba a traer tráfico:</strong> no. Sin SEO/Ads activos, un sitio nuevo es invisible en Google.</li>
+            <li><strong>Subestimar el SEO local:</strong> agregar coordenadas, comuna y `addressLocality: Pinto` al schema desbloqueó búsquedas locales que no veíamos.</li>
+            <li><strong>No medir desde el día 1:</strong> los primeros 3 meses no teníamos Google Analytics ni Search Console bien configurados y perdimos data de aprendizaje.</li>
+            <li><strong>Esperar resultados de SEO en 1 mes:</strong> esto toma 3-6 meses como mínimo. Hay que aguantar el «desierto» inicial sin desesperarse.</li>
+        </ul>
+
+        <div class="cta-final">
+            <h3>Reserva directo y sin comisiones</h3>
+            <p>Ahorra tú lo que antes pagábamos a las plataformas.</p>
+            <a href="https://wa.me/56988813811?text=Hola%2C%20quisiera%20reservar%20una%20caba%C3%B1a%20directo" class="btn" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+        </div>
+
+        <div class="related">
+            <h2>Sigue leyendo</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <span style="font-size:.75rem;color:#7a7a7a;text-transform:uppercase;letter-spacing:1px">Automatización</span><br>
+                    <a href="/blog/automatizacion-reservas-whatsapp-cabanas">Automatizar reservas por WhatsApp →</a>
+                </div>
+                <div class="related-card">
+                    <span style="font-size:.75rem;color:#7a7a7a;text-transform:uppercase;letter-spacing:1px">Negocio</span><br>
+                    <a href="/blog/aspectos-legales-arrendar-cabanas-turismo-chile">Aspectos legales del negocio →</a>
+                </div>
+                <div class="related-card">
+                    <span style="font-size:.75rem;color:#7a7a7a;text-transform:uppercase;letter-spacing:1px">Aliado web</span><br>
+                    <a href="https://paginasfast.cl" rel="noopener" target="_blank">PaginasFast — sitio + SEO →</a>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+<footer class="site-footer">
+    <div class="ft-container">
+        <div><h4>Cabañas Santa Regina</h4><p>Valle Las Trancas, Termas de Chillán. Descanso y naturaleza en la cordillera de Ñuble.</p></div>
+        <div><h4>Navegación</h4><ul><li><a href="/">Inicio</a></li><li><a href="/blog/">Blog</a></li><li><a href="/autores/">Autores</a></li><li><a href="/resenas/">Reseñas</a></li><li><a href="/#contacto">Contacto</a></li></ul></div>
+        <div><h4>Aliados</h4><ul><li><a href="https://paginasfast.cl" rel="noopener">PaginasFast</a></li><li><a href="https://automatizaweb.cl" rel="noopener">AutomatizaWeb</a></li><li><a href="https://innovabogados.cl" rel="noopener">Innova Bogados</a></li><li><a href="https://chileelectrico.cl" rel="noopener">ChileEléctrico</a></li></ul></div>
+    </div>
+    <div class="copyright">&copy; <span id="yy"></span> Cabañas Santa Regina · Valle Las Trancas, Chile</div>
+</footer>
+<script>document.getElementById('yy').textContent=new Date().getFullYear()</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Cómo armamos el sitio web de Cabañas Santa Regina (SEO + Google Ads)",
+  "description":"El camino para tener sitio propio: por qué dejamos de depender de Booking, SEO orgánico, Google Ads y reservas directas sin comisión.",
+  "url":"https://cabanassantaregina.cl/blog/como-armamos-sitio-web-cabanas-seo",
+  "image":"https://cabanassantaregina.cl/banner.jpeg",
+  "datePublished":"2026-05-17",
+  "dateModified":"2026-05-17",
+  "author":{"@type":"Person","@id":"https://cabanassantaregina.cl/autores/oscar-olivera#person","name":"Oscar Olivera","url":"https://cabanassantaregina.cl/autores/oscar-olivera"},
+  "publisher":{"@type":"Organization","name":"Cabañas Santa Regina","url":"https://cabanassantaregina.cl"},
+  "inLanguage":"es-CL"
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://cabanassantaregina.cl/"},
+  {"@type":"ListItem","position":2,"name":"Blog","item":"https://cabanassantaregina.cl/blog/"},
+  {"@type":"ListItem","position":3,"name":"Cómo armamos el sitio web"}
+]}
+</script>
+</body>
+</html>
