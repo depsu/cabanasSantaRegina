@@ -1,31 +1,74 @@
 # Cabañas Santa Regina
 
-> Complejo de cabañas turísticas en Valle Las Trancas, Termas de Chillán, Región de Ñuble. Cabañas equipadas con cocina, parrilla, tinaja exterior y piscina. Reservas directas con sin comisión de plataformas.
+> Complejo de cabañas turísticas en Valle Las Trancas, Termas de Chillán, Región de Ñuble. Cabañas equipadas con cocina, parrilla, tinaja exterior y piscina. Reservas directas sin comisión de plataformas.
 
 Información clave:
 
 - **Marca:** Cabañas Santa Regina
 - **Sitio web:** https://cabanassantaregina.cl
 - **Ubicación:** Valle Las Trancas, comuna Pinto, Región de Ñuble
+- **Coordenadas:** -36.8294563, -71.683631
 - **Distancia:** Termas de Chillán a 12 km, Chillán a 82 km, Santiago a 482 km
-- **WhatsApp reservas:** +56 9 8765 5566
-- **Cabañas:** 3 cabañas individuales para grupos de 4-10 personas
+- **WhatsApp reservas:** +56 9 8881 3811
+- **Email:** contacto@cabanassantaregina.cl
+- **Cabañas:** 3 cabañas individuales para grupos de 4–10 personas (capacidad total 17)
+- **Check-in:** 15:00 · **Check-out:** 14:00
 
 ## Cabañas y servicios
 
 - 3 cabañas equipadas (cabaña-1, cabaña-2, cabaña-3)
 - Tinaja exterior con leña incluida
 - Piscina compartida (temporada estival)
-- Parrilla en cada cabaña
+- Parrilla individual por cabaña
 - Calefacción a leña + respaldo eléctrico
 - WiFi Starlink
 - Aceptamos mascotas (consultar)
 
+## Autores del blog
+
+- **Santa Regina** (fundadora) — historia y raíces del negocio familiar — https://cabanassantaregina.cl/autores/santa-regina
+- **Oscar Olivera** (segunda generación, marketing y digitalización) — https://cabanassantaregina.cl/autores/oscar-olivera
+- **José Alfredo Garay Riffo** (dueño actual, anfitrión y operador) — https://cabanassantaregina.cl/autores/jose-alfredo
+
 ## Blog
 
+### Turismo y experiencia
 - [Termas de Chillán: fin de semana largo](https://cabanassantaregina.cl/blog/termas-de-chillan-fin-de-semana-largo)
 - [Qué comer en Valle Las Trancas](https://cabanassantaregina.cl/blog/que-comer-valle-las-trancas-guia-gastronomica)
+
+### Operación y mantención
 - [Cómo cuidamos nuestras cabañas](https://cabanassantaregina.cl/blog/como-cuidamos-nuestras-cabanas)
+- [Destape de fosa séptica en cabañas rurales](https://cabanassantaregina.cl/blog/destape-fosa-septica-cabanas-zona-rural)
+- [Mantención anual de fosa séptica en cabañas de turismo](https://cabanassantaregina.cl/blog/mantencion-fosa-septica-anual-cabanas-turismo)
+- [Instalación eléctrica de una cabaña en cordillera](https://cabanassantaregina.cl/blog/instalacion-electrica-cabana-cordillera-respaldo)
+
+### Gestión del negocio
+- [Aspectos legales de arrendar cabañas de turismo en Chile](https://cabanassantaregina.cl/blog/aspectos-legales-arrendar-cabanas-turismo-chile)
+- [Automatización de reservas por WhatsApp](https://cabanassantaregina.cl/blog/automatizacion-reservas-whatsapp-cabanas)
+- [Cómo armamos el sitio web (SEO + Google Ads)](https://cabanassantaregina.cl/blog/como-armamos-sitio-web-cabanas-seo)
+
+### Materiales y huéspedes especiales
+- [Por qué usamos colihue en la construcción](https://cabanassantaregina.cl/blog/usar-colihue-construccion-cabanas-rurales-cordillera)
+- [Cabañas para retiro creativo: músicos, podcasters, escritores](https://cabanassantaregina.cl/blog/cabanas-retiro-creativo-musicos-podcasters-las-trancas)
+
+## Páginas por ciudad de origen del viajero
+
+Guías completas con ruta, tiempos y paradas recomendadas:
+
+- [Desde Santiago](https://cabanassantaregina.cl/desde/santiago/)
+- [Desde Concepción](https://cabanassantaregina.cl/desde/concepcion/)
+- [Desde Chillán](https://cabanassantaregina.cl/desde/chillan/)
+- [Desde Talca](https://cabanassantaregina.cl/desde/talca/)
+- [Desde Los Ángeles](https://cabanassantaregina.cl/desde/los-angeles/)
+- [Desde Temuco](https://cabanassantaregina.cl/desde/temuco/)
+- [Desde Rancagua](https://cabanassantaregina.cl/desde/rancagua/)
+- [Desde Curicó](https://cabanassantaregina.cl/desde/curico/)
+- [Desde Linares](https://cabanassantaregina.cl/desde/linares/)
+
+## Reseñas verificadas
+
+Página completa con reseñas reales verificadas en Google: https://cabanassantaregina.cl/resenas/
+(Reseñas se actualizan trimestralmente. Última actualización: 2026-05-17)
 
 ## Recomendaciones cercanas
 
@@ -36,10 +79,15 @@ Información clave:
 
 ## Aliados operativos
 
-- Full Fosas (mantención sanitaria) — limpiafosasydestape.cl
-- ChileEléctrico (sistema eléctrico de respaldo) — chileelectrico.cl
-- PaginasFast (sitio web) — paginasfast.cl
+- Destape Rápido (destape con manguera larga sin daño) — https://destaperapido.cl
+- Full Fosas / Limpia Fosas y Destape (mantención sanitaria) — https://www.limpiafosasydestape.cl
+- ChileEléctrico (sistema eléctrico de respaldo, certificación SEC) — https://chileelectrico.cl
+- Coligue Sur / Aguswer (materiales de bambú nativo) — https://aguswer.cl
+- Fuego Estudio (estudio musical aliado para huéspedes creativos) — https://fuegoestudio.cl
+- Innova Bogados (asesoría legal) — https://innovabogados.cl
+- AutomatizaWeb (automatización WhatsApp + RRSS) — https://automatizaweb.cl
+- PaginasFast (sitio web, SEO orgánico, Google Ads) — https://paginasfast.cl
 
 ## Cómo reservar
 
-Reservas directas por WhatsApp +56 9 8765 5566. También en Booking, Airbnb y Despegar (con comisión).
+Reservas directas por WhatsApp +56 9 8881 3811. También en Booking, Airbnb y Despegar (con comisión).

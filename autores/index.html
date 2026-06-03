@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autores | Cabañas Santa Regina | Negocio familiar en Valle Las Trancas</title>
+<meta name="description" content="Las personas detrás de Cabañas Santa Regina: tres generaciones de una familia recibiendo huéspedes en Valle Las Trancas, Termas de Chillán.">
+<link rel="canonical" href="https://cabanassantaregina.cl/autores/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Autores | Cabañas Santa Regina">
+<meta property="og:description" content="Tres generaciones de la familia detrás de Cabañas Santa Regina en Valle Las Trancas, Termas de Chillán.">
+<meta property="og:url" content="https://cabanassantaregina.cl/autores/">
+<meta property="og:image" content="https://cabanassantaregina.cl/banner.jpeg">
+<meta property="og:site_name" content="Cabañas Santa Regina">
+<meta property="og:locale" content="es_CL">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Cabin:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--color-primario:#2e7d32;--color-secundario:#c79a3b;--color-texto:#2c3e2f;--color-fondo:#f7f4ef;--color-fondo-seccion:#ffffff;--color-acento-claro:#e8f3e9;--color-acento-calido:#fff5e1;--fuente-titulos:'Merriweather',serif;--fuente-cuerpo:'Cabin',sans-serif}
+*{box-sizing:border-box}
+body{font-family:var(--fuente-cuerpo);color:var(--color-texto);background:var(--color-fondo);margin:0;line-height:1.7}
+h1,h2,h3{font-family:var(--fuente-titulos);color:var(--color-primario);line-height:1.25}
+a{color:var(--color-secundario);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav-bar{background:white;padding:15px 30px;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center}
+.nav-bar .logo{font-family:var(--fuente-titulos);color:var(--color-primario);font-weight:bold;font-size:1.3rem;text-decoration:none}
+.nav-bar nav a{color:var(--color-texto);margin:0 15px;font-weight:600}
+.nav-bar nav a:hover{color:var(--color-primario)}
+.btn-reservar{background:var(--color-secundario);color:white!important;padding:10px 20px;border-radius:30px;font-weight:bold}
+.hero{background:linear-gradient(rgba(46,125,50,.78),rgba(46,125,50,.62)),url('/banner.jpeg');background-size:cover;background-position:center;color:white;padding:90px 30px 70px;text-align:center}
+.hero h1{color:white;font-size:2.8rem;margin-bottom:1rem}
+.hero p{font-size:1.15rem;max-width:680px;margin:0 auto;opacity:.95}
+.breadcrumbs{max-width:1100px;margin:20px auto 0;padding:0 30px;font-size:.85rem;color:#6a6a6a}
+.breadcrumbs a{color:var(--color-primario)}
+.intro{max-width:760px;margin:50px auto 20px;padding:0 30px}
+.intro p{font-size:1.1rem}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1100px;margin:30px auto 40px;padding:20px 30px}
+.author-card{background:white;border-radius:14px;padding:30px;box-shadow:0 4px 15px rgba(46,125,50,.08);border-top:4px solid var(--color-secundario);transition:transform .3s;text-align:center}
+.author-card:hover{transform:translateY(-5px)}
+.avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--color-primario),#4a8c4f);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--fuente-titulos);font-size:2.4rem;font-weight:bold;margin:0 auto 18px;border:4px solid var(--color-acento-calido)}
+.author-card h3{margin:8px 0 4px;font-size:1.35rem}
+.author-card .rol{color:var(--color-secundario);text-transform:uppercase;letter-spacing:2px;font-size:.75rem;font-weight:bold;margin-bottom:14px}
+.author-card .frase{font-style:italic;color:#555;font-size:.98rem;margin-bottom:18px}
+.author-card .link-perfil{color:var(--color-primario);font-weight:bold;font-size:.95rem}
+.por-que{background:var(--color-acento-claro);padding:50px 30px;margin:40px 0}
+.por-que .wrap{max-width:800px;margin:0 auto}
+.por-que h2{text-align:center;margin-bottom:20px}
+.cta-final{background:var(--color-primario);color:white;padding:40px 30px;text-align:center;margin-top:0}
+.cta-final h3{color:white;margin-top:0}
+.cta-final .btn{background:var(--color-secundario);padding:14px 30px;border-radius:30px;color:white!important;font-weight:bold;display:inline-block;margin-top:10px;text-decoration:none}
+footer.site-footer{background:#1a3320;color:#c8d8c9;padding:50px 30px 20px;margin-top:0}
+footer.site-footer .ft-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+footer.site-footer h4{color:var(--color-secundario);margin-bottom:15px;font-family:var(--fuente-titulos)}
+footer.site-footer ul{list-style:none;padding:0}
+footer.site-footer ul li{margin-bottom:.5rem}
+footer.site-footer ul li a{color:#c8d8c9}
+footer.site-footer .copyright{text-align:center;padding-top:30px;margin-top:30px;border-top:1px solid #2a4a30;font-size:.9rem}
+@media(max-width:768px){.hero h1{font-size:1.9rem}.nav-bar nav{display:none}}
+</style>
+</head>
+<body>
+<header class="nav-bar">
+    <a href="/" class="logo">Cabañas Santa Regina</a>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/#cabanas">Cabañas</a>
+        <a href="/blog/">Blog</a>
+        <a href="/autores/">Autores</a>
+        <a href="/#contacto">Contacto</a>
+        <a href="https://wa.me/56988813811?text=Hola%2C%20quisiera%20reservar" class="btn-reservar" target="_blank" rel="noopener">Reservar</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Las personas detrás de Cabañas Santa Regina</h1>
+    <p>Tres generaciones de una familia recibiendo huéspedes en Valle Las Trancas, Termas de Chillán.</p>
+</section>
+
+<nav class="breadcrumbs" aria-label="Migas de pan">
+    <a href="/">Inicio</a> › <span>Autores</span>
+</nav>
+
+<section class="intro">
+    <p>Cabañas Santa Regina no es un complejo administrado por una empresa lejana. Es un negocio familiar pasado de mano en mano. Cada decisión de operación — desde qué proveedor de leña usar hasta cómo responder un WhatsApp — la tomamos pensando en huéspedes que volverán a vernos el próximo verano. Conoce quiénes escribimos los posts del blog y por qué.</p>
+</section>
+
+<section class="cards-grid">
+    <article class="author-card">
+        <div class="avatar" aria-hidden="true">SR</div>
+        <h3>Santa Regina</h3>
+        <p class="rol">Fundadora</p>
+        <p class="frase">«Esta tierra siempre fue para acoger.»</p>
+        <a href="/autores/santa-regina" class="link-perfil">Conoce a Santa Regina →</a>
+    </article>
+    <article class="author-card">
+        <div class="avatar" aria-hidden="true">OO</div>
+        <h3>Oscar Olivera</h3>
+        <p class="rol">Segunda generación · Digital</p>
+        <p class="frase">«Mi mamá enseñó hospitalidad. Yo aprendí a digitalizarla.»</p>
+        <a href="/autores/oscar-olivera" class="link-perfil">Conoce a Oscar →</a>
+    </article>
+    <article class="author-card">
+        <div class="avatar" aria-hidden="true">JA</div>
+        <h3>José Alfredo</h3>
+        <p class="rol">Dueño actual · Anfitrión</p>
+        <p class="frase">«Una buena estadía empieza con una fosa séptica que nunca falla.»</p>
+        <a href="/autores/jose-alfredo" class="link-perfil">Conoce a José Alfredo →</a>
+    </article>
+</section>
+
+<section class="por-que">
+    <div class="wrap">
+        <h2>Por qué somos un negocio familiar</h2>
+        <p>En 2026, casi todos los complejos de cabañas en cordillera son operados por inversionistas que viven en Santiago, Concepción o el extranjero. Nosotros vivimos acá. Nuestros hijos crecieron entre los robles del valle. Cuando un huésped llega y le falta leña a las once de la noche, alguien de la familia se sube a la camioneta y le lleva un saco. Esa cercanía no se puede tercerizar.</p>
+        <p>Cada uno de los tres autores firma los posts que escribe porque queremos que sepas a quién le estás creyendo. No somos un blog corporativo. Somos tres personas — una que ya no está pero dejó su nombre, su hijo que opera hoy, y su nieto que digitaliza — contando lo que aprendimos haciendo turismo familiar durante décadas.</p>
+    </div>
+</section>
+
+<section class="cta-final">
+    <h3>Reserva con la familia detrás del negocio</h3>
+    <p>Sin intermediarios, sin comisiones, sin call centers.</p>
+    <a href="https://wa.me/56988813811?text=Hola%2C%20quisiera%20reservar%20una%20caba%C3%B1a" class="btn" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+</section>
+
+<footer class="site-footer">
+    <div class="ft-container">
+        <div>
+            <h4>Cabañas Santa Regina</h4>
+            <p>Valle Las Trancas, Termas de Chillán. Descanso y naturaleza en la cordillera de Ñuble.</p>
+        </div>
+        <div>
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/#cabanas">Cabañas</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/autores/">Autores</a></li>
+                <li><a href="/resenas/">Reseñas</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Aliados</h4>
+            <ul>
+                <li><a href="https://www.limpiafosasydestape.cl" rel="noopener">Mantención sanitaria</a></li>
+                <li><a href="https://chileelectrico.cl" rel="noopener">Servicios eléctricos</a></li>
+                <li><a href="https://aguswer.cl" rel="noopener">Coligue Sur — bambú nativo</a></li>
+                <li><a href="https://paginasfast.cl" rel="noopener">Sitio por PaginasFast</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">&copy; <span id="yy"></span> Cabañas Santa Regina · Valle Las Trancas, Chile</div>
+</footer>
+<script>document.getElementById('yy').textContent=new Date().getFullYear()</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"CollectionPage",
+  "name":"Autores de Cabañas Santa Regina",
+  "url":"https://cabanassantaregina.cl/autores/",
+  "description":"Las tres personas que escriben el blog de Cabañas Santa Regina: Santa Regina (fundadora), Oscar Olivera (segunda generación) y José Alfredo Garay Riffo (dueño actual).",
+  "inLanguage":"es-CL",
+  "isPartOf":{"@type":"WebSite","name":"Cabañas Santa Regina","url":"https://cabanassantaregina.cl/"},
+  "mainEntity":[
+    {"@type":"Person","@id":"https://cabanassantaregina.cl/autores/santa-regina#person","name":"Santa Regina","url":"https://cabanassantaregina.cl/autores/santa-regina","jobTitle":"Fundadora"},
+    {"@type":"Person","@id":"https://cabanassantaregina.cl/autores/oscar-olivera#person","name":"Oscar Olivera","url":"https://cabanassantaregina.cl/autores/oscar-olivera","jobTitle":"Marketing digital y reservas"},
+    {"@type":"Person","@id":"https://cabanassantaregina.cl/autores/jose-alfredo#person","name":"José Alfredo Garay Riffo","url":"https://cabanassantaregina.cl/autores/jose-alfredo","jobTitle":"Anfitrión y operador"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://cabanassantaregina.cl/"},
+  {"@type":"ListItem","position":2,"name":"Autores","item":"https://cabanassantaregina.cl/autores/"}
+]}
+</script>
+</body>
+</html>

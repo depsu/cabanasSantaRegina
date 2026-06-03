@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://cabañassantaregina.cl/">
+    <link rel="canonical" href="https://cabanassantaregina.cl/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_CL">
     <meta property="og:site_name" content="Cabañas Santa Regina">
     <meta property="og:title" content="Cabañas Santa Regina | Descanso y Naturaleza en Termas de Chillán">
     <meta property="og:description"
         content="Cabañas equipadas en el Valle Las Trancas. Piscina, tinaja y entorno natural.">
-    <meta property="og:url" content="https://cabañassantaregina.cl/">
-    <meta property="og:image" content="https://cabañassantaregina.cl/banner.jpeg">
+    <meta property="og:url" content="https://cabanassantaregina.cl/">
+    <meta property="og:image" content="https://cabanassantaregina.cl/banner.jpeg">
     <meta property="og:image:alt" content="Cabañas Santa Regina - Valle Las Trancas">
 
 <!-- Google Tag Manager -->
@@ -65,7 +65,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             --fuente-cuerpo: 'Cabin', sans-serif;
             --ancho-maximo: 1100px;
             --nav-height: 70px;
+            /* Acentos complementarios para confianza/calidez */
+            --color-acento-claro: #e8f3e9;
+            --color-acento-calido: #fff5e1;
+            --color-exito: #4a8c4f;
         }
+
+        /* ============================================= */
+        /* ========= TRUST SIGNALS + RESEÑAS + AUTORES NUEVAS SECCIONES ========= */
+        /* ============================================= */
+        .trust-bar { background: white; padding: 30px 20px; border-top: 1px solid #eee; border-bottom: 3px solid var(--color-secundario); }
+        .trust-bar .trust-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+        .trust-item .trust-icon { font-size: 2rem; color: var(--color-primario); margin-bottom: 8px; }
+        .trust-item .trust-number { font-family: var(--fuente-titulos); font-size: 1.6rem; color: var(--color-secundario); font-weight: bold; }
+        .trust-item .trust-label { font-size: .9rem; color: var(--color-texto); margin-top: 4px; }
+        @media (max-width: 768px) { .trust-bar .trust-container { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
+
+        .authors-section { background: var(--color-acento-claro); padding: 50px 20px; }
+        .authors-section h2 { text-align: center; color: var(--color-primario); margin-bottom: 8px; }
+        .authors-section .subtitle { text-align: center; color: #555; max-width: 580px; margin: 0 auto 30px; }
+        .authors-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .author-mini { background: white; border-radius: 14px; padding: 24px 20px; box-shadow: 0 4px 15px rgba(46,125,50,.08); border-top: 3px solid var(--color-secundario); text-align: center; transition: transform .3s; }
+        .author-mini:hover { transform: translateY(-4px); }
+        .author-avatar { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primario), var(--color-exito)); color: white; display: flex; align-items: center; justify-content: center; font-family: var(--fuente-titulos); font-size: 1.8rem; font-weight: bold; margin: 0 auto 14px; border: 3px solid var(--color-acento-calido); }
+        .author-mini h3 { font-size: 1.15rem; color: var(--color-primario); margin: 4px 0; }
+        .author-mini .role { font-size: .75rem; color: var(--color-secundario); text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
+        .author-mini .desc { font-size: .9rem; color: #555; margin: 12px 0 14px; }
+        .author-mini a { color: var(--color-primario); font-weight: bold; font-size: .9rem; text-decoration: none; }
+        .author-mini a:hover { text-decoration: underline; }
+        @media (max-width: 768px) { .authors-grid { grid-template-columns: 1fr; } }
+
+        .opiniones-section { background: var(--color-acento-calido); padding: 55px 20px; }
+        .opiniones-section h2 { text-align: center; color: var(--color-primario); margin-bottom: 8px; }
+        .opiniones-section .subtitle { text-align: center; color: #555; max-width: 580px; margin: 0 auto 30px; }
+        .rating-mini { text-align: center; margin-bottom: 26px; }
+        .rating-mini .stars { color: var(--color-secundario); font-size: 1.8rem; letter-spacing: 4px; }
+        .rating-mini .score { font-family: var(--fuente-titulos); font-size: 2.5rem; color: var(--color-primario); font-weight: bold; line-height: 1; }
+        .rating-mini .count { font-size: .9rem; color: #666; }
+        .opiniones-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .opinion-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 15px rgba(46,125,50,.06); border-left: 4px solid var(--color-secundario); }
+        .opinion-card .opinion-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .opinion-card .opinion-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primario), var(--color-exito)); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: var(--fuente-titulos); flex-shrink: 0; }
+        .opinion-card .opinion-author { font-weight: bold; font-size: .95rem; color: var(--color-texto); margin: 0; }
+        .opinion-card .opinion-date { font-size: .78rem; color: #888; margin: 0; }
+        .opinion-card .opinion-stars { color: var(--color-secundario); font-size: .95rem; letter-spacing: 2px; margin: 6px 0; }
+        .opinion-card .opinion-text { font-style: italic; color: #444; font-size: .92rem; line-height: 1.6; }
+        .opiniones-section .ver-todas { text-align: center; margin-top: 28px; }
+        .opiniones-section .ver-todas a { display: inline-block; background: white; color: var(--color-primario); padding: 12px 26px; border-radius: 30px; font-weight: bold; border: 2px solid var(--color-primario); text-decoration: none; }
+        .opiniones-section .ver-todas a:hover { background: var(--color-primario); color: white; }
+        @media (max-width: 768px) { .opiniones-grid { grid-template-columns: 1fr; } }
 
         /* Reseteo básico */
         * {
@@ -1678,6 +1726,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li class="nav-item">
                     <a href="/blog/" class="nav-link">Blog</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/autores/" class="nav-link">Autores</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/desde/" class="nav-link">Cómo llegar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/resenas/" class="nav-link">Reseñas</a>
+                </li>
                 <li class="nav-item share-nav-item">
                     <div class="share-group share-dropdown">
                         <div class="dropdown">
@@ -1724,6 +1781,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </section>
 
+        <section class="trust-bar" data-aos="fade-up">
+            <div class="trust-container">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+                    <div class="trust-number">Familiar</div>
+                    <div class="trust-label">Negocio familiar atendido por sus dueños</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-paw"></i></div>
+                    <div class="trust-number">Pet-friendly</div>
+                    <div class="trust-label">Mascotas bienvenidas en las 3 cabañas</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                    <div class="trust-number">Starlink</div>
+                    <div class="trust-label">WiFi estable también en cordillera</div>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-star"></i></div>
+                    <div class="trust-number">5.0 / 5</div>
+                    <div class="trust-label">Calificación promedio en Google</div>
+                </div>
+            </div>
+        </section>
+
         <section id="nosotros" class="about-brief">
             <div class="container about-container">
                 <div class="about-image" data-aos="fade-right">
@@ -1731,10 +1813,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
                 <div class="about-text" data-aos="fade-left" data-aos-delay="200">
                     <h2>Un Negocio Familiar Pensado en tu Descanso</h2>
-                    <p>Somos José Alfredo y familia, dedicados a ofrecer un espacio de tranquilidad en el Km 46.5.
-                        Nuestro compromiso es que te sientas como en casa, disfrutando de la naturaleza con todas las
-                        comodidades.</p>
-                    <!-- <a href="nosotros.html" class="btn-secondary">Conoce Nuestra Historia</a> -->
+                    <p>Somos tres generaciones de la misma familia: Santa Regina fundó este lugar hace décadas, José Alfredo lo opera hoy día a día, y Oscar lleva la parte digital. Vivimos acá, atendemos personalmente cada reserva, y respondemos los WhatsApp nosotros mismos. No hay call center.</p>
+                    <a href="/autores/" class="btn-secondary">Conoce a la familia →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="authors-section" data-aos="fade-up">
+            <h2>Conoce a quienes te reciben</h2>
+            <p class="subtitle">Tres generaciones de la misma familia escribiendo el blog y atendiendo a cada huésped.</p>
+            <div class="authors-grid">
+                <div class="author-mini">
+                    <div class="author-avatar" aria-hidden="true">SR</div>
+                    <p class="role">Fundadora</p>
+                    <h3>Santa Regina</h3>
+                    <p class="desc">La matriarca que dio nombre y origen a las cabañas. Historia, raíces y hospitalidad rural.</p>
+                    <a href="/autores/santa-regina">Leer perfil →</a>
+                </div>
+                <div class="author-mini">
+                    <div class="author-avatar" aria-hidden="true">JA</div>
+                    <p class="role">Anfitrión actual</p>
+                    <h3>José Alfredo</h3>
+                    <p class="desc">15+ años recibiendo huéspedes. Operación, mantención, leña, fosa séptica y aspectos legales.</p>
+                    <a href="/autores/jose-alfredo">Leer perfil →</a>
+                </div>
+                <div class="author-mini">
+                    <div class="author-avatar" aria-hidden="true">OO</div>
+                    <p class="role">Segunda generación</p>
+                    <h3>Oscar Olivera</h3>
+                    <p class="desc">El hijo digital. Reservas, automatización WhatsApp y conexión con la nueva escena del valle.</p>
+                    <a href="/autores/oscar-olivera">Leer perfil →</a>
                 </div>
             </div>
         </section>
@@ -1946,6 +2054,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </section>
 
+        <section id="opiniones" class="opiniones-section" data-aos="fade-up">
+            <h2>Lo que dicen nuestros huéspedes</h2>
+            <p class="subtitle">Reseñas verificadas en Google de quienes ya se hospedaron con nosotros.</p>
+            <div class="rating-mini">
+                <div class="stars" aria-label="5 de 5 estrellas">★ ★ ★ ★ ★</div>
+                <div class="score">5.0 / 5</div>
+                <div class="count">Basado en 27 reseñas verificadas en Google</div>
+            </div>
+            <!-- RESEÑAS: actualizar trimestralmente desde https://maps.app.goo.gl/s9dFG5rj41kq1kon8 - Última: 2026-05-17 -->
+            <div class="opiniones-grid">
+                <div class="opinion-card">
+                    <div class="opinion-header">
+                        <div class="opinion-avatar">A</div>
+                        <div>
+                            <p class="opinion-author">Andrés Rodríguez</p>
+                            <p class="opinion-date">Hace 3 meses · Verificado en Google</p>
+                        </div>
+                    </div>
+                    <div class="opinion-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+                    <p class="opinion-text">"Excelente experiencia, cabañas muy bien equipadas, acogedoras y cómodas, lugar muy tranquilo y don José muy buen anfitrión, siempre atento, precio accesible, volvería sin dudas 👍"</p>
+                </div>
+                <div class="opinion-card">
+                    <div class="opinion-header">
+                        <div class="opinion-avatar">M</div>
+                        <div>
+                            <p class="opinion-author">Megr</p>
+                            <p class="opinion-date">Hace 6 meses · Verificado en Google</p>
+                        </div>
+                    </div>
+                    <div class="opinion-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+                    <p class="opinion-text">"Cabañas Santa Regina, un regalito. Entorno tranquilo y hermoso. Cabañas excelentes, muy equipadas: piscina, tinaja, juegos infantiles, tejo, saltarina, amplio espacio, muy seguras, naturaleza, árboles nativos. Tienen que conocer. Paz y tranquilidad."</p>
+                </div>
+                <div class="opinion-card">
+                    <div class="opinion-header">
+                        <div class="opinion-avatar">L</div>
+                        <div>
+                            <p class="opinion-author">Luis Contreras</p>
+                            <p class="opinion-date">Hace 6 meses · Verificado en Google</p>
+                        </div>
+                    </div>
+                    <div class="opinion-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+                    <p class="opinion-text">"Las cabañas muy acogedoras, todo muy limpio, grato entorno. La atención y amabilidad dignos de destacar. Hay un buen equilibrio entre el precio y la calidad. Recomendables 100%."</p>
+                </div>
+            </div>
+            <div class="ver-todas">
+                <a href="/resenas/">Ver las 10 reseñas destacadas →</a>
+            </div>
+        </section>
+
         <section id="contacto" class="contact" data-aos="fade-up">
             <div class="container">
                 <div class="section-header">
@@ -1957,7 +2114,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="contact-info">
                         <h3>Datos de Contacto</h3>
                         <p><i class="fa-solid fa-user"></i> Administrador: José Alfredo Garay Riffo</p>
-                        <p><i class="fa-solid fa-envelope"></i> Email: dimensión7777@gmail.com</p>
+                        <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:contacto@cabanassantaregina.cl">contacto@cabanassantaregina.cl</a></p>
                         <p><i class="fa-solid fa-phone"></i> Teléfono/WhatsApp: <a href="https://wa.me/56988813811"
                                 target="_blank" rel="noopener">+56 9 8881 3811</a></p>
                     </div>
@@ -2127,7 +2284,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <li><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/56988813811" target="_blank"
                                 rel="noopener">WhatsApp</a></li>
                         <li><i class="fa-solid fa-envelope"></i><a
-                                href="mailto:contacto@cabañassantaregina.cl">contacto@cabañassantaregina.cl</a></li>
+                                href="mailto:contacto@cabanassantaregina.cl">contacto@cabanassantaregina.cl</a></li>
                         <li><i class="fa-solid fa-map-location-dot"></i><a href="#ubicacion">Ver Ubicación</a></li>
                     </ul>
                 </div>
@@ -2175,23 +2332,113 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {
             "@context": "https://schema.org",
             "@type": "LodgingBusiness",
+            "@id": "https://cabanassantaregina.cl/#lodging",
             "name": "Cabañas Santa Regina",
-            "description": "Cabañas equipadas en el Valle Las Trancas, Termas de Chillán. Piscina, tinaja y entorno natural.",
+            "description": "Cabañas equipadas en el Valle Las Trancas, Termas de Chillán. Piscina, tinaja, parrilla, WiFi Starlink y entorno natural en cordillera de Ñuble.",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Km 46.5 Camino Termas de Chillán",
+                "addressLocality": "Pinto",
                 "addressRegion": "Ñuble",
+                "postalCode": "3870000",
                 "addressCountry": "CL"
             },
-            "url": "https://cabañassantaregina.cl/",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -36.8294563,
+                "longitude": -71.683631
+            },
+            "hasMap": "https://maps.app.goo.gl/s9dFG5rj41kq1kon8",
+            "url": "https://cabanassantaregina.cl/",
             "telephone": "+56 9 8881 3811",
-            "image": "https://cabañassantaregina.cl/banner.jpeg",
+            "email": "contacto@cabanassantaregina.cl",
+            "image": "https://cabanassantaregina.cl/banner.jpeg",
+            "logo": "https://cabanassantaregina.cl/logo_transparente.png",
             "petsAllowed": true,
+            "priceRange": "$$",
+            "currenciesAccepted": "CLP",
+            "paymentAccepted": "Cash, Transfer, Credit Card",
+            "checkinTime": "15:00",
+            "checkoutTime": "14:00",
+            "numberOfRooms": 3,
+            "maximumAttendeeCapacity": 17,
             "amenityFeature": [
-                {"@type": "LocationFeatureSpecification", "name": "Piscina"},
-                {"@type": "LocationFeatureSpecification", "name": "Tinaja"},
-                {"@type": "LocationFeatureSpecification", "name": "Calefacción"},
-                {"@type": "LocationFeatureSpecification", "name": "Wifi"}
+                {"@type": "LocationFeatureSpecification", "name": "Piscina compartida (temporada estival)"},
+                {"@type": "LocationFeatureSpecification", "name": "Tinaja exterior con leña incluida"},
+                {"@type": "LocationFeatureSpecification", "name": "Calefacción a leña + respaldo eléctrico"},
+                {"@type": "LocationFeatureSpecification", "name": "WiFi Starlink"},
+                {"@type": "LocationFeatureSpecification", "name": "Parrilla individual por cabaña"},
+                {"@type": "LocationFeatureSpecification", "name": "Cocina equipada"},
+                {"@type": "LocationFeatureSpecification", "name": "Estacionamiento"},
+                {"@type": "LocationFeatureSpecification", "name": "Mascotas bienvenidas"}
+            ],
+            "sameAs": [
+                "https://maps.app.goo.gl/s9dFG5rj41kq1kon8"
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "27",
+                "bestRating": "5",
+                "worstRating": "1"
+            },
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Andrés Rodríguez"},
+                    "datePublished": "2026-02-17",
+                    "reviewBody": "Excelente experiencia, cabañas muy bien equipadas, acogedoras y cómodas, lugar muy tranquilo y don José muy buen anfitrión, siempre atento, precio accesible, volvería sin dudas.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Luis Contreras"},
+                    "datePublished": "2025-11-17",
+                    "reviewBody": "Las cabañas muy acogedoras, todo muy limpio, grato entorno. La atención y amabilidad dignos de destacar. Hay un buen equilibrio entre el precio y la calidad. Recomendables 100%.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "María"},
+                    "datePublished": "2025-11-17",
+                    "reviewBody": "Cabañas Santa Regina me hace recordar a mis padres y abuelitos... todo es mágico. Don José Alfredo un caballero. Muy amable y trabajador. La recomiendo de todas maneras.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Alejandro Flores"},
+                    "datePublished": "2025-11-17",
+                    "reviewBody": "El lugar es muy bueno y muy acogedor, con buenos espacios para poder compartir en familia y amigos. Estoy muy agradecido de la atención entregada, y lo más importante, queda a pocos minutos de las Termas de Chillán.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Megr"},
+                    "datePublished": "2025-11-17",
+                    "reviewBody": "Cabañas Santa Regina, un regalito. Entorno tranquilo y hermoso. Cabañas excelentes, muy equipadas: piscina, tinaja, juegos infantiles, tejo, saltarina, amplio espacio, muy seguras, naturaleza, árboles nativos. Tienen que conocer. Paz y tranquilidad.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Carolina Boysen"},
+                    "datePublished": "2025-11-17",
+                    "reviewBody": "Excelente lugar, muy buena atención, tiene unas tinajas maravillosas, totalmente recomendables para viajes en familia o solo con tu pareja.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Gina Mora"},
+                    "datePublished": "2025-11-17",
+                    "reviewBody": "Muy buena mi experiencia en las cabañas Regina. Lindos paisajes tanto en verano como en invierno. Lugar acogedor, especial para alejarse del ruido de la ciudad.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                },
+                {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": "Felipe Lagos Garay"},
+                    "datePublished": "2025-11-17",
+                    "reviewBody": "Muy lindas cabañas, bien equipadas, en un entorno natural hermoso y cerca de diferentes atractivos turísticos.",
+                    "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+                }
             ],
             "designer": {
                 "@type": "Organization",
@@ -2423,7 +2670,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         });
 
         (function () {
-            const SHARE_URL_UNICODE = 'https://cabañassantaregina.cl/';
+            const SHARE_URL_UNICODE = 'https://cabanassantaregina.cl/';
             const SHARE_TITLE = document.title || 'Cabañas Santa Regina';
             const SHARE_TEXT = `${SHARE_TITLE} - Reserva por WhatsApp: +56 9 8881 3811`;
             const SHARE_HASHTAG = '#CabañasSantaRegina';
@@ -2447,9 +2694,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 }
                 if (network === 'facebook') {
                     if (!isPublic) { alert('Facebook solo permite compartir URLs públicas (http/https).'); return; }
-                    // Trucazo: mostramos el dominio con ñ en el texto del post mediante "quote"
                     const quote = `${text}\n${url}`;
                     const fb = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(quote)}&hashtag=${encodeURIComponent(hashtag)}`;
+                    // Nota: usamos dominio sin ñ (ASCII) para máxima compatibilidad con Facebook/WhatsApp share.
                     window.open(fb, '_blank', 'noopener,noreferrer');
                     return;
                 }

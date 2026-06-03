@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reseñas de huéspedes | Cabañas Santa Regina | Valle Las Trancas</title>
+<meta name="description" content="Reseñas verificadas de huéspedes en Cabañas Santa Regina, Valle Las Trancas. Calificación 5.0 en Google. Opiniones reales sobre nuestras 3 cabañas familiares.">
+<link rel="canonical" href="https://cabanassantaregina.cl/resenas/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reseñas de huéspedes | Cabañas Santa Regina">
+<meta property="og:description" content="5.0 ★ en Google. Opiniones reales de huéspedes que se hospedaron en nuestras 3 cabañas de Valle Las Trancas, Termas de Chillán.">
+<meta property="og:url" content="https://cabanassantaregina.cl/resenas/">
+<meta property="og:image" content="https://cabanassantaregina.cl/banner.jpeg">
+<meta property="og:site_name" content="Cabañas Santa Regina">
+<meta property="og:locale" content="es_CL">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Cabin:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--color-primario:#2e7d32;--color-secundario:#c79a3b;--color-texto:#2c3e2f;--color-fondo:#f7f4ef;--color-fondo-seccion:#ffffff;--color-acento-claro:#e8f3e9;--color-acento-calido:#fff5e1;--color-exito:#4a8c4f;--fuente-titulos:'Merriweather',serif;--fuente-cuerpo:'Cabin',sans-serif}
+*{box-sizing:border-box}
+body{font-family:var(--fuente-cuerpo);color:var(--color-texto);background:var(--color-fondo);margin:0;line-height:1.7}
+h1,h2,h3{font-family:var(--fuente-titulos);color:var(--color-primario);line-height:1.25}
+a{color:var(--color-secundario);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav-bar{background:white;padding:15px 30px;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center}
+.nav-bar .logo{font-family:var(--fuente-titulos);color:var(--color-primario);font-weight:bold;font-size:1.3rem;text-decoration:none}
+.nav-bar nav a{color:var(--color-texto);margin:0 15px;font-weight:600}
+.btn-reservar{background:var(--color-secundario);color:white!important;padding:10px 20px;border-radius:30px;font-weight:bold}
+.hero{background:linear-gradient(rgba(46,125,50,.78),rgba(46,125,50,.62)),url('/banner.jpeg');background-size:cover;background-position:center;color:white;padding:90px 30px 70px;text-align:center}
+.hero h1{color:white;font-size:2.8rem;margin-bottom:.5rem}
+.hero p{font-size:1.15rem;max-width:680px;margin:0 auto;opacity:.95}
+.rating-summary{background:white;max-width:600px;margin:-40px auto 0;padding:30px 40px;border-radius:14px;box-shadow:0 10px 35px rgba(0,0,0,.1);text-align:center;position:relative;z-index:10}
+.rating-summary .big-rating{font-family:var(--fuente-titulos);font-size:3.5rem;color:var(--color-primario);line-height:1;font-weight:bold}
+.rating-summary .stars{color:var(--color-secundario);font-size:1.5rem;letter-spacing:4px;margin:8px 0}
+.rating-summary .count{color:#666;font-size:.95rem}
+.rating-summary .google-badge{display:inline-flex;align-items:center;gap:8px;background:var(--color-acento-claro);padding:8px 16px;border-radius:30px;margin-top:14px;font-size:.85rem;color:var(--color-primario);font-weight:600}
+.breadcrumbs{max-width:1100px;margin:30px auto 0;padding:0 30px;font-size:.85rem;color:#6a6a6a}
+.breadcrumbs a{color:var(--color-primario)}
+.intro{max-width:760px;margin:40px auto 0;padding:0 30px;text-align:center}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px;max-width:1100px;margin:30px auto 40px;padding:20px 30px}
+.review-card{background:white;border-radius:14px;padding:30px;box-shadow:0 4px 15px rgba(46,125,50,.08);border-left:4px solid var(--color-secundario);position:relative}
+.review-header{display:flex;align-items:center;gap:15px;margin-bottom:14px}
+.review-avatar{width:55px;height:55px;border-radius:50%;background:linear-gradient(135deg,var(--color-primario),var(--color-exito));color:white;display:flex;align-items:center;justify-content:center;font-family:var(--fuente-titulos);font-size:1.4rem;font-weight:bold;flex-shrink:0}
+.review-meta{flex:1}
+.review-author{font-weight:bold;color:var(--color-texto);font-size:1rem;margin:0}
+.review-date{color:#888;font-size:.82rem;margin:2px 0 0}
+.review-stars{color:var(--color-secundario);font-size:1.05rem;letter-spacing:2px;margin-bottom:10px}
+.review-body{font-style:italic;color:#444;font-size:.97rem;line-height:1.65}
+.verified-badge{display:inline-flex;align-items:center;gap:5px;color:var(--color-exito);font-size:.78rem;font-weight:600;margin-top:14px}
+.ver-todas{background:var(--color-acento-claro);padding:50px 30px;text-align:center;margin-top:20px}
+.ver-todas h2{margin-bottom:14px}
+.ver-todas p{max-width:600px;margin:0 auto 20px;color:#555}
+.btn-google{display:inline-flex;align-items:center;gap:10px;background:white;color:var(--color-texto);padding:14px 28px;border-radius:30px;font-weight:bold;border:2px solid var(--color-primario);transition:all .3s}
+.btn-google:hover{background:var(--color-primario);color:white;text-decoration:none}
+.deja-resena{background:white;max-width:760px;margin:30px auto;padding:35px;border-radius:14px;box-shadow:0 4px 15px rgba(46,125,50,.08);text-align:center}
+.deja-resena h2{margin-top:0}
+.btn-primario{background:var(--color-secundario);color:white!important;padding:14px 28px;border-radius:30px;font-weight:bold;display:inline-block;margin-top:10px;text-decoration:none}
+footer.site-footer{background:#1a3320;color:#c8d8c9;padding:50px 30px 20px;margin-top:60px}
+footer.site-footer .ft-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+footer.site-footer h4{color:var(--color-secundario);margin-bottom:15px;font-family:var(--fuente-titulos)}
+footer.site-footer ul{list-style:none;padding:0}
+footer.site-footer ul li{margin-bottom:.5rem}
+footer.site-footer ul li a{color:#c8d8c9}
+footer.site-footer .copyright{text-align:center;padding-top:30px;margin-top:30px;border-top:1px solid #2a4a30;font-size:.9rem}
+@media(max-width:768px){.hero h1{font-size:1.9rem}.rating-summary .big-rating{font-size:2.6rem}.nav-bar nav{display:none}}
+</style>
+</head>
+<body>
+<header class="nav-bar">
+    <a href="/" class="logo">Cabañas Santa Regina</a>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/#cabanas">Cabañas</a>
+        <a href="/blog/">Blog</a>
+        <a href="/autores/">Autores</a>
+        <a href="/resenas/" style="color:var(--color-primario);">Reseñas</a>
+        <a href="/#contacto">Contacto</a>
+        <a href="https://wa.me/56988813811?text=Hola%2C%20quisiera%20reservar" class="btn-reservar" target="_blank" rel="noopener">Reservar</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Reseñas de huéspedes</h1>
+    <p>Opiniones reales de quienes se han hospedado en nuestras 3 cabañas en Valle Las Trancas.</p>
+</section>
+
+<div class="rating-summary">
+    <div class="big-rating">5.0</div>
+    <div class="stars" aria-label="5 de 5 estrellas">★ ★ ★ ★ ★</div>
+    <div class="count">Basado en 27 reseñas verificadas en Google</div>
+    <div class="google-badge"><i class="fa-brands fa-google"></i> Perfil verificado en Google</div>
+</div>
+
+<nav class="breadcrumbs" aria-label="Migas de pan">
+    <a href="/">Inicio</a> › <span>Reseñas</span>
+</nav>
+
+<section class="intro">
+    <h2>Lo que dicen quienes nos visitan</h2>
+    <p>Reseñas reales dejadas en nuestro perfil de Google. Las actualizamos trimestralmente. Si te hospedaste con nosotros, agradeceremos que dejes la tuya.</p>
+</section>
+
+<!-- RESEÑAS: actualizar trimestralmente desde https://maps.app.goo.gl/s9dFG5rj41kq1kon8 - Última actualización: 2026-05-17 -->
+
+<section class="reviews-grid">
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">A</div>
+            <div class="review-meta">
+                <p class="review-author">Andrés Rodríguez</p>
+                <p class="review-date">Hace 3 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Excelente experiencia, cabañas muy bien equipadas, acogedoras y cómodas, lugar muy tranquilo y don José muy buen anfitrión, siempre atento, precio accesible, volvería sin dudas 👍"</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">L</div>
+            <div class="review-meta">
+                <p class="review-author">Luis Contreras</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Las cabañas muy acogedoras, todo muy limpio, grato entorno. La atención y amabilidad dignos de destacar. Hay un buen equilibrio entre el precio y la calidad. Recomendables 100%."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">M</div>
+            <div class="review-meta">
+                <p class="review-author">María</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Cabañas Santa Regina me hace recordar a mis padres y abuelitos... todo es mágico. Don José Alfredo un caballero. Muy amable y trabajador. La recomiendo de todas maneras."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">A</div>
+            <div class="review-meta">
+                <p class="review-author">Alejandro Flores</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"El lugar es muy bueno y muy acogedor, con buenos espacios para poder compartir en familia y amigos. Estoy muy agradecido de la atención entregada, y lo más importante, queda a pocos minutos de las Termas de Chillán."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">M</div>
+            <div class="review-meta">
+                <p class="review-author">Megr</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Cabañas Santa Regina, un regalito. Entorno tranquilo y hermoso. Cabañas excelentes, muy equipadas: piscina, tinaja, juegos infantiles, tejo, saltarina, amplio espacio, muy seguras, naturaleza, árboles nativos. Tienen que conocer. Paz y tranquilidad."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">C</div>
+            <div class="review-meta">
+                <p class="review-author">Carolina Boysen</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Excelente lugar, muy buena atención, tiene unas tinajas maravillosas, totalmente recomendables para viajes en familia o solo con tu pareja."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">G</div>
+            <div class="review-meta">
+                <p class="review-author">Gina Mora</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Muy buena mi experiencia en las cabañas Regina. Lindos paisajes tanto en verano como en invierno. Lugar acogedor, especial para alejarse del ruido de la ciudad."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">F</div>
+            <div class="review-meta">
+                <p class="review-author">Felipe Lagos Garay</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Muy lindas cabañas, bien equipadas, en un entorno natural hermoso y cerca de diferentes atractivos turísticos."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">P</div>
+            <div class="review-meta">
+                <p class="review-author">Paola Gutiérrez</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Son excelentes cabañas, totalmente equipadas y muy cómodas. Felicitaciones a sus dueños por tanta atención y preocupación."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+
+    <article class="review-card">
+        <div class="review-header">
+            <div class="review-avatar" aria-hidden="true">V</div>
+            <div class="review-meta">
+                <p class="review-author">Víctor Elgueta</p>
+                <p class="review-date">Hace 6 meses</p>
+            </div>
+        </div>
+        <div class="review-stars" aria-label="5 estrellas">★ ★ ★ ★ ★</div>
+        <p class="review-body">"Celebré mi cumpleaños con toda mi familia y fuimos atendidos por sus dueños. Su atención fue excelente."</p>
+        <div class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verificado en Google</div>
+    </article>
+</section>
+
+<section class="ver-todas">
+    <h2>Ver todas las reseñas en Google</h2>
+    <p>Mostramos aquí una selección. Para leer todas las reseñas verificadas, visita nuestro perfil de Google Maps.</p>
+    <a href="https://maps.app.goo.gl/s9dFG5rj41kq1kon8" class="btn-google" target="_blank" rel="noopener">
+        <i class="fa-brands fa-google"></i> Ver perfil en Google Maps
+    </a>
+</section>
+
+<div class="deja-resena">
+    <h2>¿Te hospedaste con nosotros?</h2>
+    <p>Nos ayudas mucho dejando tu reseña en Google. Toma menos de un minuto y le sirve a otros huéspedes que están planificando su escapada.</p>
+    <a href="https://maps.app.goo.gl/s9dFG5rj41kq1kon8" class="btn-primario" target="_blank" rel="noopener">Dejar reseña en Google</a>
+</div>
+
+<footer class="site-footer">
+    <div class="ft-container">
+        <div>
+            <h4>Cabañas Santa Regina</h4>
+            <p>Valle Las Trancas, Termas de Chillán. Descanso y naturaleza en la cordillera de Ñuble.</p>
+        </div>
+        <div>
+            <h4>Navegación</h4>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/#cabanas">Cabañas</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/autores/">Autores</a></li>
+                <li><a href="/resenas/">Reseñas</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Aliados</h4>
+            <ul>
+                <li><a href="https://destaperapido.cl" rel="noopener">Destape Rápido</a></li>
+                <li><a href="https://www.limpiafosasydestape.cl" rel="noopener">Mantención sanitaria</a></li>
+                <li><a href="https://chileelectrico.cl" rel="noopener">ChileEléctrico</a></li>
+                <li><a href="https://paginasfast.cl" rel="noopener">Sitio por PaginasFast</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">&copy; <span id="yy"></span> Cabañas Santa Regina · Valle Las Trancas, Chile</div>
+</footer>
+<script>document.getElementById('yy').textContent=new Date().getFullYear()</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Reseñas de huéspedes - Cabañas Santa Regina",
+  "url":"https://cabanassantaregina.cl/resenas/",
+  "description":"Reseñas verificadas de huéspedes en Cabañas Santa Regina. Calificación 5.0 en Google.",
+  "inLanguage":"es-CL",
+  "isPartOf":{"@type":"WebSite","name":"Cabañas Santa Regina","url":"https://cabanassantaregina.cl/"},
+  "about":{"@type":"LodgingBusiness","@id":"https://cabanassantaregina.cl/#lodging","name":"Cabañas Santa Regina"}
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Inicio","item":"https://cabanassantaregina.cl/"},
+  {"@type":"ListItem","position":2,"name":"Reseñas"}
+]}
+</script>
+</body>
+</html>
