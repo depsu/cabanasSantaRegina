@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cabanassantaregina.cl/sitemap.xml
+Sitemap: https://www.xn--cabaassantaregina-ixb.cl/sitemap.xml
